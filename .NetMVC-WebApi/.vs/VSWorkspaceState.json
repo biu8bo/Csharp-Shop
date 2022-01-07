@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Content",
+    "\\Content\\img"
   ],
-  "SelectedNode": "\\MVC卓越项目.sln",
+  "SelectedNode": "\\MVC卓越项目.csproj",
   "PreviewInSolutionExplorer": false
 }
