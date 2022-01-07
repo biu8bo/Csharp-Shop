@@ -134,7 +134,9 @@
     <Compile Include="Attribute\CacheEnableAttribute.cs" />
     <Compile Include="Attribute\WebApiResultFilterAttribute.cs" />
     <Compile Include="BaseModels\ApiBaseModel.cs" />
+    <Compile Include="BaseModels\ApiCode.cs" />
     <Compile Include="BaseModels\ApiExceptionModel.cs" />
+    <Compile Include="BaseModels\ApiResult.cs" />
     <Compile Include="Constant\ShopConstant.cs" />
     <Compile Include="ExceptionHandler\ApiException.cs" />
     <Compile Include="ExceptionHandler\AuthException.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Utils\JwtHelper.cs" />
     <Compile Include="Utils\LocalUser.cs" />
     <Compile Include="Utils\Log4netHelper.cs" />
+    <Compile Include="Utils\Md5Utils.cs" />
     <Compile Include="Utils\RedisHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

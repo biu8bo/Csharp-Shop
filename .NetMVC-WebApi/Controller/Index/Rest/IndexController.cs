@@ -1,4 +1,5 @@
-﻿using Mapper;
+﻿using Commons.BaseModels;
+using Mapper;
 using Microsoft.Practices.Unity;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
@@ -25,9 +26,9 @@ namespace MVC卓越项目.Areas
 
         [Route("banner")]
         [HttpGet]
-        public List<system_group_data> index()
+        public ApiResult<system_group_data> index()
         {
-            return indexService.GetIndexBanner();
+         return   ApiResult<system_group_data>.ok(indexService.GetIndexBanner());
         }
     }
 }
