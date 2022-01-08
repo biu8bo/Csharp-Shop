@@ -22,12 +22,6 @@ namespace MVC卓越项目
             config.Filters.Add(new WebApiExceptionFilter());
             //开启特性路由 
             config.MapHttpAttributeRoutes();
-
-            //    config.Routes.MapHttpRoute(
-            //      name: "ParentApi",
-            //      routeTemplate: "api/{controller}/{action}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
         }
     }
 }

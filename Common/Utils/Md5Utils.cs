@@ -11,9 +11,9 @@ namespace Commons.Utils
     /// <summary>
     /// md5 工具类
     /// </summary>
-    class Md5Utils
+  public  class Md5Utils
     {
-        public string Md5(string txt)
+        public static string Md5(string txt)
         {
             byte[] sor = Encoding.UTF8.GetBytes(txt);
             MD5 md5 = MD5.Create();

@@ -140,6 +140,9 @@
     <Compile Include="Constant\ShopConstant.cs" />
     <Compile Include="ExceptionHandler\ApiException.cs" />
     <Compile Include="ExceptionHandler\AuthException.cs" />
+    <Compile Include="ExceptionHandler\ForbiddenException.cs" />
+    <Compile Include="ExceptionHandler\MethodNotFoundException.cs" />
+    <Compile Include="ExceptionHandler\MethodNotSupportException.cs" />
     <Compile Include="Fillter\WebApiExceptionFilter.cs" />
     <Compile Include="Utils\JwtHelper.cs" />
     <Compile Include="Utils\LocalUser.cs" />

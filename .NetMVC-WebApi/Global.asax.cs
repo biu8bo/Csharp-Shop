@@ -20,8 +20,11 @@ namespace MVC卓越项目
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //载入log4j配置文件
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
+            //初始化IOC容器
             Bootstrapper.Initialise();
         }
-        }
+       
+}
 }

@@ -22,6 +22,11 @@ namespace Commons.BaseModels
 
             return (ApiResult<T>)new ApiResult<T>().setCode(HttpStatusCode.OK).setIsSuccess(true).setMsg("请求成功").setData(data);
         }
+        public static ApiResult<T> ok(Object data, String message)
+        {
+
+            return (ApiResult<T>)new ApiResult<T>().setCode(HttpStatusCode.OK).setIsSuccess(true).setMsg(message).setData(data);
+        }
         public static ApiResult<T> ok(String message)
         {
 

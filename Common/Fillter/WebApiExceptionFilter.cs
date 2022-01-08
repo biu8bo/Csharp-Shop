@@ -25,7 +25,7 @@ namespace MVC卓越项目.Commons.Fillter
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             Exception ex = actionExecutedContext.Exception;
-            ApiException customerException = actionExecutedContext.Exception as ApiException;
+            ApiException customerException = ex as ApiException;
             //获取状态代码
             if (customerException == null)
             {

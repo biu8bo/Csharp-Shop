@@ -16,9 +16,9 @@ namespace MVC卓越项目.Commons.Utils
     /// <summary>
     /// LocalUser工具类
     /// </summary>
-    public static class LocalUser
+    public class LocalUser
     {
-        //线程隔离
+        //线程资源隔离
         public static ThreadLocal<Hashtable> threadLocalTable = new ThreadLocal<Hashtable>(()=>new Hashtable());
 
         //获取user实例
@@ -46,6 +46,14 @@ namespace MVC卓越项目.Commons.Utils
                 throw new AuthException();
             }
            return userInfo.uid;
+        }
+
+        /// <summary>
+        /// 清空ThreadLocalTable
+        /// </summary>
+        public static void Clear()
+        {
+            threadLocalTable.Value.Clear();
         }
     }
 }
