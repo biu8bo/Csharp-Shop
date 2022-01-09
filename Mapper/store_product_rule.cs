@@ -9,13 +9,27 @@
 
 namespace Mapper
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class store_product_rule
     {
         public int id { get; set; }
         public string rule_name { get; set; }
+        public string rule_value { get; set; }
+        [NotMapped]
+        public Dictionary<string,object> rule_value_json {
+            get
+            {
+                return JsonConvert.DeserializeObject<Dictionary<string, object>>(string.IsNullOrEmpty(rule_value) ? "{}" : rule_value);
+            }
+            set
+            {
+                rule_value = value.ToString();
+            }
+            }
         public Nullable<System.DateTime> create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public Nullable<bool> is_del { get; set; }

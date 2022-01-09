@@ -1,5 +1,6 @@
 ﻿using Commons.BaseModels;
 using Mapper;
+using MVC卓越项目.Commons.ExceptionHandler;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -49,8 +50,16 @@ namespace MVC卓越项目.Commons.Utils
             //获取总数
             page.Total = queryObject.Count();
             //获取当前分页查询
-            page.Data = queryObject.Skip(pageSize * (pageNum - 1)).Take(pageSize).ToList();
-            //是否有下一页
+            try
+            {
+                page.Data = queryObject.Skip(pageSize * (pageNum - 1)).Take(pageSize).ToList();
+            }
+            catch
+            {
+
+                throw new ApiException(500,"你没有使用OrderBy或OrderByDescending方法就直接调用分页方法！");
+            }
+            //计算是否有下一页
             int s = page.Total / (this.pageSize * (this.pageNum - 1) + this.pageSize);
             if (s == 0)
             {

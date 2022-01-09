@@ -46,10 +46,10 @@ namespace MVC卓越项目.Commons.Attribute
             if (result != null)
             {
                 //反序列化json对象
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+                Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(result);
                 //设置响应内容
                 HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
-                httpResponseMessage.Content = new ObjectContent<Dictionary<string, string>>(dict, new JsonMediaTypeFormatter(), "application/json");
+                httpResponseMessage.Content = new ObjectContent<Dictionary<string, object>>(dict, new JsonMediaTypeFormatter(), "application/json");
                 //  设置响应体
                 actionContext.Response = httpResponseMessage;
                 return;
@@ -78,7 +78,7 @@ namespace MVC卓越项目.Commons.Attribute
             //写入redis
             RedisHelper.SetStringValue(templateKey, json);
             base.OnActionExecuted(actionExecutedContext);
-
+           
         }
     }
 }

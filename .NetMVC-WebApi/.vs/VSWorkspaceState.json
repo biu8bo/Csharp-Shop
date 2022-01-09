@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controller",
+    "\\Controller\\Auth",
+    "\\Controller\\Auth\\Rest"
   ],
-  "SelectedNode": "\\MVC卓越项目.sln",
+  "SelectedNode": "\\Controller\\Auth\\Rest\\LoginController.cs",
   "PreviewInSolutionExplorer": false
 }

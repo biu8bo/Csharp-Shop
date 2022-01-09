@@ -1,5 +1,6 @@
 ﻿using Commons.BaseModels;
 using Mapper;
+using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Controller.Auth.Param;
 using Service.Service;
@@ -10,23 +11,25 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace MVC卓越项目.Controller.Auth.Rest
+namespace MVC卓越项目.Controller.Auth
 {
+    [RoutePrefix("api")]
     public class LoginController : ApiController
     {
         private readonly IAuthService iAuthService = Bootstrapper.Resolve<IAuthService>();
-        private readonly static Log4NetHelper logger = Log4NetHelper.Default;
+        [HttpPost]
         [Route("login")]
       public  ApiResult<eshop_user> Login([FromBody] LoginParam loginParam)
         {
-            IPAddress[] ips = Dns.GetHostAddresses(Dns.GetHostName());
-            string ip = "";
-            foreach (IPAddress e in ips)
-            {
-                ip += e.ToString() + "|";
-            }
-            logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 密码:{loginParam.Password}");
-            return ApiResult<eshop_user>.ok(iAuthService.login(loginParam),"登陆成功");
+            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam,Dns.GetHostAddresses(Dns.GetHostName())),"登陆成功");
         }
+        [AuthCheck]
+        [HttpPost]
+        [Route("logout")]
+        public ApiResult<eshop_user> Logout()
+        {
+            return ApiResult<eshop_user>.ok(iAuthService.Logout(Request.Headers.GetValues("Authorization").First()));
+        }
+
     }
 }

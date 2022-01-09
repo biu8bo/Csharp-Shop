@@ -148,6 +148,7 @@
     <Compile Include="BaseModels\ApiExceptionModel.cs" />
     <Compile Include="BaseModels\ApiResult.cs" />
     <Compile Include="BaseModels\PageModel.cs" />
+    <Compile Include="Utils\ObjectUtils.cs" />
     <Compile Include="Utils\PageUtils.cs" />
     <Compile Include="Enum\ProductEnum.cs" />
     <Compile Include="Enum\ShopConstant.cs" />

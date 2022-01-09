@@ -72,3 +72,5 @@ C:\Users\肖霄\source\repos\Eshopping\Mapper\bin\Debug\System.Runtime.CompilerS
 C:\Users\肖霄\source\repos\Eshopping\Mapper\obj\Debug\Mapper.csproj.CopyComplete
 C:\Users\肖霄\source\repos\Eshopping\Mapper\bin\Debug\log4net.dll
 C:\Users\肖霄\source\repos\Eshopping\Mapper\bin\Debug\log4net.xml
+C:\Users\肖霄\source\repos\Eshopping\Mapper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\肖霄\source\repos\Eshopping\Mapper\bin\Debug\Newtonsoft.Json.xml

@@ -68,6 +68,9 @@
   <ItemGroup>
     <Compile Include="ProductService\Impl\ProductServiceImpl.cs" />
     <Compile Include="ProductService\IProductService.cs" />
+    <Compile Include="ProductService\VO\ProductVO.cs" />
+    <Compile Include="ProductService\VO\StoreProductAttr.cs" />
+    <Compile Include="ProductService\VO\StoreProductAttrValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IndexService\Impl\IndexServiceImpl.cs" />
     <Compile Include="IndexService\IIndexService.cs" />

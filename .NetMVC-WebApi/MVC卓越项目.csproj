@@ -312,10 +312,11 @@
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="Controller\Auth\Rest\LoginController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
-    <Compile Include="Controller\Index\Rest\IndexController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controller\Index\Rest\IndexController.cs" />
+    <Compile Include="Controller\Product\Rest\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -4004,6 +4005,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Log\" />
+    <Folder Include="Controller\Product\Param\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.config">
