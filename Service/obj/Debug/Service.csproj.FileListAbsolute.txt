@@ -112,3 +112,11 @@ C:\Users\肖霄\source\repos\Eshopping\Service\obj\Debug\Service.csproj.CoreComp
 C:\Users\肖霄\source\repos\Eshopping\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\肖霄\source\repos\Eshopping\Service\obj\Debug\Service.dll
 C:\Users\肖霄\source\repos\Eshopping\Service\obj\Debug\Service.pdb
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\MySql.Data.dll
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\Google.Protobuf.dll
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\Zstandard.Net.dll
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\MySql.Data.xml
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\Google.Protobuf.pdb
+C:\Users\肖霄\source\repos\Eshopping\Service\bin\Debug\Google.Protobuf.xml

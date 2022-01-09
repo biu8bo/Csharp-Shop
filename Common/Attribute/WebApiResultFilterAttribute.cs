@@ -15,7 +15,6 @@ namespace MVC卓越项目.Commons.Attribute
         //action执行后,统一执行的结果
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
         {
-           
             //如果有异常就抛出异常
             if (actionExecutedContext.Exception != null)
             {

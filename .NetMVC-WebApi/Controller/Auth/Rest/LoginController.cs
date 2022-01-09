@@ -15,7 +15,7 @@ namespace MVC卓越项目.Controller.Auth.Rest
     public class LoginController : ApiController
     {
         private readonly IAuthService iAuthService = Bootstrapper.Resolve<IAuthService>();
-        private readonly Log4NetHelper logger = Log4NetHelper.Default;
+        private readonly static Log4NetHelper logger = Log4NetHelper.Default;
         [Route("login")]
       public  ApiResult<eshop_user> Login([FromBody] LoginParam loginParam)
         {
