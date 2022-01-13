@@ -32,7 +32,7 @@ namespace Service.Service
             }
             using (var db = new eshoppingEntities())
             {
-                eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password).FirstOrDefault();
+                eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del==false).FirstOrDefault();
                 if (result == null)
                 {
                     logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username}  登录失败！");
@@ -40,6 +40,11 @@ namespace Service.Service
                 }
                 else
                 {
+                    if (result.status==false)
+                    {
+                        throw new AuthException("该用户已被封禁！");
+                    }
+
                     //获取设置登录的过期时间
                     string exTime = ConfigurationManager.AppSettings["tokenExpired"];
                     //获取token

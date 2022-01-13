@@ -1,4 +1,7 @@
 ﻿using Commons.BaseModels;
+using Mapper;
+using MVC卓越项目.Commons.Attribute;
+using MVC卓越项目.Commons.Utils;
 using Service.ProductService;
 using Service.Service;
 using System;
@@ -17,6 +20,7 @@ namespace MVC卓越项目.Controller.Product
 
         [HttpGet]
         [Route("product/{id}")]
+        [AuthCheck(required =false)]
         public ApiResult<ProductVO> getProductInfo(long id)
         {
             return ApiResult<ProductVO>.ok(productService.getProductById(id));

@@ -64,5 +64,10 @@ namespace Service.ProductService
         /// 规格参数
         /// </summary>
         public List<StoreProductAttr> storeProductAttrs { get; set; }
+
+        /// <summary>
+        /// 详细规格数据
+        /// </summary>
+        public List<StoreProductAttrValue> storeProductAttrValues { get; set; }
     }
 }

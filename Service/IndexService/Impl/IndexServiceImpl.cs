@@ -19,7 +19,7 @@ namespace Service.Service
         {
             using (var ctx = new eshoppingEntities())
             {
-                return ctx.system_group_data.Where(e => e.group_name == shopConstants).ToList();
+                return ctx.system_group_data.Where(e => e.group_name == shopConstants && e.is_del==false).ToList();
             }
         }
 
@@ -30,19 +30,23 @@ namespace Service.Service
                 PageUtils<store_product> pageUtils = new PageUtils<store_product>();
                 if (ProductEnum.TYPE_1 == flag)
                 {
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_best == true).OrderBy(e => e.id));
+                    //精品推荐
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_best == true && e.is_del == false).OrderBy(e => e.id));
                 }
                 else if (ProductEnum.TYPE_2 == flag)
                 {
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_hot == true).OrderBy(e => e.id));
+                    //热销
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_hot == true && e.is_del == false).OrderBy(e => e.id));
                 }
                 else if (ProductEnum.TYPE_3 == flag)
                 {
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_new == true).OrderBy(e => e.id));
+                    //新品推荐
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_new == true && e.is_del == false).OrderBy(e => e.id));
                 }
                 else if (ProductEnum.TYPE_4 == flag)
                 {
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_benefit == true).OrderBy(e => e.id));
+                    //猜你喜欢
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_benefit == true && e.is_del == false).OrderBy(e => e.id));
                 }
                 return null;
             }

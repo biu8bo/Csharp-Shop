@@ -136,7 +136,6 @@ C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\EntityFramework.xml
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.Helpers.resources.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.Http.resources.dll
-C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
@@ -162,3 +161,14 @@ C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\WebActivatorEx.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Unity.Mvc4.dll
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml

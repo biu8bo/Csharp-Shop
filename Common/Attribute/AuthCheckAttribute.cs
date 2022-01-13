@@ -22,6 +22,10 @@ namespace MVC卓越项目.Commons.Attribute
     public class AuthCheckAttribute : ActionFilterAttribute
     {
         /// <summary>
+        /// 是否必须登录
+        /// </summary>
+        public bool required = true;
+        /// <summary>
         /// 方法执行前的权限检查
         /// </summary>
         /// <param name="actionContext"></param>
@@ -45,12 +49,24 @@ namespace MVC卓越项目.Commons.Attribute
                 }
                 else
                 {
+                    if (!this.required)
+                    {
+                        //给下一个过滤器
+                        base.OnActionExecuting(actionContext);
+                        return;
+                    }
                     //验证失败
                     throw new AuthException();
                 }
             }
             catch
             {
+                if (!this.required)
+                {
+                    //给下一个过滤器
+                    base.OnActionExecuting(actionContext);
+                    return;
+                }
                 throw new AuthException();
             }
         }

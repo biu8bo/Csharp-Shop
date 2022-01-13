@@ -25,15 +25,9 @@ namespace MVC卓越项目.Commons.Utils
         public static eshop_user getUser()
         {
             eshop_user userInfo = null;
-            try
-            {
-                userInfo= threadLocalTable.Value["USER"] as eshop_user;
-            }
-            catch (Exception)
-            {
-
-                throw new AuthException();
-            }
+      
+            userInfo= threadLocalTable.Value["USER"] as eshop_user;
+           
             return userInfo;
         } 
 
@@ -43,7 +37,7 @@ namespace MVC卓越项目.Commons.Utils
             eshop_user userInfo = getUser();
             if (userInfo==null)
             {
-                throw new AuthException();
+                return 0;
             }
            return userInfo.uid;
         }

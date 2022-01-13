@@ -309,7 +309,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="Controller\Auth\Rest\LoginController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />

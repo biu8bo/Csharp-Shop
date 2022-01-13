@@ -34,7 +34,6 @@ C:\Users\肖霄\Source\Repos\Mapper\obj\Debug\Mapper.csproj.CopyComplete
 C:\Users\肖霄\Source\Repos\Mapper\obj\Debug\Mapper.dll
 C:\Users\肖霄\Source\Repos\Mapper\obj\Debug\Mapper.pdb
 C:\Users\肖霄\Source\Repos\Mapper\obj\Debug\Mapper.csproj.AssemblyReference.cache
-C:\Users\肖霄\source\repos\Eshopping\Mapper\obj\Debug\Mapper.csproj.AssemblyReference.cache
 C:\Users\肖霄\source\repos\Eshopping\Mapper\obj\Debug\Mapper.csproj.CoreCompileInputs.cache
 C:\Users\肖霄\source\repos\Eshopping\Mapper\obj\Debug\Mapper.dll
 C:\Users\肖霄\source\repos\Eshopping\Mapper\obj\Debug\Mapper.pdb

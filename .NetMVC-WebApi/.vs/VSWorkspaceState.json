@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Controller",
-    "\\Controller\\Auth",
-    "\\Controller\\Auth\\Rest"
+    "\\Controller\\Index",
+    "\\Controller\\Index\\Rest",
+    "\\Controller\\Product",
+    "\\Controller\\Product\\Rest",
+    "\\img"
   ],
-  "SelectedNode": "\\Controller\\Auth\\Rest\\LoginController.cs",
+  "SelectedNode": "\\MVC卓越项目.sln",
   "PreviewInSolutionExplorer": false
 }

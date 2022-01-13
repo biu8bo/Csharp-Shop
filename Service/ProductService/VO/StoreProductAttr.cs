@@ -15,9 +15,6 @@ namespace Service.ProductService
         public decimal product_id { get; set; }
         public string attr_name { get; set; }
         public string attr_values { get; set; }
-        /// <summary>
-        /// 详细规格数据
-        /// </summary>
-        public List<StoreProductAttrValue> storeProductAttrValues { get; set; }
+      
 }
 }
