@@ -51,15 +51,8 @@ namespace Service.ProductService
         /// <summary>
         /// 是否收藏
         /// </summary>
-        public bool iscollect { get; set; }
-        /// <summary>
-        /// 评论信息
-        /// </summary>
-        public store_product_reply StoreProductReply { get; set; }
-        /// <summary>
-        /// 收藏与足迹
-        /// </summary>
-        public store_product_relation StoreProductRelation { get; set; }
+        public bool isCollect { get; set; }
+
         /// <summary>
         /// 规格参数
         /// </summary>

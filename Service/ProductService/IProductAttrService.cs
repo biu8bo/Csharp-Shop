@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Service.Service
 {
     /// <summary>
-    /// 商品规格
+    /// 商品规格模块
     /// </summary>
   public  interface IProductAttrService
     {

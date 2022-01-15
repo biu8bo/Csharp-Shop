@@ -14,7 +14,7 @@ namespace Mapper
     
     public partial class eshop_user
     {
-        public decimal uid { get; set; }
+        public long uid { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string real_name { get; set; }

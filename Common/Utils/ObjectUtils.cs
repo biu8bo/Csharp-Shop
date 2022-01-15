@@ -35,13 +35,26 @@ namespace Commons.Utils
         /// <returns></returns>
         public static bool isNotNull(object obj)
         {
-            if(obj is  null)
+            if(obj is  null||obj == null)
             {
                 return false;
             }
             else
             {
                 return true;
+            }
+        }
+
+        public static bool isNull(object obj)
+        {
+            if (obj is null || obj == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+             
             }
         }
     }

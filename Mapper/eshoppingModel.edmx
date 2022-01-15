@@ -1829,7 +1829,7 @@
           <Key>
             <PropertyRef Name="uid" />
           </Key>
-          <Property Name="uid" Type="Decimal" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="real_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />

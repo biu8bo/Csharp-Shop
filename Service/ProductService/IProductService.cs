@@ -8,6 +8,9 @@ using System.Linq;
 
 namespace Service.Service
 {
+    /// <summary>
+    /// 商品模块
+    /// </summary>
     public interface IProductService
     {
         /// <summary>
@@ -32,6 +35,6 @@ namespace Service.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        ProductVO getProductById(long id);
+        ProductVO getProductById(long pid, long uid);
     }
 }

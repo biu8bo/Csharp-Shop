@@ -23,7 +23,8 @@ namespace MVC卓越项目.Controller.Product
         [AuthCheck(required =false)]
         public ApiResult<ProductVO> getProductInfo(long id)
         {
-            return ApiResult<ProductVO>.ok(productService.getProductById(id));
+            long uid = LocalUser.getUidByUser();
+            return ApiResult<ProductVO>.ok(productService.getProductById(id, uid));
         }
     }
 }

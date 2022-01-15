@@ -49,7 +49,7 @@ namespace MVC卓越项目.Commons.Fillter
             #if DEBUG
             result.StackTraceMessage = ex.StackTrace;
             #else
-                result.StackTraceMessage = "堆栈信息只能在DEBUG环境下获取";
+                result.StackTraceMessage = "堆栈信息仅能在DEBUG环境下获取";
             #endif
             //结果转为JSON消息格式
             HttpResponseMessage httpResponseMessage = new HttpResponseMessage()

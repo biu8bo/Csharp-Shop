@@ -1,4 +1,5 @@
 ﻿
+using Commons.Utils;
 using Mapper;
 using MVC卓越项目.Commons.ExceptionHandler;
 using MVC卓越项目.Commons.Utils;
@@ -34,11 +35,15 @@ namespace MVC卓越项目.Commons.Attribute
             try
             {
                 //获取token
-                string token = actionContext.Request.Headers.GetValues("Authorization").First();
+                string token = actionContext.Request.Headers.GetValues("Authorization").FirstOrDefault();
                 //尝试获取用户对象
                 eshop_user user = JwtHelper.getUserByToken(token);
                 //从缓存获取用户
                 eshop_user redisUser = RedisHelper.GetStringKey<eshop_user>("USER:" + user.username + ":" + token);
+                if (ObjectUtils<eshop_user>.isNull(redisUser))
+                {
+                    throw new AuthException("登录状态过期,请重新登陆!");
+                }
                 if (redisUser.username.Equals(user.username) && redisUser.password.Equals(user.password))
                 {
                     //验证通过！
@@ -57,9 +62,10 @@ namespace MVC卓越项目.Commons.Attribute
                     }
                     //验证失败
                     throw new AuthException();
+                 
                 }
             }
-            catch
+            catch(Exception e)
             {
                 if (!this.required)
                 {
@@ -67,7 +73,14 @@ namespace MVC卓越项目.Commons.Attribute
                     base.OnActionExecuting(actionContext);
                     return;
                 }
-                throw new AuthException();
+                if (e is AuthException)
+                {
+                    throw e;
+                }
+                else
+                {
+                    throw new ApiException();
+                }
             }
         }
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)

@@ -9,18 +9,15 @@
 
 namespace Mapper
 {
-    using global::Interceptor;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Infrastructure.Interception;
-
+    
     public partial class eshoppingEntities : DbContext
     {
         public eshoppingEntities()
             : base("name=eshoppingEntities")
         {
-            DbInterception.Add(new EFCommandInterceptor());
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

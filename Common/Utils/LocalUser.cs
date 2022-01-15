@@ -32,7 +32,7 @@ namespace MVC卓越项目.Commons.Utils
         } 
 
         //获取UID
-        public static  decimal getUidByUser()
+        public static long getUidByUser()
         {
             eshop_user userInfo = getUser();
             if (userInfo==null)

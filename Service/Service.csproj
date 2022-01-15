@@ -112,9 +112,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CollectService\ICollectService.cs" />
+    <Compile Include="CollectService\Impl\CollectServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductAttrServiceImpl.cs" />
+    <Compile Include="ProductService\Impl\ProductReplyImpl.cs" />
     <Compile Include="ProductService\Impl\ProductServiceImpl.cs" />
     <Compile Include="ProductService\IProductAttrService.cs" />
+    <Compile Include="ProductService\IProductReply.cs" />
     <Compile Include="ProductService\IProductService.cs" />
     <Compile Include="ProductService\VO\ProductVO.cs" />
     <Compile Include="ProductService\VO\StoreProductAttr.cs" />
@@ -142,9 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Unity.Mvc4.README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
