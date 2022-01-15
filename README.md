@@ -21,5 +21,5 @@ Untiy 实现 控制反转，依赖注入
 
 JWT 生成token
 
-面向切面编程 自己实现缓存(redis)[Cacheable]特性 权限控制 [AuthCheck]特性  
+面向切面编程 实现缓存(redis)[Cacheable]特性 权限控制 [AuthCheck]特性  
 
