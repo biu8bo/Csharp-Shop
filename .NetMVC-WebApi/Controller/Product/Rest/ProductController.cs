@@ -24,7 +24,17 @@ namespace MVC卓越项目.Controller.Product
         public ApiResult<ProductVO> getProductInfo(long id)
         {
             long uid = LocalUser.getUidByUser();
+            //浏览量增加
+            productService.incBrowseNum(id);
             return ApiResult<ProductVO>.ok(productService.getProductById(id, uid));
+        }
+
+
+        [HttpGet]
+        [Route("search")]
+        public ApiResult<PageModel> search([FromBody] ProductParam productParam)
+        {
+            return ApiResult<PageModel>.ok(productService.searchProducts(productParam));
         }
     }
 }

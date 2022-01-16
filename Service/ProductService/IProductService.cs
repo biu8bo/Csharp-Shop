@@ -36,5 +36,17 @@ namespace Service.Service
         /// <param name="id"></param>
         /// <returns></returns>
         ProductVO getProductById(long pid, long uid);
+
+        /// <summary>
+        /// 增加浏览量
+        /// </summary>
+        /// <param name="pid"></param>
+        void incBrowseNum(long pid);
+
+        /// <summary>
+        /// 搜索
+        /// </summary>
+        /// <param name="productParam"></param>
+        PageModel searchProducts(ProductParam productParam);
     }
 }

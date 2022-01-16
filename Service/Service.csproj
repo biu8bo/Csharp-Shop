@@ -120,6 +120,7 @@
     <Compile Include="ProductService\IProductAttrService.cs" />
     <Compile Include="ProductService\IProductReply.cs" />
     <Compile Include="ProductService\IProductService.cs" />
+    <Compile Include="ProductService\Param\ProductParam.cs" />
     <Compile Include="ProductService\VO\ProductVO.cs" />
     <Compile Include="ProductService\VO\StoreProductAttr.cs" />
     <Compile Include="ProductService\VO\StoreProductAttrValue.cs" />

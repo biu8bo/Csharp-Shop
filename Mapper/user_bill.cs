@@ -26,5 +26,7 @@ namespace Mapper
         public Nullable<System.DateTime> update_time { get; set; }
         public bool status { get; set; }
         public Nullable<bool> is_del { get; set; }
+        public decimal number { get; set; }
+        public decimal balance { get; set; }
     }
 }

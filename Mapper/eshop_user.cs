@@ -44,5 +44,7 @@ namespace Mapper
         public Nullable<long> adminid { get; set; }
         public string login_type { get; set; }
         public Nullable<bool> is_del { get; set; }
+        public decimal now_money { get; set; }
+        public decimal integral { get; set; }
     }
 }

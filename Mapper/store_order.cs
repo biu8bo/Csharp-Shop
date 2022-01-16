@@ -57,5 +57,17 @@ namespace Mapper
         public Nullable<bool> is_channel { get; set; }
         public Nullable<bool> is_remind { get; set; }
         public Nullable<bool> is_system_del { get; set; }
+        public decimal total_price { get; set; }
+        public decimal total_postage { get; set; }
+        public decimal pay_price { get; set; }
+        public decimal pay_postage { get; set; }
+        public decimal deduction_price { get; set; }
+        public decimal coupon_price { get; set; }
+        public decimal refund_price { get; set; }
+        public decimal gain_integral { get; set; }
+        public decimal use_integral { get; set; }
+        public decimal pay_integral { get; set; }
+        public Nullable<decimal> back_integral { get; set; }
+        public decimal cost { get; set; }
     }
 }

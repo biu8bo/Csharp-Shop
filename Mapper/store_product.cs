@@ -49,5 +49,11 @@ namespace Mapper
         public Nullable<bool> spec_type { get; set; }
         public Nullable<bool> is_integral { get; set; }
         public Nullable<int> integral { get; set; }
+        public Nullable<decimal> postage { get; set; }
+        public Nullable<decimal> give_integral { get; set; }
+        public Nullable<decimal> cost { get; set; }
+        public decimal price { get; set; }
+        public Nullable<decimal> vip_price { get; set; }
+        public Nullable<decimal> ot_price { get; set; }
     }
 }

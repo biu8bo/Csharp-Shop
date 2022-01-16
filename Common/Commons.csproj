@@ -165,6 +165,7 @@
     <Compile Include="BaseModels\ApiCode.cs" />
     <Compile Include="BaseModels\ApiExceptionModel.cs" />
     <Compile Include="BaseModels\ApiResult.cs" />
+    <Compile Include="BaseModels\QueryParam.cs" />
     <Compile Include="BaseModels\PageModel.cs" />
     <Compile Include="IocContainer\Bootstrapper.cs" />
     <Compile Include="Utils\ObjectUtils.cs" />

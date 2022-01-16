@@ -1,0 +1,3570 @@
+2022-01-16 21:05:36,080 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:05:36,088 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:07:54,482 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:07:54,483 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:07:54,485 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:07:54,485 线程ID:[5] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:08,757 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:08,758 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:08,758 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:08,761 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:08,761 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:08,761 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:26,407 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:26,408 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:26,408 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:26,408 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:13:26,411 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:26,411 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:26,411 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:13:26,411 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:04,876 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:04,877 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:04,877 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:04,877 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:04,878 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:04,880 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:04,880 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:04,881 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:04,881 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:04,881 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,558 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,558 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,558 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,559 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,559 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,559 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:22:34,562 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,562 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,562 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,562 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,562 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:34,563 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,504 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,505 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`) AS `GroupBy1`]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,508 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:22:55,509 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,731 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,731 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,731 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,732 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,732 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,732 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,733 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,733 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:23:17,735 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,736 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,736 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,736 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,737 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,737 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,737 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:23:17,737 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,620 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,620 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,620 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,620 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,621 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,621 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,621 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,621 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,622 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:24:15,636 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,637 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,637 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,637 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,637 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,638 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,638 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,638 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:24:15,638 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,231 线程ID:[44] 日志级别:[INFO ] : [Opened connection at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:25:21,232 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,232 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,232 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,233 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,233 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,233 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,234 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,234 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,234 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,235 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,235 线程ID:[44] 日志级别:[INFO ] : [SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:25:21,235 线程ID:[44] 日志级别:[INFO ] : [
+]
+2022-01-16 21:25:21,235 线程ID:[44] 日志级别:[INFO ] : [-- Executing at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:25:21,236 线程ID:[44] 日志级别:[INFO ] : [-- Completed in 1 ms with result: EFMySqlDataReader
+]
+2022-01-16 21:25:21,237 线程ID:[44] 日志级别:[INFO ] : [
+]
+2022-01-16 21:25:21,237 线程ID:[44] 日志级别:[INFO ] : [Closed connection at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:25:21,238 线程ID:[44] 日志级别:[INFO ] : [Opened connection at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:25:21,238 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,239 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,239 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,239 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,239 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,240 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,240 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,240 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,240 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,240 线程ID:[44] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,241 线程ID:[44] 日志级别:[INFO ] : [SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:25:21,241 线程ID:[44] 日志级别:[INFO ] : [
+]
+2022-01-16 21:25:21,241 线程ID:[44] 日志级别:[INFO ] : [-- Executing at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:25:21,243 线程ID:[44] 日志级别:[INFO ] : [-- Completed in 1 ms with result: EFMySqlDataReader
+]
+2022-01-16 21:25:21,243 线程ID:[44] 日志级别:[INFO ] : [
+]
+2022-01-16 21:25:21,244 线程ID:[44] 日志级别:[INFO ] : [Closed connection at 2022/1/16 21:25:21 +08:00
+]
+2022-01-16 21:26:16,854 线程ID:[141] 日志级别:[ERROR] : [Opened connection at 2022/1/16 21:26:16 +08:00
+]
+2022-01-16 21:26:16,855 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,855 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,855 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,856 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,856 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,856 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,857 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,857 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,857 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,858 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,858 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,858 线程ID:[141] 日志级别:[ERROR] : [SELECT 
+`GroupBy1`.`A1` AS `C1`
+ FROM (SELECT 
+COUNT(1) AS `A1`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)) AS `GroupBy1`]
+2022-01-16 21:26:16,858 线程ID:[141] 日志级别:[ERROR] : [
+]
+2022-01-16 21:26:16,859 线程ID:[141] 日志级别:[ERROR] : [-- Executing at 2022/1/16 21:26:16 +08:00
+]
+2022-01-16 21:26:16,860 线程ID:[141] 日志级别:[ERROR] : [-- Completed in 1 ms with result: EFMySqlDataReader
+]
+2022-01-16 21:26:16,860 线程ID:[141] 日志级别:[ERROR] : [
+]
+2022-01-16 21:26:16,861 线程ID:[141] 日志级别:[ERROR] : [Closed connection at 2022/1/16 21:26:16 +08:00
+]
+2022-01-16 21:26:16,861 线程ID:[141] 日志级别:[ERROR] : [Opened connection at 2022/1/16 21:26:16 +08:00
+]
+2022-01-16 21:26:16,862 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,862 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,863 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,863 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,863 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,863 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,863 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,864 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,864 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,864 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,864 线程ID:[141] 日志级别:[INFO ] : [SQLInfo(EF):SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,864 线程ID:[141] 日志级别:[ERROR] : [SELECT 
+`Extent1`.`id`, 
+`Extent1`.`mer_id`, 
+`Extent1`.`image`, 
+`Extent1`.`slider_image`, 
+`Extent1`.`store_name`, 
+`Extent1`.`store_info`, 
+`Extent1`.`keyword`, 
+`Extent1`.`bar_code`, 
+`Extent1`.`cate_id`, 
+`Extent1`.`unit_name`, 
+`Extent1`.`sort`, 
+`Extent1`.`sales`, 
+`Extent1`.`stock`, 
+`Extent1`.`is_show`, 
+`Extent1`.`is_hot`, 
+`Extent1`.`is_benefit`, 
+`Extent1`.`is_best`, 
+`Extent1`.`is_new`, 
+`Extent1`.`description`, 
+`Extent1`.`create_time`, 
+`Extent1`.`update_time`, 
+`Extent1`.`is_postage`, 
+`Extent1`.`is_del`, 
+`Extent1`.`mer_use`, 
+`Extent1`.`is_seckill`, 
+`Extent1`.`is_bargain`, 
+`Extent1`.`is_good`, 
+`Extent1`.`ficti`, 
+`Extent1`.`browse`, 
+`Extent1`.`code_path`, 
+`Extent1`.`is_sub`, 
+`Extent1`.`temp_id`, 
+`Extent1`.`spec_type`, 
+`Extent1`.`is_integral`, 
+`Extent1`.`integral`, 
+`Extent1`.`postage`, 
+`Extent1`.`give_integral`, 
+`Extent1`.`cost`, 
+`Extent1`.`price`, 
+`Extent1`.`vip_price`, 
+`Extent1`.`ot_price`
+ FROM `store_product` AS `Extent1`
+ WHERE (1 = `Extent1`.`is_show`) AND (0 = `Extent1`.`is_del`)
+ ORDER BY 
+`Extent1`.`id` ASC LIMIT 40,10]
+2022-01-16 21:26:16,865 线程ID:[141] 日志级别:[ERROR] : [
+]
+2022-01-16 21:26:16,865 线程ID:[141] 日志级别:[ERROR] : [-- Executing at 2022/1/16 21:26:16 +08:00
+]
+2022-01-16 21:26:16,867 线程ID:[141] 日志级别:[ERROR] : [-- Completed in 1 ms with result: EFMySqlDataReader
+]
+2022-01-16 21:26:16,867 线程ID:[141] 日志级别:[ERROR] : [
+]
+2022-01-16 21:26:16,867 线程ID:[141] 日志级别:[ERROR] : [Closed connection at 2022/1/16 21:26:16 +08:00
+]

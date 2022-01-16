@@ -25,5 +25,7 @@ namespace Mapper
         public System.DateTime create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public bool is_del { get; set; }
+        public decimal coupon_price { get; set; }
+        public decimal use_min_price { get; set; }
     }
 }

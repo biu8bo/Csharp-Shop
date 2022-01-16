@@ -70,5 +70,52 @@ namespace Service.Service
             }
 
         }
+        public PageModel searchProducts(ProductParam productParam)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                IQueryable<store_product> query = db.store_product.Where(e=>e.is_show ==true&&e.is_del==false);
+                //如果关键词不为空
+                if (ObjectUtils<string>.isNotNull(productParam.keyword))
+                {
+                    query.Where(e=>e.keyword.Contains(productParam.keyword));
+                }
+                //如果是积分商品
+                if (ObjectUtils<bool>.isNotNull(productParam.isIntegral)&&productParam.isIntegral==true)
+                {
+                    query.Where(e=>e.is_integral == true);
+                }
+                //如果是新品
+                 if (ObjectUtils<bool>.isNotNull(productParam.isNew)&& productParam.isNew==true)
+                {
+                    query.Where(e => e.is_new == true);
+                }
+                //如果是价格排序
+                if (ObjectUtils<bool>.isNotNull(productParam.priceOrder))
+                {
+                    //升序
+                    if (productParam.priceOrder.Equals("asc"))
+                    {
+                        query.OrderBy(e => e.price);
+                    }
+                    //降序
+                    else
+                    {
+                        query.OrderByDescending(e => e.price);
+                    }
+                    return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query);
+                }
+                return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e=>e.id));
+            }
+        }
+        public void incBrowseNum(long pid)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                store_product storeProduct = db.store_product.Where(e => e.id == pid && e.is_del == false && e.is_show == true).FirstOrDefault();
+                storeProduct.browse += 1;
+                db.SaveChanges();
+            }
+        }
     }
 }

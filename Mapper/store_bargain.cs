@@ -39,5 +39,12 @@ namespace Mapper
         public string rule { get; set; }
         public Nullable<long> look { get; set; }
         public Nullable<long> share { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public Nullable<decimal> min_price { get; set; }
+        public Nullable<decimal> bargain_max_price { get; set; }
+        public Nullable<decimal> bargain_min_price { get; set; }
+        public decimal give_integral { get; set; }
+        public Nullable<decimal> cost { get; set; }
+        public Nullable<decimal> postage { get; set; }
     }
 }

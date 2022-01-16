@@ -21,5 +21,6 @@ namespace Mapper
         public Nullable<System.DateTime> create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public Nullable<bool> is_del { get; set; }
+        public Nullable<decimal> price { get; set; }
     }
 }

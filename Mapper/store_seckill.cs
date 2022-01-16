@@ -38,5 +38,10 @@ namespace Mapper
         public Nullable<long> time_id { get; set; }
         public Nullable<bool> spec_type { get; set; }
         public Nullable<int> temp_id { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public Nullable<decimal> cost { get; set; }
+        public Nullable<decimal> ot_price { get; set; }
+        public Nullable<decimal> give_integral { get; set; }
+        public decimal postage { get; set; }
     }
 }

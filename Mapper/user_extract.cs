@@ -29,5 +29,6 @@ namespace Mapper
         public Nullable<sbyte> status { get; set; }
         public string wechat { get; set; }
         public Nullable<bool> is_del { get; set; }
+        public Nullable<decimal> balance { get; set; }
     }
 }

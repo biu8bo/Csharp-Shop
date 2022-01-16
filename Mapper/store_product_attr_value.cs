@@ -32,5 +32,7 @@ namespace Mapper
         public decimal seckill_price { get; set; }
         public int seckill_stock { get; set; }
         public Nullable<long> integral { get; set; }
+        public decimal price { get; set; }
+        public decimal cost { get; set; }
     }
 }

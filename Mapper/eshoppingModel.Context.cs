@@ -9,15 +9,18 @@
 
 namespace Mapper
 {
+    using Interceptor;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.Entity.Infrastructure.Interception;
+
     public partial class eshoppingEntities : DbContext
     {
         public eshoppingEntities()
             : base("name=eshoppingEntities")
         {
+            DbInterception.Add(new EFCommandInterceptor());
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -69,7 +72,6 @@ namespace Mapper
         public virtual DbSet<store_order_cart_info> store_order_cart_info { get; set; }
         public virtual DbSet<store_order_status> store_order_status { get; set; }
         public virtual DbSet<store_pink> store_pink { get; set; }
-        public virtual DbSet<store_product> store_product { get; set; }
         public virtual DbSet<store_product_attr> store_product_attr { get; set; }
         public virtual DbSet<store_product_attr_result> store_product_attr_result { get; set; }
         public virtual DbSet<store_product_attr_value> store_product_attr_value { get; set; }
@@ -105,5 +107,6 @@ namespace Mapper
         public virtual DbSet<wechat_menu> wechat_menu { get; set; }
         public virtual DbSet<wechat_reply> wechat_reply { get; set; }
         public virtual DbSet<wechat_template> wechat_template { get; set; }
+        public virtual DbSet<store_product> store_product { get; set; }
     }
 }

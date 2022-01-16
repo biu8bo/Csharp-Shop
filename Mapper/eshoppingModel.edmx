@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="eshoppingModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="eshoppingModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="alipay_config">
           <Key>
             <PropertyRef Name="id" />
@@ -130,8 +130,6 @@
           <Property Name="user" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.eshop_user”中的列“now_money”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.eshop_user”中的列“integral”。
 警告 6005: 目标实体框架版本目前不支持数据类型“json”；已排除表“def.eshopping.eshop_user”中的列“wx_profile”。-->
         <EntityType Name="eshop_user">
           <Key>
@@ -153,7 +151,9 @@
           <Property Name="create_time" Type="datetime" Precision="0" />
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="last_ip" Type="varchar" MaxLength="100" />
+          <Property Name="now_money" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="brokerage_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="sign_num" Type="int" Nullable="false" />
           <Property Name="status" Type="bool" Nullable="false" />
           <Property Name="level" Type="utinyint" Nullable="false" />
@@ -464,14 +464,6 @@
           <Property Name="type" Type="bool" Nullable="false" />
           <Property Name="uniqid" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“min_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“bargain_max_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“bargain_min_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“give_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“cost”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain”中的列“postage”。-->
         <EntityType Name="store_bargain">
           <Key>
             <PropertyRef Name="id" />
@@ -487,23 +479,29 @@
           <Property Name="start_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="stop_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="store_name" Type="varchar" MaxLength="255" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="min_price" Type="decimal" Precision="8" Scale="2" />
           <Property Name="num" Type="uint" />
+          <Property Name="bargain_max_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="bargain_min_price" Type="decimal" Precision="8" Scale="2" />
           <Property Name="bargain_num" Type="uint" Nullable="false" />
           <Property Name="status" Type="bool" Nullable="false" />
           <Property Name="description" Type="text" />
+          <Property Name="give_integral" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="info" Type="varchar" MaxLength="255" />
+          <Property Name="cost" Type="decimal" Precision="8" Scale="2" />
           <Property Name="sort" Type="uint" Nullable="false" />
           <Property Name="is_hot" Type="bool" Nullable="false" />
           <Property Name="is_del" Type="bool" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" />
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="is_postage" Type="bool" Nullable="false" />
+          <Property Name="postage" Type="decimal" Precision="10" Scale="2" />
           <Property Name="rule" Type="text" />
           <Property Name="look" Type="uint" />
           <Property Name="share" Type="uint" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain_user”中的列“bargain_price_min”。
 警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain_user”中的列“price”。-->
         <EntityType Name="store_bargain_user">
           <Key>
@@ -512,14 +510,13 @@
           <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="uid" Type="ubigint" />
           <Property Name="bargain_id" Type="ubigint" />
+          <Property Name="bargain_price_min" Type="decimal" Precision="8" Scale="2" />
           <Property Name="bargain_price" Type="decimal" Precision="8" Scale="2" />
           <Property Name="status" Type="bool" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" />
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="is_del" Type="bool" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_bargain_user_help”中的列“price”。-->
         <EntityType Name="store_bargain_user_help">
           <Key>
             <PropertyRef Name="id" />
@@ -528,6 +525,7 @@
           <Property Name="uid" Type="ubigint" />
           <Property Name="bargain_id" Type="ubigint" />
           <Property Name="bargain_user_id" Type="ubigint" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" />
           <Property Name="create_time" Type="datetime" Precision="0" />
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="is_del" Type="bool" />
@@ -615,9 +613,6 @@
           <Property Name="spec_type" Type="bool" />
           <Property Name="temp_id" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_coupon”中的列“coupon_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_coupon”中的列“use_min_price”。-->
         <EntityType Name="store_coupon">
           <Key>
             <PropertyRef Name="id" />
@@ -625,6 +620,8 @@
           <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="integral" Type="uint" Nullable="false" />
+          <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="use_min_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="coupon_time" Type="uint" Nullable="false" />
           <Property Name="sort" Type="uint" Nullable="false" />
           <Property Name="status" Type="bool" Nullable="false" />
@@ -663,9 +660,6 @@
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="is_del" Type="bool" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_coupon_user”中的列“coupon_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_coupon_user”中的列“use_min_price”。-->
         <EntityType Name="store_coupon_user">
           <Key>
             <PropertyRef Name="id" />
@@ -674,6 +668,8 @@
           <Property Name="cid" Type="uint" Nullable="false" />
           <Property Name="uid" Type="ubigint" Nullable="false" />
           <Property Name="coupon_title" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="use_min_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="end_time" Type="datetime" Precision="0" Nullable="false" />
@@ -696,19 +692,6 @@
           <Property Name="is_del" Type="bool" />
           <Property Name="is_enable" Type="bool" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“total_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“total_postage”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“pay_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“pay_postage”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“deduction_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“coupon_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“refund_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“gain_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“use_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“pay_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“back_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_order”中的列“cost”。-->
         <EntityType Name="store_order">
           <Key>
             <PropertyRef Name="id" />
@@ -723,7 +706,13 @@
           <Property Name="cart_id" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="freight_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="total_num" Type="uint" Nullable="false" />
+          <Property Name="total_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="total_postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="pay_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="pay_postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="deduction_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="coupon_id" Type="uint" Nullable="false" />
+          <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="paid" Type="bool" Nullable="false" />
           <Property Name="pay_time" Type="datetime" Precision="0" />
           <Property Name="pay_type" Type="varchar" MaxLength="32" Nullable="false" />
@@ -736,10 +725,15 @@
           <Property Name="refund_reason_time" Type="datetime" Precision="0" />
           <Property Name="refund_reason_wap" Type="varchar" MaxLength="255" />
           <Property Name="refund_reason" Type="varchar" MaxLength="255" />
+          <Property Name="refund_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="delivery_sn" Type="varchar" MaxLength="100" />
           <Property Name="delivery_name" Type="varchar" MaxLength="64" />
           <Property Name="delivery_type" Type="varchar" MaxLength="32" />
           <Property Name="delivery_id" Type="varchar" MaxLength="64" />
+          <Property Name="gain_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="use_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="pay_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="back_integral" Type="decimal" Precision="8" Scale="2" />
           <Property Name="mark" Type="varchar" MaxLength="512" Nullable="false" />
           <Property Name="is_del" Type="bool" Nullable="false" />
           <Property Name="unique" Type="char" MaxLength="32" Nullable="false" />
@@ -748,6 +742,7 @@
           <Property Name="is_mer_check" Type="utinyint" Nullable="false" />
           <Property Name="combination_id" Type="ubigint" />
           <Property Name="pink_id" Type="ubigint" Nullable="false" />
+          <Property Name="cost" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="seckill_id" Type="ubigint" Nullable="false" />
           <Property Name="bargain_id" Type="uint" />
           <Property Name="verify_code" Type="varchar" MaxLength="50" Nullable="false" />
@@ -803,13 +798,6 @@
           <Property Name="is_del" Type="bool" />
           <Property Name="unique_id" Type="varchar" MaxLength="128" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“vip_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“ot_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“postage”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“give_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product”中的列“cost”。-->
         <EntityType Name="store_product">
           <Key>
             <PropertyRef Name="id" />
@@ -823,6 +811,10 @@
           <Property Name="keyword" Type="varchar" MaxLength="256" Nullable="false" />
           <Property Name="bar_code" Type="varchar" MaxLength="15" />
           <Property Name="cate_id" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="vip_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="ot_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="postage" Type="decimal" Precision="8" Scale="2" />
           <Property Name="unit_name" Type="varchar" MaxLength="32" />
           <Property Name="sort" Type="smallint" />
           <Property Name="sales" Type="umediumint" />
@@ -838,6 +830,8 @@
           <Property Name="is_postage" Type="bool" />
           <Property Name="is_del" Type="bool" />
           <Property Name="mer_use" Type="bool" />
+          <Property Name="give_integral" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="cost" Type="decimal" Precision="8" Scale="2" />
           <Property Name="is_seckill" Type="bool" />
           <Property Name="is_bargain" Type="bool" />
           <Property Name="is_good" Type="bool" />
@@ -868,9 +862,6 @@
           <Property Name="result" Type="text" Nullable="false" />
           <Property Name="change_time" Type="datetime" Precision="0" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product_attr_value”中的列“price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_product_attr_value”中的列“cost”。-->
         <EntityType Name="store_product_attr_value">
           <Key>
             <PropertyRef Name="id" />
@@ -880,8 +871,10 @@
           <Property Name="sku" Type="varchar" MaxLength="128" Nullable="false" />
           <Property Name="stock" Type="uint" Nullable="false" />
           <Property Name="sales" Type="uint" />
+          <Property Name="price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="image" Type="varchar" MaxLength="128" />
           <Property Name="unique" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cost" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="bar_code" Type="varchar" MaxLength="255" />
           <Property Name="ot_price" Type="decimal" Precision="10" Scale="2" />
           <Property Name="weight" Type="decimal" Precision="8" Scale="2" Nullable="false" />
@@ -940,12 +933,6 @@
           <Property Name="update_time" Type="datetime" Precision="0" />
           <Property Name="is_del" Type="bool" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_seckill”中的列“price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_seckill”中的列“cost”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_seckill”中的列“ot_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_seckill”中的列“give_integral”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_seckill”中的列“postage”。-->
         <EntityType Name="store_seckill">
           <Key>
             <PropertyRef Name="id" />
@@ -956,10 +943,15 @@
           <Property Name="images" Type="varchar" MaxLength="2000" Nullable="false" />
           <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="info" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="cost" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="ot_price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="give_integral" Type="decimal" Precision="10" Scale="2" />
           <Property Name="sort" Type="uint" Nullable="false" />
           <Property Name="stock" Type="uint" Nullable="false" />
           <Property Name="sales" Type="uint" Nullable="false" />
           <Property Name="unit_name" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="description" Type="text" />
           <Property Name="start_time" Type="date" Nullable="false" />
           <Property Name="stop_time" Type="date" Nullable="false" />
@@ -1178,9 +1170,6 @@
           <Property Name="size" Type="varchar" MaxLength="255" />
           <Property Name="create_time" Type="datetime" Precision="0" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.user_bill”中的列“number”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.user_bill”中的列“balance”。-->
         <EntityType Name="user_bill">
           <Key>
             <PropertyRef Name="id" />
@@ -1192,6 +1181,8 @@
           <Property Name="title" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="category" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="type" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="number" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="balance" Type="decimal" Precision="8" Scale="2" Nullable="false" />
           <Property Name="mark" Type="varchar" MaxLength="512" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="update_time" Type="datetime" Precision="0" />
@@ -1222,8 +1213,7 @@
           <Property Name="is_del" Type="bool" Nullable="false" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.user_extract”中的列“extract_price”。
-警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.user_extract”中的列“balance”。-->
+警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.user_extract”中的列“extract_price”。-->
         <EntityType Name="user_extract">
           <Key>
             <PropertyRef Name="id" />
@@ -1236,6 +1226,7 @@
           <Property Name="bank_address" Type="varchar" MaxLength="256" />
           <Property Name="alipay_code" Type="varchar" MaxLength="64" />
           <Property Name="mark" Type="varchar" MaxLength="512" />
+          <Property Name="balance" Type="decimal" Precision="8" Scale="2" />
           <Property Name="fail_msg" Type="varchar" MaxLength="128" />
           <Property Name="fail_time" Type="datetime" Precision="0" />
           <Property Name="create_time" Type="datetime" Precision="0" />
@@ -1691,8 +1682,7 @@
             <End Role="roles_menus" EntitySet="roles_menus" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="eshoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1859,6 +1849,8 @@
           <Property Name="adminid" Type="Int64" />
           <Property Name="login_type" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="is_del" Type="Boolean" />
+          <Property Name="now_money" Type="Decimal" Nullable="false" />
+          <Property Name="integral" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="express">
           <Key>
@@ -2175,6 +2167,13 @@
           <Property Name="rule" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="look" Type="Int64" />
           <Property Name="share" Type="Int64" />
+          <Property Name="price" Type="Decimal" />
+          <Property Name="min_price" Type="Decimal" />
+          <Property Name="bargain_max_price" Type="Decimal" />
+          <Property Name="bargain_min_price" Type="Decimal" />
+          <Property Name="give_integral" Type="Decimal" Nullable="false" />
+          <Property Name="cost" Type="Decimal" />
+          <Property Name="postage" Type="Decimal" />
         </EntityType>
         <EntityType Name="store_bargain_user">
           <Key>
@@ -2188,6 +2187,7 @@
           <Property Name="create_time" Type="DateTime" />
           <Property Name="update_time" Type="DateTime" />
           <Property Name="is_del" Type="Boolean" Nullable="false" />
+          <Property Name="bargain_price_min" Type="Decimal" />
         </EntityType>
         <EntityType Name="store_bargain_user_help">
           <Key>
@@ -2200,6 +2200,7 @@
           <Property Name="create_time" Type="DateTime" />
           <Property Name="update_time" Type="DateTime" />
           <Property Name="is_del" Type="Boolean" />
+          <Property Name="price" Type="Decimal" />
         </EntityType>
         <EntityType Name="store_canvas">
           <Key>
@@ -2297,6 +2298,8 @@
           <Property Name="create_time" Type="DateTime" Nullable="false" />
           <Property Name="update_time" Type="DateTime" />
           <Property Name="is_del" Type="Boolean" Nullable="false" />
+          <Property Name="coupon_price" Type="Decimal" Nullable="false" />
+          <Property Name="use_min_price" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="store_coupon_issue">
           <Key>
@@ -2343,6 +2346,8 @@
           <Property Name="status" Type="Boolean" Nullable="false" />
           <Property Name="is_fail" Type="Boolean" Nullable="false" />
           <Property Name="is_del" Type="Boolean" />
+          <Property Name="coupon_price" Type="Decimal" Nullable="false" />
+          <Property Name="use_min_price" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="store_customer">
           <Key>
@@ -2404,6 +2409,18 @@
           <Property Name="is_channel" Type="Boolean" />
           <Property Name="is_remind" Type="Boolean" />
           <Property Name="is_system_del" Type="Boolean" />
+          <Property Name="total_price" Type="Decimal" Nullable="false" />
+          <Property Name="total_postage" Type="Decimal" Nullable="false" />
+          <Property Name="pay_price" Type="Decimal" Nullable="false" />
+          <Property Name="pay_postage" Type="Decimal" Nullable="false" />
+          <Property Name="deduction_price" Type="Decimal" Nullable="false" />
+          <Property Name="coupon_price" Type="Decimal" Nullable="false" />
+          <Property Name="refund_price" Type="Decimal" Nullable="false" />
+          <Property Name="gain_integral" Type="Decimal" Nullable="false" />
+          <Property Name="use_integral" Type="Decimal" Nullable="false" />
+          <Property Name="pay_integral" Type="Decimal" Nullable="false" />
+          <Property Name="back_integral" Type="Decimal" />
+          <Property Name="cost" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="store_order_cart_info">
           <Key>
@@ -2448,46 +2465,6 @@
           <Property Name="is_del" Type="Boolean" />
           <Property Name="unique_id" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="store_product">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="mer_id" Type="Int64" />
-          <Property Name="image" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="slider_image" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="store_name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="store_info" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="keyword" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="bar_code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="cate_id" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="unit_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-          <Property Name="sort" Type="Int16" />
-          <Property Name="sales" Type="Int32" />
-          <Property Name="stock" Type="Int32" />
-          <Property Name="is_show" Type="Boolean" />
-          <Property Name="is_hot" Type="Boolean" />
-          <Property Name="is_benefit" Type="Boolean" />
-          <Property Name="is_best" Type="Boolean" />
-          <Property Name="is_new" Type="Boolean" />
-          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
-          <Property Name="create_time" Type="DateTime" />
-          <Property Name="update_time" Type="DateTime" />
-          <Property Name="is_postage" Type="Boolean" />
-          <Property Name="is_del" Type="Boolean" />
-          <Property Name="mer_use" Type="Boolean" />
-          <Property Name="is_seckill" Type="Boolean" />
-          <Property Name="is_bargain" Type="Boolean" />
-          <Property Name="is_good" Type="Boolean" />
-          <Property Name="ficti" Type="Int32" />
-          <Property Name="browse" Type="Int32" />
-          <Property Name="code_path" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="is_sub" Type="Boolean" />
-          <Property Name="temp_id" Type="Int32" />
-          <Property Name="spec_type" Type="Boolean" />
-          <Property Name="is_integral" Type="Boolean" />
-          <Property Name="integral" Type="Int32" />
-        </EntityType>
         <EntityType Name="store_product_attr">
           <Key>
             <PropertyRef Name="id" />
@@ -2528,6 +2505,8 @@
           <Property Name="seckill_price" Type="Decimal" Nullable="false" />
           <Property Name="seckill_stock" Type="Int32" Nullable="false" />
           <Property Name="integral" Type="Int64" />
+          <Property Name="price" Type="Decimal" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="store_product_relation">
           <Key>
@@ -2601,6 +2580,11 @@
           <Property Name="time_id" Type="Int64" />
           <Property Name="spec_type" Type="Boolean" />
           <Property Name="temp_id" Type="Int32" />
+          <Property Name="price" Type="Decimal" />
+          <Property Name="cost" Type="Decimal" />
+          <Property Name="ot_price" Type="Decimal" />
+          <Property Name="give_integral" Type="Decimal" />
+          <Property Name="postage" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="store_visit">
           <Key>
@@ -2826,6 +2810,8 @@
           <Property Name="update_time" Type="DateTime" />
           <Property Name="status" Type="Boolean" Nullable="false" />
           <Property Name="is_del" Type="Boolean" />
+          <Property Name="number" Type="Decimal" Nullable="false" />
+          <Property Name="balance" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="user_enter">
           <Key>
@@ -2869,6 +2855,7 @@
           <Property Name="status" Type="SByte" />
           <Property Name="wechat" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="is_del" Type="Boolean" />
+          <Property Name="balance" Type="Decimal" />
         </EntityType>
         <EntityType Name="user_group">
           <Key>
@@ -3165,7 +3152,6 @@
           <EntitySet Name="store_order_cart_info" EntityType="Self.store_order_cart_info" />
           <EntitySet Name="store_order_status" EntityType="Self.store_order_status" />
           <EntitySet Name="store_pink" EntityType="Self.store_pink" />
-          <EntitySet Name="store_product" EntityType="Self.store_product" />
           <EntitySet Name="store_product_attr" EntityType="Self.store_product_attr" />
           <EntitySet Name="store_product_attr_result" EntityType="Self.store_product_attr_result" />
           <EntitySet Name="store_product_attr_value" EntityType="Self.store_product_attr_value" />
@@ -3233,7 +3219,54 @@
             <End Role="user" EntitySet="user" />
             <End Role="role" EntitySet="role" />
           </AssociationSet>
+          <EntitySet Name="store_product" EntityType="eshoppingModel.store_product" />
         </EntityContainer>
+        <EntityType Name="store_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mer_id" Type="Int64" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="slider_image" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="store_name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="store_info" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="keyword" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="bar_code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="cate_id" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="unit_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="sort" Type="Int16" />
+          <Property Name="sales" Type="Int32" />
+          <Property Name="stock" Type="Int32" />
+          <Property Name="is_show" Type="Boolean" />
+          <Property Name="is_hot" Type="Boolean" />
+          <Property Name="is_benefit" Type="Boolean" />
+          <Property Name="is_best" Type="Boolean" />
+          <Property Name="is_new" Type="Boolean" />
+          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" />
+          <Property Name="update_time" Type="DateTime" />
+          <Property Name="is_postage" Type="Boolean" />
+          <Property Name="is_del" Type="Boolean" />
+          <Property Name="mer_use" Type="Boolean" />
+          <Property Name="is_seckill" Type="Boolean" />
+          <Property Name="is_bargain" Type="Boolean" />
+          <Property Name="is_good" Type="Boolean" />
+          <Property Name="ficti" Type="Int32" />
+          <Property Name="browse" Type="Int32" />
+          <Property Name="code_path" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="is_sub" Type="Boolean" />
+          <Property Name="temp_id" Type="Int32" />
+          <Property Name="spec_type" Type="Boolean" />
+          <Property Name="is_integral" Type="Boolean" />
+          <Property Name="integral" Type="Int32" />
+          <Property Name="postage" Type="Decimal" />
+          <Property Name="give_integral" Type="Decimal" />
+          <Property Name="cost" Type="Decimal" />
+          <Property Name="price" Type="Decimal" Nullable="false" />
+          <Property Name="vip_price" Type="Decimal" />
+          <Property Name="ot_price" Type="Decimal" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3375,6 +3408,8 @@
           <EntitySetMapping Name="eshop_user">
             <EntityTypeMapping TypeName="eshoppingModel.eshop_user">
               <MappingFragment StoreEntitySet="eshop_user">
+                <ScalarProperty Name="integral" ColumnName="integral" />
+                <ScalarProperty Name="now_money" ColumnName="now_money" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
@@ -3710,6 +3745,13 @@
           <EntitySetMapping Name="store_bargain">
             <EntityTypeMapping TypeName="eshoppingModel.store_bargain">
               <MappingFragment StoreEntitySet="store_bargain">
+                <ScalarProperty Name="postage" ColumnName="postage" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="give_integral" ColumnName="give_integral" />
+                <ScalarProperty Name="bargain_min_price" ColumnName="bargain_min_price" />
+                <ScalarProperty Name="bargain_max_price" ColumnName="bargain_max_price" />
+                <ScalarProperty Name="min_price" ColumnName="min_price" />
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="title" ColumnName="title" />
@@ -3741,6 +3783,7 @@
           <EntitySetMapping Name="store_bargain_user">
             <EntityTypeMapping TypeName="eshoppingModel.store_bargain_user">
               <MappingFragment StoreEntitySet="store_bargain_user">
+                <ScalarProperty Name="bargain_price_min" ColumnName="bargain_price_min" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="bargain_id" ColumnName="bargain_id" />
@@ -3755,6 +3798,7 @@
           <EntitySetMapping Name="store_bargain_user_help">
             <EntityTypeMapping TypeName="eshoppingModel.store_bargain_user_help">
               <MappingFragment StoreEntitySet="store_bargain_user_help">
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="bargain_id" ColumnName="bargain_id" />
@@ -3853,6 +3897,8 @@
           <EntitySetMapping Name="store_coupon">
             <EntityTypeMapping TypeName="eshoppingModel.store_coupon">
               <MappingFragment StoreEntitySet="store_coupon">
+                <ScalarProperty Name="use_min_price" ColumnName="use_min_price" />
+                <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="integral" ColumnName="integral" />
@@ -3901,6 +3947,8 @@
           <EntitySetMapping Name="store_coupon_user">
             <EntityTypeMapping TypeName="eshoppingModel.store_coupon_user">
               <MappingFragment StoreEntitySet="store_coupon_user">
+                <ScalarProperty Name="use_min_price" ColumnName="use_min_price" />
+                <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="cid" ColumnName="cid" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
@@ -3933,6 +3981,18 @@
           <EntitySetMapping Name="store_order">
             <EntityTypeMapping TypeName="eshoppingModel.store_order">
               <MappingFragment StoreEntitySet="store_order">
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="back_integral" ColumnName="back_integral" />
+                <ScalarProperty Name="pay_integral" ColumnName="pay_integral" />
+                <ScalarProperty Name="use_integral" ColumnName="use_integral" />
+                <ScalarProperty Name="gain_integral" ColumnName="gain_integral" />
+                <ScalarProperty Name="refund_price" ColumnName="refund_price" />
+                <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
+                <ScalarProperty Name="deduction_price" ColumnName="deduction_price" />
+                <ScalarProperty Name="pay_postage" ColumnName="pay_postage" />
+                <ScalarProperty Name="pay_price" ColumnName="pay_price" />
+                <ScalarProperty Name="total_postage" ColumnName="total_postage" />
+                <ScalarProperty Name="total_price" ColumnName="total_price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="extend_order_id" ColumnName="extend_order_id" />
@@ -4025,47 +4085,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="store_product">
-            <EntityTypeMapping TypeName="eshoppingModel.store_product">
-              <MappingFragment StoreEntitySet="store_product">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="mer_id" ColumnName="mer_id" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="slider_image" ColumnName="slider_image" />
-                <ScalarProperty Name="store_name" ColumnName="store_name" />
-                <ScalarProperty Name="store_info" ColumnName="store_info" />
-                <ScalarProperty Name="keyword" ColumnName="keyword" />
-                <ScalarProperty Name="bar_code" ColumnName="bar_code" />
-                <ScalarProperty Name="cate_id" ColumnName="cate_id" />
-                <ScalarProperty Name="unit_name" ColumnName="unit_name" />
-                <ScalarProperty Name="sort" ColumnName="sort" />
-                <ScalarProperty Name="sales" ColumnName="sales" />
-                <ScalarProperty Name="stock" ColumnName="stock" />
-                <ScalarProperty Name="is_show" ColumnName="is_show" />
-                <ScalarProperty Name="is_hot" ColumnName="is_hot" />
-                <ScalarProperty Name="is_benefit" ColumnName="is_benefit" />
-                <ScalarProperty Name="is_best" ColumnName="is_best" />
-                <ScalarProperty Name="is_new" ColumnName="is_new" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="create_time" ColumnName="create_time" />
-                <ScalarProperty Name="update_time" ColumnName="update_time" />
-                <ScalarProperty Name="is_postage" ColumnName="is_postage" />
-                <ScalarProperty Name="is_del" ColumnName="is_del" />
-                <ScalarProperty Name="mer_use" ColumnName="mer_use" />
-                <ScalarProperty Name="is_seckill" ColumnName="is_seckill" />
-                <ScalarProperty Name="is_bargain" ColumnName="is_bargain" />
-                <ScalarProperty Name="is_good" ColumnName="is_good" />
-                <ScalarProperty Name="ficti" ColumnName="ficti" />
-                <ScalarProperty Name="browse" ColumnName="browse" />
-                <ScalarProperty Name="code_path" ColumnName="code_path" />
-                <ScalarProperty Name="is_sub" ColumnName="is_sub" />
-                <ScalarProperty Name="temp_id" ColumnName="temp_id" />
-                <ScalarProperty Name="spec_type" ColumnName="spec_type" />
-                <ScalarProperty Name="is_integral" ColumnName="is_integral" />
-                <ScalarProperty Name="integral" ColumnName="integral" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="store_product_attr">
             <EntityTypeMapping TypeName="eshoppingModel.store_product_attr">
               <MappingFragment StoreEntitySet="store_product_attr">
@@ -4089,6 +4108,8 @@
           <EntitySetMapping Name="store_product_attr_value">
             <EntityTypeMapping TypeName="eshoppingModel.store_product_attr_value">
               <MappingFragment StoreEntitySet="store_product_attr_value">
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="sku" ColumnName="sku" />
@@ -4160,6 +4181,11 @@
           <EntitySetMapping Name="store_seckill">
             <EntityTypeMapping TypeName="eshoppingModel.store_seckill">
               <MappingFragment StoreEntitySet="store_seckill">
+                <ScalarProperty Name="postage" ColumnName="postage" />
+                <ScalarProperty Name="give_integral" ColumnName="give_integral" />
+                <ScalarProperty Name="ot_price" ColumnName="ot_price" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="image" ColumnName="image" />
@@ -4405,6 +4431,8 @@
           <EntitySetMapping Name="user_bill">
             <EntityTypeMapping TypeName="eshoppingModel.user_bill">
               <MappingFragment StoreEntitySet="user_bill">
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="number" ColumnName="number" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="link_id" ColumnName="link_id" />
@@ -4447,6 +4475,7 @@
           <EntitySetMapping Name="user_extract">
             <EntityTypeMapping TypeName="eshoppingModel.user_extract">
               <MappingFragment StoreEntitySet="user_extract">
+                <ScalarProperty Name="balance" ColumnName="balance" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="real_name" ColumnName="real_name" />
@@ -4680,6 +4709,53 @@
               <ScalarProperty Name="id" ColumnName="role_id" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="store_product">
+            <EntityTypeMapping TypeName="eshoppingModel.store_product">
+              <MappingFragment StoreEntitySet="store_product">
+                <ScalarProperty Name="ot_price" ColumnName="ot_price" />
+                <ScalarProperty Name="vip_price" ColumnName="vip_price" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="give_integral" ColumnName="give_integral" />
+                <ScalarProperty Name="postage" ColumnName="postage" />
+                <ScalarProperty Name="integral" ColumnName="integral" />
+                <ScalarProperty Name="is_integral" ColumnName="is_integral" />
+                <ScalarProperty Name="spec_type" ColumnName="spec_type" />
+                <ScalarProperty Name="temp_id" ColumnName="temp_id" />
+                <ScalarProperty Name="is_sub" ColumnName="is_sub" />
+                <ScalarProperty Name="code_path" ColumnName="code_path" />
+                <ScalarProperty Name="browse" ColumnName="browse" />
+                <ScalarProperty Name="ficti" ColumnName="ficti" />
+                <ScalarProperty Name="is_good" ColumnName="is_good" />
+                <ScalarProperty Name="is_bargain" ColumnName="is_bargain" />
+                <ScalarProperty Name="is_seckill" ColumnName="is_seckill" />
+                <ScalarProperty Name="mer_use" ColumnName="mer_use" />
+                <ScalarProperty Name="is_del" ColumnName="is_del" />
+                <ScalarProperty Name="is_postage" ColumnName="is_postage" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="is_new" ColumnName="is_new" />
+                <ScalarProperty Name="is_best" ColumnName="is_best" />
+                <ScalarProperty Name="is_benefit" ColumnName="is_benefit" />
+                <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+                <ScalarProperty Name="is_show" ColumnName="is_show" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="sales" ColumnName="sales" />
+                <ScalarProperty Name="sort" ColumnName="sort" />
+                <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+                <ScalarProperty Name="cate_id" ColumnName="cate_id" />
+                <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+                <ScalarProperty Name="keyword" ColumnName="keyword" />
+                <ScalarProperty Name="store_info" ColumnName="store_info" />
+                <ScalarProperty Name="store_name" ColumnName="store_name" />
+                <ScalarProperty Name="slider_image" ColumnName="slider_image" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="mer_id" ColumnName="mer_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
