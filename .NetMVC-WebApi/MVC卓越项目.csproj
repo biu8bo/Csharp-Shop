@@ -323,7 +323,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Log\2022.01.15.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\avatar\20210811171508442104.jpg" />
@@ -4005,6 +4004,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Log\" />
     <Folder Include="Controller\Product\Param\" />
   </ItemGroup>
   <ItemGroup>

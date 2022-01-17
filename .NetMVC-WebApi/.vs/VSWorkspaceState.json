@@ -1,12 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Controller",
-    "\\Controller\\Index",
-    "\\Controller\\Index\\Rest",
-    "\\Controller\\Product",
-    "\\Controller\\Product\\Rest",
-    "\\img"
+    ""
   ],
   "SelectedNode": "\\MVC卓越项目.sln",
   "PreviewInSolutionExplorer": false

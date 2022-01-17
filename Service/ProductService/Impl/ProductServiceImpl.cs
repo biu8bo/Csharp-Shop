@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,36 +75,42 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                IQueryable<store_product> query = db.store_product.Where(e=>e.is_show ==true&&e.is_del==false);
+                QueryExpressionUtils<store_product> where = new QueryExpressionUtils<store_product>();
+                where.And(e => e.is_show == true&&e.is_del == false);
+
                 //如果关键词不为空
                 if (ObjectUtils<string>.isNotNull(productParam.keyword))
                 {
-                    query.Where(e=>e.keyword.Contains(productParam.keyword));
+                    where.And(e => e.keyword.Contains(productParam.keyword));
                 }
                 //如果是积分商品
                 if (ObjectUtils<bool>.isNotNull(productParam.isIntegral)&&productParam.isIntegral==true)
                 {
-                    query.Where(e=>e.is_integral == true);
+                    where.And(e => e.is_integral == true);
+       
                 }
                 //如果是新品
                  if (ObjectUtils<bool>.isNotNull(productParam.isNew)&& productParam.isNew==true)
                 {
-                    query.Where(e => e.is_new == true);
+                    where.And(e => e.is_new == true);
                 }
+                //构造SQL
+                IQueryable<store_product> query = db.store_product.Where(where.GetExpression());
                 //如果是价格排序
                 if (ObjectUtils<bool>.isNotNull(productParam.priceOrder))
                 {
                     //升序
                     if (productParam.priceOrder.Equals("asc"))
                     {
-                        query.OrderBy(e => e.price);
+                        return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e => e.price));
+                
                     }
                     //降序
                     else
                     {
-                        query.OrderByDescending(e => e.price);
+                        return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderByDescending(e => e.price));
                     }
-                    return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query);
+                  
                 }
                 return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e=>e.id));
             }

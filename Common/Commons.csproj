@@ -168,6 +168,7 @@
     <Compile Include="BaseModels\QueryParam.cs" />
     <Compile Include="BaseModels\PageModel.cs" />
     <Compile Include="IocContainer\Bootstrapper.cs" />
+    <Compile Include="Utils\ExpressionExtensions.cs" />
     <Compile Include="Utils\ObjectUtils.cs" />
     <Compile Include="Utils\PageUtils.cs" />
     <Compile Include="Enum\ProductEnum.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Utils\LocalUser.cs" />
     <Compile Include="Utils\Log4netHelper.cs" />
     <Compile Include="Utils\Md5Utils.cs" />
+    <Compile Include="Utils\QueryExpressionUtils.cs" />
     <Compile Include="Utils\RedisHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
