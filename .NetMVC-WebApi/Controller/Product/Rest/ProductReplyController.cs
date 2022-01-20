@@ -16,9 +16,9 @@ namespace MVC卓越项目.Controller.Product.Rest
         //获取商品评论数据
         [Route("reply")]
         [HttpGet]
-        public PageModel getReplyByPid(long pid,int page,int limit)
+        public ApiResult<PageModel> getReplyByPid(long pid,int page,int limit)
         {
-            return iProductReply.GetReplyByPid(pid,page,limit);
+            return ApiResult<PageModel>.ok(iProductReply.GetReplyByPid(pid, page, limit));
         }
     }
 }

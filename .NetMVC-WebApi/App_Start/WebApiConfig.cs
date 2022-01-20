@@ -17,7 +17,7 @@ namespace MVC卓越项目
         {
 
             //全局结果统一过滤器注册
-            config.Filters.Add(new WebApiResultFilterAttribute());
+           // config.Filters.Add(new WebApiResultFilterAttribute());
             //全局异常处理器注册
             config.Filters.Add(new WebApiExceptionFilter());
             //开启特性路由 
