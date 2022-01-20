@@ -6,6 +6,7 @@ using Microsoft.Practices.Unity;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Models;
+using Newtonsoft.Json;
 using Service.Service;
 using System;
 using System.Collections;
@@ -35,9 +36,12 @@ namespace MVC卓越项目.Controller.Auth
         [Route("banner")]
         [HttpGet]
         [CacheEnable]
-        public ApiResult<List<system_group_data>> index()
+        public ApiResult<List<object>> index()
         {
-         return   ApiResult<List<system_group_data>>.ok(indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOME_BANNER));
+            List<object> list =new List<object>();
+            List<system_group_data> system_Group_Data = indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOME_BANNER);
+            system_Group_Data.ForEach(e => list.Add(JsonConvert.DeserializeObject(e.value)));
+         return   ApiResult<List<object>>.ok(list);
         }
         /// <summary>
         /// 首页菜单

@@ -14,6 +14,7 @@ namespace Commons.ExceptionHandler
     {
         public ForbiddenException(string message = "访问被拒绝！")
         {
+            throw new ApiException(403, "访问被拒绝！");
         }
     }
 }
