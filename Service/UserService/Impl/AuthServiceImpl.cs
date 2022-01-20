@@ -23,13 +23,8 @@ namespace Service.Service
         /// </summary>
         /// <param name="loginParam"></param>
         /// <returns></returns>
-        public Hashtable Login(LoginParam loginParam, IPAddress[] ips)
+        public Hashtable Login(LoginParam loginParam, string ip)
         {
-            string ip = "";
-            foreach (IPAddress e in ips)
-            {
-                ip += e.ToString() + "|";
-            }
             using (var db = new eshoppingEntities())
             {
                 eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del==false).FirstOrDefault();
@@ -46,6 +41,8 @@ namespace Service.Service
                     }
                     //修改登录时间
                     result.update_time = DateTime.Now;
+                    //修改IP
+                    result.last_ip = ip;
                     db.SaveChanges();
                     //获取设置登录的过期时间
                     string exTime = ConfigurationManager.AppSettings["tokenExpired"];

@@ -310,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Auth\Rest\LoginController.cs" />
+    <Compile Include="Controller\Category\Rest\CategoryController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

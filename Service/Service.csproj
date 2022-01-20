@@ -112,6 +112,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\ICategoryService.cs" />
+    <Compile Include="Category\Impl\CategoryServiceImpl.cs" />
+    <Compile Include="Category\VO\CategoryVO.cs" />
     <Compile Include="CollectService\ICollectService.cs" />
     <Compile Include="CollectService\Impl\CollectServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductAttrServiceImpl.cs" />

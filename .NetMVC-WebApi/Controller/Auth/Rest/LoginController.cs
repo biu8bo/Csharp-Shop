@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Auth
@@ -21,7 +22,23 @@ namespace MVC卓越项目.Controller.Auth
         [Route("login")]
       public  ApiResult<eshop_user> Login([FromBody] LoginParam loginParam)
         {
-            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam,Dns.GetHostAddresses(Dns.GetHostName())),"登陆成功");
+           string ip = Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
+           string ipv4 = string.Empty;
+            // 利用 Dns.GetHostEntry 方法，由获取的 IPv6 位址反查 DNS 纪录，<br> // 再逐一判断何者为 IPv4 协议，即可转为 IPv4 位址。
+            if (string.IsNullOrEmpty(ip))
+            {
+                ip = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            }
+
+            
+            foreach (IPAddress ipAddr in Dns.GetHostEntry(ip).AddressList)
+            {
+                if (ipAddr.AddressFamily.ToString() == "InterNetwork")
+                {
+                   ipv4 = ipAddr.ToString();
+                }
+            }
+            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam, ipv4),"登陆成功");
         }
         [AuthCheck]
         [HttpPost]

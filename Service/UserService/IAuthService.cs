@@ -17,7 +17,7 @@ namespace Service.Service
         /// </summary>
         /// <param name="loginParam"></param>
         /// <returns></returns>
-        Hashtable Login(LoginParam loginParam, IPAddress[] ips);
+        Hashtable Login(LoginParam loginParam, string ip);
         /// <summary>
         /// 退出登录
         /// </summary>

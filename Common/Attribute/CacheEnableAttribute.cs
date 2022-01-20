@@ -38,8 +38,9 @@ namespace MVC卓越项目.Commons.Attribute
             {
                 key = actionContext.ActionDescriptor.ActionName;
             }
+            string controllerName = actionContext.ActionDescriptor.ControllerDescriptor.ControllerName;
             //生成redis Key
-            string templateKey =key +":"+ JsonConvert.SerializeObject(args).GetHashCode().ToString();
+            string templateKey = controllerName + ":"+key + ":"+ JsonConvert.SerializeObject(args).GetHashCode().ToString();
             //通过key得到该方法结果的json
             string result = RedisHelper.GetStringValue(templateKey);
             //如果不为空就直接返回而不去执行action
@@ -71,8 +72,9 @@ namespace MVC卓越项目.Commons.Attribute
             object result = actionExecutedContext.ActionContext.Response.Content.ReadAsAsync<object>().Result;
             //得到方法参数
             Dictionary<string, object> args = actionExecutedContext.ActionContext.ActionArguments;
+            string controllerName = actionExecutedContext.ActionContext.ControllerContext.ControllerDescriptor.ControllerName;
             //使用key和方法参数的hashcode拼接生成redisKey 保证传参一致时能正确读取
-            string templateKey = key + ":" + JsonConvert.SerializeObject(args).GetHashCode().ToString();
+            string templateKey = controllerName+":"+ key + ":" + JsonConvert.SerializeObject(args).GetHashCode().ToString();
             //序列化成json
             string json = JsonConvert.SerializeObject(result);
             //写入redis
