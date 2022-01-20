@@ -36,7 +36,7 @@ namespace MVC卓越项目.Controller.Auth
         [Route("banner")]
         [HttpGet]
         [CacheEnable]
-        public ApiResult<List<object>> index()
+        public ApiResult<List<object>> banner()
         {
             List<object> list =new List<object>();
             List<system_group_data> system_Group_Data = indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOME_BANNER);
@@ -50,9 +50,12 @@ namespace MVC卓越项目.Controller.Auth
         [Route("menu")]
         [HttpGet]
         [CacheEnable]
-        public ApiResult<List<system_group_data>> menu()
+        public ApiResult<List<object>> menu()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOME_MENUS));
+            List<object> list = new List<object>();
+            List<system_group_data> system_Group_Data = indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOME_MENUS);
+            system_Group_Data.ForEach(e => list.Add(JsonConvert.DeserializeObject(e.value)));
+            return ApiResult<List<object>>.ok(list);
         }
         /// <summary>
         /// 精品推荐
@@ -63,9 +66,19 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<List<system_group_data>> bastList()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1,10,ProductEnum.TYPE_1));
+            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1,8,ProductEnum.TYPE_1));
         }
-
+        /// <summary>
+        /// 精品推荐
+        /// </summary>
+        /// <returns></returns>
+        [CacheEnable]
+        [Route("hotList")]
+        [HttpGet]
+        public ApiResult<List<system_group_data>> hotList()
+        {
+            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_2));
+        }
         /// <summary>
         /// 猜你喜欢
         /// </summary>
@@ -75,7 +88,7 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<List<system_group_data>> guessLike()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 10, ProductEnum.TYPE_4));
+            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_4));
         }
 
         

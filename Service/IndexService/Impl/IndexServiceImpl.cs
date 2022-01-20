@@ -27,7 +27,7 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                PageUtils<store_product> pageUtils = new PageUtils<store_product>();
+                PageUtils<store_product> pageUtils = new PageUtils<store_product>(page,limit);
                 if (ProductEnum.TYPE_1 == flag)
                 {
                     //精品推荐
