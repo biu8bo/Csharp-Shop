@@ -158,15 +158,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute\AuthCheckAttribute.cs" />
-    <Compile Include="Attribute\CacheEnableAttribute.cs" />
-    <Compile Include="Attribute\WebApiResultFilterAttribute.cs" />
+    <Compile Include="Fillter\AuthCheckAttribute.cs" />
+    <Compile Include="Fillter\CacheEnableAttribute.cs" />
+    <Compile Include="Fillter\WebApiResultFilterAttribute.cs" />
     <Compile Include="BaseModels\ApiBaseModel.cs" />
     <Compile Include="BaseModels\ApiCode.cs" />
     <Compile Include="BaseModels\ApiExceptionModel.cs" />
     <Compile Include="BaseModels\ApiResult.cs" />
     <Compile Include="BaseModels\QueryParam.cs" />
     <Compile Include="BaseModels\PageModel.cs" />
+    <Compile Include="Fillter\CrosFilter.cs" />
     <Compile Include="IocContainer\Bootstrapper.cs" />
     <Compile Include="Utils\ExpressionExtensions.cs" />
     <Compile Include="Utils\ObjectUtils.cs" />
