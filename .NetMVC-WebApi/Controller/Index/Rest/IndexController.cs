@@ -66,10 +66,10 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<List<system_group_data>> bastList()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1,8,ProductEnum.TYPE_1));
+            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1,6,ProductEnum.TYPE_1));
         }
         /// <summary>
-        /// 精品推荐
+        /// 热门推荐
         /// </summary>
         /// <returns></returns>
         [CacheEnable]
@@ -77,7 +77,7 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<List<system_group_data>> hotList()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_2));
+            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 6, ProductEnum.TYPE_2));
         }
         /// <summary>
         /// 猜你喜欢
