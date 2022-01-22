@@ -12,8 +12,7 @@ namespace Commons.ExceptionHandler
     /// </summary>
    public class MethodNotFoundException : ApiException
     {
-
-        public MethodNotFoundException(string message = "请求的接口不存在!")
+        public MethodNotFoundException(string message = "请求的资源不存在!")
         {
             throw new ApiException(404, message);
         }
