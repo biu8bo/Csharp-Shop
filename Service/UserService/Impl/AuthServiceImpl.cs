@@ -31,7 +31,7 @@ namespace Service.Service
                 if (result == null)
                 {
                     logger.WriteInfo($"IP[{ip}]:用户尝试登录 用户名:{loginParam.Username}  登录失败！");
-                    throw new AuthException("登录失败！");
+                    throw new AuthException("用户名或密码错误！");
                 }
                 else
                 {

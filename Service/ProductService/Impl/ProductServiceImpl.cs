@@ -94,23 +94,41 @@ namespace Service.Service
                 {
                     where.And(e => e.is_new == true);
                 }
+
                 //构造SQL
                 IQueryable<store_product> query = db.store_product.Where(where.GetExpression());
-                //如果是价格排序
+                //如果是销量排序
+                if (ObjectUtils<bool>.isNotNull(productParam.salesOrder))
+                {
+                    //升序
+                    if (productParam.salesOrder.Equals("asc"))
+                    {
+                        return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e => e.sales));
+                
+                    }
+                    //降序
+                    else
+                    {
+                        return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderByDescending(e => e.sales));
+                    }
+                  
+                }
+                // 如果是价格排序
+
                 if (ObjectUtils<bool>.isNotNull(productParam.priceOrder))
                 {
                     //升序
                     if (productParam.priceOrder.Equals("asc"))
                     {
                         return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e => e.price));
-                
+
                     }
                     //降序
                     else
                     {
                         return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderByDescending(e => e.price));
                     }
-                  
+
                 }
                 return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e=>e.id));
             }

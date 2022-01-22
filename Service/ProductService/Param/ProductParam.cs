@@ -17,5 +17,8 @@ namespace Service.Service
         public string priceOrder { get; set; }
         //是否新品
         public Nullable<bool> isNew { get; set; }
+
+        //销量排序
+        public string salesOrder { get; set; }
     }
 }
