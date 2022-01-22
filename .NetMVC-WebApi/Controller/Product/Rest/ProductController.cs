@@ -30,7 +30,7 @@ namespace MVC卓越项目.Controller.Product
         }
 
 
-        [HttpGet]
+        [HttpPost]
         [Route("search")]
         public ApiResult<PageModel> search([FromBody] ProductParam productParam)
         {

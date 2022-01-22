@@ -162,5 +162,3 @@ C:\Users\肖霄\Source\Repos\.NetMVC-WebApi\bin\zh-Hans\System.Web.WebPages.Razo
 C:\Users\肖霄\Source\Repos\.NetMVC-WebApi\obj\Debug\MVC卓越项目.csproj.CopyComplete
 C:\Users\肖霄\Source\Repos\.NetMVC-WebApi\obj\Debug\MVC卓越项目.dll
 C:\Users\肖霄\Source\Repos\.NetMVC-WebApi\obj\Debug\MVC卓越项目.pdb
-C:\Users\肖霄\source\repos\Eshopping\.NetMVC-WebApi\bin\StackExchange.Redis.dll
-C:\Users\肖霄\source\repos\Eshopping\.NetMVC-WebApi\bin\System.Web.Mvc.xml

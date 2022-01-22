@@ -72,4 +72,3 @@ C:\Users\肖霄\Source\Repos\Common\bin\Debug\EntityFramework.dll
 C:\Users\肖霄\Source\Repos\Common\bin\Debug\Mapper.pdb
 C:\Users\肖霄\Source\Repos\Common\bin\Debug\Mapper.dll.config
 C:\Users\肖霄\Source\Repos\Common\bin\Debug\EntityFramework.xml
-C:\Users\肖霄\source\repos\Eshopping\Common\bin\Debug\System.Web.Mvc.xml

@@ -90,8 +90,22 @@ namespace MVC卓越项目.Controller.Auth
         {
             return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_4));
         }
+        /// <summary>
+        /// 热门搜索
+        /// </summary>
+        /// <returns></returns>
+        [CacheEnable]
+        [Route("hotSearch")]
+        [HttpGet]
+        public ApiResult<List<object>> hotSearch()
+        {
+            List<object> list = new List<object>();
+            List<system_group_data> system_Group_Data = indexService.GetDataByShopConstants(ShopConstants.YSHOP_HOT_SEARCH);
+            system_Group_Data.ForEach(e => list.Add(JsonConvert.DeserializeObject(e.value)));
+            return ApiResult<List<object>>.ok(list);
+        }
 
-        
-        
+
+
     }
 }
