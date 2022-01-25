@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eshoppingModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="article">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cid" Type="varchar" MaxLength="255" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="author" Type="varchar" MaxLength="255" />
+    <Property Name="image_input" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="synopsis" Type="varchar" MaxLength="255" />
+    <Property Name="content" Type="text" />
+    <Property Name="share_title" Type="varchar" MaxLength="255" />
+    <Property Name="share_synopsis" Type="varchar" MaxLength="255" />
+    <Property Name="visit" Type="varchar" MaxLength="255" />
+    <Property Name="sort" Type="uint" />
+    <Property Name="url" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bool" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+    <Property Name="hide" Type="bool" />
+    <Property Name="admin_id" Type="uint" />
+    <Property Name="mer_id" Type="uint" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="is_hot" Type="bool" />
+    <Property Name="is_banner" Type="bool" />
+  </EntityType>
+  <EntityType Name="column_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="table_name" Type="varchar" MaxLength="255" />
+    <Property Name="column_name" Type="varchar" MaxLength="255" />
+    <Property Name="column_type" Type="varchar" MaxLength="255" />
+    <Property Name="dict_name" Type="varchar" MaxLength="255" />
+    <Property Name="extra" Type="varchar" MaxLength="255" />
+    <Property Name="form_show" Type="bit" />
+    <Property Name="form_type" Type="varchar" MaxLength="255" />
+    <Property Name="key_type" Type="varchar" MaxLength="255" />
+    <Property Name="list_show" Type="bit" />
+    <Property Name="not_null" Type="bit" />
+    <Property Name="query_type" Type="varchar" MaxLength="255" />
+    <Property Name="remark" Type="varchar" MaxLength="255" />
+    <Property Name="date_annotation" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="dict">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="remark" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="dict_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="label" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="sort" Type="varchar" MaxLength="255" />
+    <Property Name="dict_id" Type="bigint" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“json”；已排除表“def.eshopping.eshop_user”中的列“wx_profile”。-->
+  <EntityType Name="eshop_user">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="real_name" Type="varchar" MaxLength="25" />
+    <Property Name="birthday" Type="int" />
+    <Property Name="card_id" Type="varchar" MaxLength="20" />
+    <Property Name="mark" Type="varchar" MaxLength="255" />
+    <Property Name="partner_id" Type="int" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="nickname" Type="varchar" MaxLength="100" />
+    <Property Name="avatar" Type="varchar" MaxLength="256" />
+    <Property Name="phone" Type="char" MaxLength="15" />
+    <Property Name="add_ip" Type="varchar" MaxLength="100" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="last_ip" Type="varchar" MaxLength="100" />
+    <Property Name="now_money" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="brokerage_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="sign_num" Type="int" Nullable="false" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="level" Type="utinyint" Nullable="false" />
+    <Property Name="spread_uid" Type="ubigint" />
+    <Property Name="spread_time" Type="datetime" Precision="0" />
+    <Property Name="user_type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="is_promoter" Type="bool" Nullable="false" />
+    <Property Name="pay_count" Type="uint" />
+    <Property Name="spread_count" Type="int" />
+    <Property Name="addres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="adminid" Type="uint" />
+    <Property Name="login_type" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="express">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="umediumint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="is_show" Type="bool" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="gen_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="table_name" Type="varchar" MaxLength="255" />
+    <Property Name="author" Type="varchar" MaxLength="255" />
+    <Property Name="cover" Type="bit" />
+    <Property Name="module_name" Type="varchar" MaxLength="255" />
+    <Property Name="pack" Type="varchar" MaxLength="255" />
+    <Property Name="path" Type="varchar" MaxLength="255" />
+    <Property Name="api_path" Type="varchar" MaxLength="255" />
+    <Property Name="prefix" Type="varchar" MaxLength="255" />
+    <Property Name="api_alias" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="gen_test">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="sex" Type="int" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="local_storage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="real_name" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="suffix" Type="varchar" MaxLength="255" />
+    <Property Name="path" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="varchar" MaxLength="255" />
+    <Property Name="size" Type="varchar" MaxLength="100" />
+    <Property Name="operate" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="description" Type="varchar" MaxLength="255" />
+    <Property Name="exception_detail" Type="text" />
+    <Property Name="log_type" Type="varchar" MaxLength="255" />
+    <Property Name="method" Type="varchar" MaxLength="255" />
+    <Property Name="params" Type="text" />
+    <Property Name="request_ip" Type="varchar" MaxLength="255" />
+    <Property Name="time" Type="bigint" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="browser" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="int" />
+    <Property Name="uid" Type="bigint" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="material">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_id" Type="varchar" MaxLength="100" />
+    <Property Name="type" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="group_id" Type="varchar" MaxLength="32" />
+    <Property Name="name" Type="varchar" MaxLength="500" />
+    <Property Name="url" Type="varchar" MaxLength="500" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="material_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_id" Type="varchar" MaxLength="32" />
+    <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_frame" Type="bit" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="component" Type="varchar" MaxLength="255" />
+    <Property Name="pid" Type="bigint" Nullable="false" />
+    <Property Name="sort" Type="bigint" Nullable="false" />
+    <Property Name="icon" Type="varchar" MaxLength="255" />
+    <Property Name="path" Type="varchar" MaxLength="255" />
+    <Property Name="cache" Type="bit" />
+    <Property Name="hidden" Type="bit" />
+    <Property Name="component_name" Type="varchar" MaxLength="20" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="permission" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="int" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="picture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="delete_url" Type="varchar" MaxLength="255" />
+    <Property Name="filename" Type="varchar" MaxLength="255" />
+    <Property Name="height" Type="varchar" MaxLength="255" />
+    <Property Name="size" Type="varchar" MaxLength="255" />
+    <Property Name="url" Type="varchar" MaxLength="255" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="width" Type="varchar" MaxLength="255" />
+    <Property Name="md5code" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="quartz_job">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bean_name" Type="varchar" MaxLength="255" />
+    <Property Name="cron_expression" Type="varchar" MaxLength="255" />
+    <Property Name="is_pause" Type="bit" />
+    <Property Name="job_name" Type="varchar" MaxLength="255" />
+    <Property Name="method_name" Type="varchar" MaxLength="255" />
+    <Property Name="params" Type="varchar" MaxLength="255" />
+    <Property Name="remark" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="quartz_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baen_name" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="cron_expression" Type="varchar" MaxLength="255" />
+    <Property Name="exception_detail" Type="text" />
+    <Property Name="is_success" Type="bit" />
+    <Property Name="job_name" Type="varchar" MaxLength="255" />
+    <Property Name="method_name" Type="varchar" MaxLength="255" />
+    <Property Name="params" Type="varchar" MaxLength="255" />
+    <Property Name="time" Type="bigint" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="product_attr_unique" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cart_num" Type="usmallint" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_pay" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="is_new" Type="bool" Nullable="false" />
+    <Property Name="combination_id" Type="uint" />
+    <Property Name="seckill_id" Type="uint" Nullable="false" />
+    <Property Name="bargain_id" Type="uint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="mediumint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pid" Type="mediumint" Nullable="false" />
+    <Property Name="cate_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sort" Type="mediumint" />
+    <Property Name="pic" Type="varchar" MaxLength="128" />
+    <Property Name="is_show" Type="bool" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“udecimal”；已排除表“def.eshopping.store_combination”中的列“price”。-->
+  <EntityType Name="store_combination">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="mer_id" Type="uint" />
+    <Property Name="image" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="images" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="attr" Type="varchar" MaxLength="255" />
+    <Property Name="people" Type="uint" Nullable="false" />
+    <Property Name="info" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="product_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="sort" Type="uint" Nullable="false" />
+    <Property Name="sales" Type="uint" Nullable="false" />
+    <Property Name="stock" Type="uint" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_host" Type="bool" Nullable="false" />
+    <Property Name="is_show" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="combination" Type="bool" Nullable="false" />
+    <Property Name="mer_use" Type="bool" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="start_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="stop_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="effective_time" Type="int" Nullable="false" />
+    <Property Name="cost" Type="uint" Nullable="false" />
+    <Property Name="browse" Type="int" />
+    <Property Name="unit_name" Type="varchar" MaxLength="32" />
+    <Property Name="spec_type" Type="bool" />
+    <Property Name="temp_id" Type="int" />
+  </EntityType>
+  <EntityType Name="store_coupon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="integral" Type="uint" Nullable="false" />
+    <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="use_min_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="coupon_time" Type="uint" Nullable="false" />
+    <Property Name="sort" Type="uint" Nullable="false" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="product_id" Type="varchar" MaxLength="200" />
+    <Property Name="type" Type="tinyint" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store_coupon_issue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cname" Type="varchar" MaxLength="50" />
+    <Property Name="cid" Type="int" />
+    <Property Name="ctype" Type="bool" />
+    <Property Name="start_time" Type="datetime" Precision="0" />
+    <Property Name="end_time" Type="datetime" Precision="0" />
+    <Property Name="total_count" Type="int" />
+    <Property Name="remain_count" Type="int" />
+    <Property Name="is_permanent" Type="bool" Nullable="false" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="store_coupon_issue_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="bigint" />
+    <Property Name="issue_coupon_id" Type="int" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_coupon_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cid" Type="uint" Nullable="false" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="coupon_title" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="use_min_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="end_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="use_time" Type="datetime" Precision="0" />
+    <Property Name="type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="is_fail" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nick_name" Type="varchar" MaxLength="255" />
+    <Property Name="open_id" Type="varchar" MaxLength="32" />
+    <Property Name="remark" Type="varchar" MaxLength="128" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+    <Property Name="is_enable" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_id" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="extend_order_id" Type="varchar" MaxLength="32" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="real_name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="user_phone" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="user_address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cart_id" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="freight_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="total_num" Type="uint" Nullable="false" />
+    <Property Name="total_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="total_postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="pay_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="pay_postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="deduction_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="coupon_id" Type="uint" Nullable="false" />
+    <Property Name="coupon_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="paid" Type="bool" Nullable="false" />
+    <Property Name="pay_time" Type="datetime" Precision="0" />
+    <Property Name="pay_type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="refund_status" Type="bool" Nullable="false" />
+    <Property Name="refund_reason_wap_img" Type="varchar" MaxLength="255" />
+    <Property Name="refund_reason_wap_explain" Type="varchar" MaxLength="255" />
+    <Property Name="refund_reason_time" Type="datetime" Precision="0" />
+    <Property Name="refund_reason_wap" Type="varchar" MaxLength="255" />
+    <Property Name="refund_reason" Type="varchar" MaxLength="255" />
+    <Property Name="refund_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="delivery_sn" Type="varchar" MaxLength="100" />
+    <Property Name="delivery_name" Type="varchar" MaxLength="64" />
+    <Property Name="delivery_type" Type="varchar" MaxLength="32" />
+    <Property Name="delivery_id" Type="varchar" MaxLength="64" />
+    <Property Name="gain_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="use_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="pay_integral" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="back_integral" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="mark" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="unique" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="remark" Type="varchar" MaxLength="512" />
+    <Property Name="mer_id" Type="uint" Nullable="false" />
+    <Property Name="is_mer_check" Type="utinyint" Nullable="false" />
+    <Property Name="combination_id" Type="ubigint" />
+    <Property Name="pink_id" Type="ubigint" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="seckill_id" Type="ubigint" Nullable="false" />
+    <Property Name="bargain_id" Type="uint" />
+    <Property Name="verify_code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="store_id" Type="int" Nullable="false" />
+    <Property Name="shipping_type" Type="bool" Nullable="false" />
+    <Property Name="is_channel" Type="bool" />
+    <Property Name="is_remind" Type="bool" />
+    <Property Name="is_system_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_order_cart_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oid" Type="ubigint" Nullable="false" />
+    <Property Name="cart_id" Type="ubigint" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="cart_info" Type="text" Nullable="false" />
+    <Property Name="unique" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store_order_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oid" Type="ubigint" Nullable="false" />
+    <Property Name="change_type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="change_message" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="change_time" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mer_id" Type="uint" />
+    <Property Name="image" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="slider_image" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="store_name" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="store_info" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="keyword" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="bar_code" Type="varchar" MaxLength="15" />
+    <Property Name="cate_id" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="vip_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="ot_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="postage" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="unit_name" Type="varchar" MaxLength="32" />
+    <Property Name="sort" Type="smallint" />
+    <Property Name="sales" Type="umediumint" />
+    <Property Name="stock" Type="umediumint" />
+    <Property Name="is_show" Type="bool" />
+    <Property Name="is_hot" Type="bool" />
+    <Property Name="is_benefit" Type="bool" />
+    <Property Name="is_best" Type="bool" />
+    <Property Name="is_new" Type="bool" />
+    <Property Name="description" Type="text" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_postage" Type="bool" />
+    <Property Name="is_del" Type="bool" />
+    <Property Name="mer_use" Type="bool" />
+    <Property Name="give_integral" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="cost" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="is_seckill" Type="bool" />
+    <Property Name="is_bargain" Type="bool" />
+    <Property Name="is_good" Type="bool" />
+    <Property Name="ficti" Type="mediumint" />
+    <Property Name="browse" Type="int" />
+    <Property Name="code_path" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="is_sub" Type="bool" />
+    <Property Name="temp_id" Type="int" />
+    <Property Name="spec_type" Type="bool" />
+    <Property Name="is_integral" Type="bool" />
+    <Property Name="integral" Type="int" />
+  </EntityType>
+  <EntityType Name="store_product_attr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="attr_name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="attr_values" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="store_product_attr_result">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="result" Type="text" Nullable="false" />
+    <Property Name="change_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="store_product_attr_value">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="stock" Type="uint" Nullable="false" />
+    <Property Name="sales" Type="uint" />
+    <Property Name="price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="128" />
+    <Property Name="unique" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="bar_code" Type="varchar" MaxLength="255" />
+    <Property Name="ot_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="weight" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="volume" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="brokerage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="brokerage_two" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="pink_price" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="pink_stock" Type="int" Nullable="false" />
+    <Property Name="seckill_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="seckill_stock" Type="int" Nullable="false" />
+    <Property Name="integral" Type="uint" />
+  </EntityType>
+  <EntityType Name="store_product_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="32" />
+    <Property Name="category" Type="varchar" MaxLength="32" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_product_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="bigint" Nullable="false" />
+    <Property Name="oid" Type="bigint" Nullable="false" />
+    <Property Name="unique" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="reply_type" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="product_score" Type="bool" Nullable="false" />
+    <Property Name="service_score" Type="bool" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="pics" Type="text" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="merchant_reply_content" Type="varchar" MaxLength="300" />
+    <Property Name="merchant_reply_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="is_reply" Type="bool" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“json”；已排除表“def.eshopping.store_product_rule”中的列“rule_value”。-->
+  <EntityType Name="store_product_rule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rule_name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="store_seckill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="ubigint" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="images" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="info" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="cost" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="ot_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="give_integral" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="sort" Type="uint" Nullable="false" />
+    <Property Name="stock" Type="uint" Nullable="false" />
+    <Property Name="sales" Type="uint" Nullable="false" />
+    <Property Name="unit_name" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="postage" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="start_time" Type="date" Nullable="false" />
+    <Property Name="stop_time" Type="date" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="is_postage" Type="bool" Nullable="false" />
+    <Property Name="is_hot" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="num" Type="uint" Nullable="false" />
+    <Property Name="is_show" Type="bool" Nullable="false" />
+    <Property Name="time_id" Type="uint" />
+    <Property Name="spec_type" Type="bool" />
+    <Property Name="temp_id" Type="int" />
+  </EntityType>
+  <EntityType Name="store_visit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="bigint" />
+    <Property Name="product_type" Type="varchar" MaxLength="32" />
+    <Property Name="cate_id" Type="int" />
+    <Property Name="type" Type="char" MaxLength="50" />
+    <Property Name="uid" Type="bigint" />
+    <Property Name="count" Type="int" />
+    <Property Name="content" Type="varchar" MaxLength="255" />
+    <Property Name="add_time" Type="int" />
+  </EntityType>
+  <EntityType Name="system_attachment">
+    <Key>
+      <PropertyRef Name="att_id" />
+    </Key>
+    <Property Name="att_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="att_dir" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="satt_dir" Type="varchar" MaxLength="200" />
+    <Property Name="att_size" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="att_type" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="pid" Type="int" Nullable="false" />
+    <Property Name="image_type" Type="bool" Nullable="false" />
+    <Property Name="module_type" Type="bool" Nullable="false" />
+    <Property Name="uid" Type="ubigint" />
+    <Property Name="invite_code" Type="varchar" MaxLength="50" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="system_city">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+    <Property Name="level" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="area_code" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="merger_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="lng" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lat" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_show" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="system_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="5000" />
+    <Property Name="sort" Type="uint" />
+    <Property Name="status" Type="bool" />
+  </EntityType>
+  <EntityType Name="system_group_data">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="group_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="value" Type="text" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="sort" Type="int" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="system_user_task">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="real_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="task_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
+    <Property Name="level_id" Type="int" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="is_show" Type="bool" Nullable="false" />
+    <Property Name="is_must" Type="bool" Nullable="false" />
+    <Property Name="illustrate" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="avatar_id" Type="bigint" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="enabled" Type="bigint" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="dept_id" Type="bigint" />
+    <Property Name="phone" Type="varchar" MaxLength="255" />
+    <Property Name="job_id" Type="bigint" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="last_password_reset_time" Type="datetime" Precision="0" />
+    <Property Name="nick_name" Type="varchar" MaxLength="255" />
+    <Property Name="sex" Type="varchar" MaxLength="255" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="user_address">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="real_name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="province" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="city_id" Type="int" />
+    <Property Name="district" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="detail" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="post_code" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="longitude" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="latitude" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="is_default" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="user_avatar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="real_name" Type="varchar" MaxLength="255" />
+    <Property Name="path" Type="varchar" MaxLength="255" />
+    <Property Name="size" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="user_bill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="ubigint" Nullable="false" />
+    <Property Name="link_id" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="pm" Type="bool" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="category" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="number" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="balance" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="mark" Type="varchar" MaxLength="512" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="status" Type="bool" Nullable="false" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <EntityType Name="user_recharge">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="ubigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="bigint" />
+    <Property Name="nickname" Type="varchar" MaxLength="50" />
+    <Property Name="order_id" Type="varchar" MaxLength="32" />
+    <Property Name="price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="give_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="recharge_type" Type="varchar" MaxLength="32" />
+    <Property Name="paid" Type="bool" />
+    <Property Name="pay_time" Type="datetime" Precision="0" />
+    <Property Name="create_time" Type="datetime" Precision="0" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="refund_price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="is_del" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="user_sign">
+    <Key>
+      <PropertyRef Name="int" />
+    </Key>
+    <Property Name="int" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
+    <Property Name="balance" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="update_time" Type="datetime" Precision="0" />
+    <Property Name="is_del" Type="bool" />
+  </EntityType>
+  <Association Name="FK5tpkputc6d9nboxojdbgnpmyb">
+    <End Role="dict" Type="Self.dict" Multiplicity="0..1" />
+    <End Role="dict_detail" Type="Self.dict_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dict">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="dict_detail">
+        <PropertyRef Name="dict_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKpq2dhypk2qgt68nauh2by22jb">
+    <End Role="user_avatar" Type="Self.user_avatar" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_avatar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="avatar_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="eshoppingModelStoreContainer">
+    <EntitySet Name="article" EntityType="Self.article" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="column_config" EntityType="Self.column_config" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="dict" EntityType="Self.dict" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="dict_detail" EntityType="Self.dict_detail" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="eshop_user" EntityType="Self.eshop_user" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="express" EntityType="Self.express" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="gen_config" EntityType="Self.gen_config" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="gen_test" EntityType="Self.gen_test" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="local_storage" EntityType="Self.local_storage" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="log" EntityType="Self.log" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="material" EntityType="Self.material" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="material_group" EntityType="Self.material_group" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="menu" EntityType="Self.menu" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="picture" EntityType="Self.picture" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="quartz_job" EntityType="Self.quartz_job" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="quartz_log" EntityType="Self.quartz_log" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_cart" EntityType="Self.store_cart" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_category" EntityType="Self.store_category" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_combination" EntityType="Self.store_combination" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_coupon" EntityType="Self.store_coupon" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_coupon_issue" EntityType="Self.store_coupon_issue" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_coupon_issue_user" EntityType="Self.store_coupon_issue_user" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_coupon_user" EntityType="Self.store_coupon_user" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_customer" EntityType="Self.store_customer" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_order" EntityType="Self.store_order" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_order_cart_info" EntityType="Self.store_order_cart_info" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_order_status" EntityType="Self.store_order_status" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product" EntityType="Self.store_product" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_attr" EntityType="Self.store_product_attr" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_attr_result" EntityType="Self.store_product_attr_result" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_attr_value" EntityType="Self.store_product_attr_value" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_relation" EntityType="Self.store_product_relation" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_reply" EntityType="Self.store_product_reply" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_product_rule" EntityType="Self.store_product_rule" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_seckill" EntityType="Self.store_seckill" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="store_visit" EntityType="Self.store_visit" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="system_attachment" EntityType="Self.system_attachment" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="system_city" EntityType="Self.system_city" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="system_config" EntityType="Self.system_config" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="system_group_data" EntityType="Self.system_group_data" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="system_user_task" EntityType="Self.system_user_task" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user_address" EntityType="Self.user_address" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user_avatar" EntityType="Self.user_avatar" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user_bill" EntityType="Self.user_bill" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user_recharge" EntityType="Self.user_recharge" Schema="eshopping" store:Type="Tables" />
+    <EntitySet Name="user_sign" EntityType="Self.user_sign" Schema="eshopping" store:Type="Tables" />
+    <AssociationSet Name="FK5tpkputc6d9nboxojdbgnpmyb" Association="Self.FK5tpkputc6d9nboxojdbgnpmyb">
+      <End Role="dict" EntitySet="dict" />
+      <End Role="dict_detail" EntitySet="dict_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FKpq2dhypk2qgt68nauh2by22jb" Association="Self.FKpq2dhypk2qgt68nauh2by22jb">
+      <End Role="user_avatar" EntitySet="user_avatar" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

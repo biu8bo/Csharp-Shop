@@ -5,94 +5,55 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="20bf3c64c67c4ee0a6b83b9708d85831" Name="Diagram1" ZoomLevel="111">
-        <EntityTypeShape EntityType="eshoppingModel.alipay_config" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.app_version" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.article" Width="1.5" PointX="11.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.column_config" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.dept" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.dict" Width="1.5" PointX="7.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.dict_detail" Width="1.5" PointX="10" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.email_config" Width="1.5" PointX="7.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.eshop_user" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.express" Width="1.5" PointX="11.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.gen_config" Width="1.5" PointX="12.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.gen_test" Width="1.5" PointX="13.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.job" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.local_storage" Width="1.5" PointX="13.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.log" Width="1.5" PointX="14.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.material" Width="1.5" PointX="13.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.material_group" Width="1.5" PointX="15.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.menu" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.monitor_server" Width="1.5" PointX="2.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.picture" Width="1.5" PointX="4.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.qiniu_config" Width="1.5" PointX="6.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.qiniu_content" Width="1.5" PointX="15.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.quartz_job" Width="1.5" PointX="15.75" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.quartz_log" Width="1.5" PointX="16.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.role" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.shipping_templates" Width="1.5" PointX="15.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.shipping_templates_free" Width="1.5" PointX="17.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.shipping_templates_region" Width="1.5" PointX="17.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_bargain" Width="1.5" PointX="17.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_bargain_user" Width="1.5" PointX="18.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_bargain_user_help" Width="1.5" PointX="11.75" PointY="19.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_canvas" Width="1.5" PointX="19.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_cart" Width="1.5" PointX="4.75" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_category" Width="1.5" PointX="6.75" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_combination" Width="1.5" PointX="19.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_coupon" Width="1.5" PointX="8.75" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue" Width="1.5" PointX="19.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue_user" Width="1.5" PointX="20.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_coupon_user" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_customer" Width="1.5" PointX="13.75" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_order" Width="1.5" PointX="21.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_order_cart_info" Width="1.5" PointX="21.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_order_status" Width="1.5" PointX="21.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_pink" Width="1.5" PointX="21.75" PointY="20.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_attr" Width="1.5" PointX="22.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_attr_result" Width="1.5" PointX="15.75" PointY="23.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_attr_value" Width="1.5" PointX="17.875" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_relation" Width="1.5" PointX="23.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_reply" Width="1.5" PointX="6.75" PointY="24.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product_rule" Width="1.5" PointX="23.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_seckill" Width="1.5" PointX="23.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.store_visit" Width="1.5" PointX="23.75" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_attachment" Width="1.5" PointX="23.75" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_city" Width="1.5" PointX="0.75" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_config" Width="1.5" PointX="24.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_group_data" Width="1.5" PointX="2.75" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_store" Width="1.5" PointX="12.75" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_store_staff" Width="1.5" PointX="19.75" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_user_level" Width="1.5" PointX="25.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.system_user_task" Width="1.5" PointX="25.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_address" Width="1.5" PointX="25.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_avatar" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_bill" Width="1.5" PointX="14.75" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_enter" Width="1.5" PointX="25.75" PointY="19.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_extract" Width="1.5" PointX="25.75" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_group" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_level" Width="1.5" PointX="21.75" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_recharge" Width="1.5" PointX="27.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_sign" Width="1.5" PointX="27.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.user_task_finish" Width="1.5" PointX="27.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.verification_code" Width="1.5" PointX="27.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.visits" Width="1.5" PointX="27.75" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_live" Width="1.5" PointX="27.75" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_live_goods" Width="1.5" PointX="27.75" PointY="27.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_media" Width="1.5" PointX="0.75" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_menu" Width="1.5" PointX="2.75" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_reply" Width="1.5" PointX="4.75" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="eshoppingModel.wechat_template" Width="1.5" PointX="6.75" PointY="29.25" IsExpanded="true" />
-        <AssociationConnector Association="eshoppingModel.FK5rwmryny6jthaaxkogownknqp" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.FKmvhj0rogastlctflsxf1d6k3i" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.FK5tpkputc6d9nboxojdbgnpmyb" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.FKfftoc2abhot8f2wu6cl9a5iky" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.FKpq2dhypk2qgt68nauh2by22jb" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.roles_depts" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.roles_menus" ManuallyRouted="false" />
-        <AssociationConnector Association="eshoppingModel.users_roles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="eshoppingModel.store_product" Width="1.5" PointX="9.375" PointY="24.75" />
+        <EntityTypeShape EntityType="eshoppingModel.article" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.column_config" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="eshoppingModel.dict" Width="1.5" PointX="2.75" PointY="1.125" />
+        <EntityTypeShape EntityType="eshoppingModel.dict_detail" Width="1.5" PointX="5" PointY="1" />
+        <EntityTypeShape EntityType="eshoppingModel.eshop_user" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.express" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="eshoppingModel.gen_config" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.gen_test" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="eshoppingModel.local_storage" Width="1.5" PointX="5.75" PointY="11.75" />
+        <EntityTypeShape EntityType="eshoppingModel.log" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="eshoppingModel.material" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="eshoppingModel.material_group" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="eshoppingModel.menu" Width="1.5" PointX="7.75" PointY="12.75" />
+        <EntityTypeShape EntityType="eshoppingModel.picture" Width="1.5" PointX="9.75" PointY="12.75" />
+        <EntityTypeShape EntityType="eshoppingModel.quartz_job" Width="1.5" PointX="11.75" PointY="12.75" />
+        <EntityTypeShape EntityType="eshoppingModel.quartz_log" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_cart" Width="1.5" PointX="13.75" PointY="4.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_category" Width="1.5" PointX="13.75" PointY="9.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_combination" Width="1.5" PointX="13.75" PointY="13.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_coupon" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue_user" Width="1.5" PointX="4.75" PointY="15.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_coupon_user" Width="1.5" PointX="15.75" PointY="5.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_customer" Width="1.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_order" Width="1.5" PointX="15.75" PointY="14.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_order_cart_info" Width="1.5" PointX="9.75" PointY="16.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_order_status" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product" Width="1.5" PointX="17.75" PointY="3.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_attr" Width="1.5" PointX="6.75" PointY="17.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_attr_result" Width="1.5" PointX="17.75" PointY="13.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_attr_value" Width="1.5" PointX="17.75" PointY="16.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_relation" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_reply" Width="1.5" PointX="19.75" PointY="4.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_product_rule" Width="1.5" PointX="8.75" PointY="19.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_seckill" Width="1.5" PointX="19.75" PointY="9.75" />
+        <EntityTypeShape EntityType="eshoppingModel.store_visit" Width="1.5" PointX="10.75" PointY="19.75" />
+        <EntityTypeShape EntityType="eshoppingModel.system_attachment" Width="1.5" PointX="19.75" PointY="17.75" />
+        <EntityTypeShape EntityType="eshoppingModel.system_city" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="eshoppingModel.system_config" Width="1.5" PointX="2.75" PointY="20.75" />
+        <EntityTypeShape EntityType="eshoppingModel.system_group_data" Width="1.5" PointX="4.75" PointY="20.75" />
+        <EntityTypeShape EntityType="eshoppingModel.system_user_task" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="eshoppingModel.user" Width="1.5" PointX="5.25" PointY="5.625" />
+        <EntityTypeShape EntityType="eshoppingModel.user_address" Width="1.5" PointX="21.75" PointY="5.75" />
+        <EntityTypeShape EntityType="eshoppingModel.user_avatar" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="eshoppingModel.user_bill" Width="1.5" PointX="21.75" PointY="10.75" />
+        <EntityTypeShape EntityType="eshoppingModel.user_recharge" Width="1.5" PointX="12.75" PointY="21.75" />
+        <EntityTypeShape EntityType="eshoppingModel.user_sign" Width="1.5" PointX="21.75" PointY="15.75" />
+        <AssociationConnector Association="eshoppingModel.FK5tpkputc6d9nboxojdbgnpmyb" />
+        <AssociationConnector Association="eshoppingModel.FKpq2dhypk2qgt68nauh2by22jb" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

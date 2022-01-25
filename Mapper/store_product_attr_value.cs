@@ -19,8 +19,10 @@ namespace Mapper
         public string sku { get; set; }
         public long stock { get; set; }
         public Nullable<long> sales { get; set; }
+        public decimal price { get; set; }
         public string image { get; set; }
         public string unique { get; set; }
+        public decimal cost { get; set; }
         public string bar_code { get; set; }
         public Nullable<decimal> ot_price { get; set; }
         public decimal weight { get; set; }
@@ -32,7 +34,5 @@ namespace Mapper
         public decimal seckill_price { get; set; }
         public int seckill_stock { get; set; }
         public Nullable<long> integral { get; set; }
-        public decimal price { get; set; }
-        public decimal cost { get; set; }
     }
 }

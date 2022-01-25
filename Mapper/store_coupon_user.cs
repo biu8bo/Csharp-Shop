@@ -18,6 +18,8 @@ namespace Mapper
         public long cid { get; set; }
         public decimal uid { get; set; }
         public string coupon_title { get; set; }
+        public decimal coupon_price { get; set; }
+        public decimal use_min_price { get; set; }
         public System.DateTime create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public System.DateTime end_time { get; set; }
@@ -26,7 +28,5 @@ namespace Mapper
         public bool status { get; set; }
         public bool is_fail { get; set; }
         public Nullable<bool> is_del { get; set; }
-        public decimal coupon_price { get; set; }
-        public decimal use_min_price { get; set; }
     }
 }

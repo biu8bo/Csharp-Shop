@@ -23,6 +23,10 @@ namespace Mapper
         public string keyword { get; set; }
         public string bar_code { get; set; }
         public string cate_id { get; set; }
+        public decimal price { get; set; }
+        public Nullable<decimal> vip_price { get; set; }
+        public Nullable<decimal> ot_price { get; set; }
+        public Nullable<decimal> postage { get; set; }
         public string unit_name { get; set; }
         public Nullable<short> sort { get; set; }
         public Nullable<int> sales { get; set; }
@@ -38,6 +42,8 @@ namespace Mapper
         public Nullable<bool> is_postage { get; set; }
         public Nullable<bool> is_del { get; set; }
         public Nullable<bool> mer_use { get; set; }
+        public Nullable<decimal> give_integral { get; set; }
+        public Nullable<decimal> cost { get; set; }
         public Nullable<bool> is_seckill { get; set; }
         public Nullable<bool> is_bargain { get; set; }
         public Nullable<bool> is_good { get; set; }
@@ -49,11 +55,5 @@ namespace Mapper
         public Nullable<bool> spec_type { get; set; }
         public Nullable<bool> is_integral { get; set; }
         public Nullable<int> integral { get; set; }
-        public Nullable<decimal> postage { get; set; }
-        public Nullable<decimal> give_integral { get; set; }
-        public Nullable<decimal> cost { get; set; }
-        public decimal price { get; set; }
-        public Nullable<decimal> vip_price { get; set; }
-        public Nullable<decimal> ot_price { get; set; }
     }
 }

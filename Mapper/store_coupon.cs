@@ -17,6 +17,8 @@ namespace Mapper
         public long id { get; set; }
         public string title { get; set; }
         public long integral { get; set; }
+        public decimal coupon_price { get; set; }
+        public decimal use_min_price { get; set; }
         public long coupon_time { get; set; }
         public long sort { get; set; }
         public bool status { get; set; }
@@ -25,7 +27,5 @@ namespace Mapper
         public System.DateTime create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public bool is_del { get; set; }
-        public decimal coupon_price { get; set; }
-        public decimal use_min_price { get; set; }
     }
 }

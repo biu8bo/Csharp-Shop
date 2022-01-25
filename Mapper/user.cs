@@ -14,12 +14,6 @@ namespace Mapper
     
     public partial class user
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
-        {
-            this.role = new HashSet<role>();
-        }
-    
         public long id { get; set; }
         public Nullable<long> avatar_id { get; set; }
         public string email { get; set; }
@@ -36,10 +30,6 @@ namespace Mapper
         public Nullable<System.DateTime> update_time { get; set; }
         public Nullable<bool> is_del { get; set; }
     
-        public virtual dept dept { get; set; }
-        public virtual job job { get; set; }
         public virtual user_avatar user_avatar { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<role> role { get; set; }
     }
 }

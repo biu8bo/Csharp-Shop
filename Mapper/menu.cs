@@ -14,12 +14,6 @@ namespace Mapper
     
     public partial class menu
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public menu()
-        {
-            this.role = new HashSet<role>();
-        }
-    
         public long id { get; set; }
         public Nullable<bool> i_frame { get; set; }
         public string name { get; set; }
@@ -36,8 +30,5 @@ namespace Mapper
         public Nullable<int> type { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public Nullable<bool> is_del { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<role> role { get; set; }
     }
 }
