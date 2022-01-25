@@ -21,12 +21,12 @@ namespace Mapper
         public string title { get; set; }
         public string category { get; set; }
         public string type { get; set; }
+        public decimal number { get; set; }
+        public decimal balance { get; set; }
         public string mark { get; set; }
         public System.DateTime create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public bool status { get; set; }
         public Nullable<bool> is_del { get; set; }
-        public decimal number { get; set; }
-        public decimal balance { get; set; }
     }
 }

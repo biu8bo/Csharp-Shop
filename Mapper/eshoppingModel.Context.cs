@@ -9,18 +9,15 @@
 
 namespace Mapper
 {
-    using Interceptor;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Infrastructure.Interception;
-
+    
     public partial class eshoppingEntities : DbContext
     {
         public eshoppingEntities()
             : base("name=eshoppingEntities")
         {
-            DbInterception.Add(new EFCommandInterceptor());
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -28,38 +25,22 @@ namespace Mapper
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<alipay_config> alipay_config { get; set; }
-        public virtual DbSet<app_version> app_version { get; set; }
         public virtual DbSet<article> article { get; set; }
         public virtual DbSet<column_config> column_config { get; set; }
-        public virtual DbSet<dept> dept { get; set; }
         public virtual DbSet<dict> dict { get; set; }
         public virtual DbSet<dict_detail> dict_detail { get; set; }
-        public virtual DbSet<email_config> email_config { get; set; }
         public virtual DbSet<eshop_user> eshop_user { get; set; }
         public virtual DbSet<express> express { get; set; }
         public virtual DbSet<gen_config> gen_config { get; set; }
         public virtual DbSet<gen_test> gen_test { get; set; }
-        public virtual DbSet<job> job { get; set; }
         public virtual DbSet<local_storage> local_storage { get; set; }
         public virtual DbSet<log> log { get; set; }
         public virtual DbSet<material> material { get; set; }
         public virtual DbSet<material_group> material_group { get; set; }
         public virtual DbSet<menu> menu { get; set; }
-        public virtual DbSet<monitor_server> monitor_server { get; set; }
         public virtual DbSet<picture> picture { get; set; }
-        public virtual DbSet<qiniu_config> qiniu_config { get; set; }
-        public virtual DbSet<qiniu_content> qiniu_content { get; set; }
         public virtual DbSet<quartz_job> quartz_job { get; set; }
         public virtual DbSet<quartz_log> quartz_log { get; set; }
-        public virtual DbSet<role> role { get; set; }
-        public virtual DbSet<shipping_templates> shipping_templates { get; set; }
-        public virtual DbSet<shipping_templates_free> shipping_templates_free { get; set; }
-        public virtual DbSet<shipping_templates_region> shipping_templates_region { get; set; }
-        public virtual DbSet<store_bargain> store_bargain { get; set; }
-        public virtual DbSet<store_bargain_user> store_bargain_user { get; set; }
-        public virtual DbSet<store_bargain_user_help> store_bargain_user_help { get; set; }
-        public virtual DbSet<store_canvas> store_canvas { get; set; }
         public virtual DbSet<store_cart> store_cart { get; set; }
         public virtual DbSet<store_category> store_category { get; set; }
         public virtual DbSet<store_combination> store_combination { get; set; }
@@ -71,7 +52,7 @@ namespace Mapper
         public virtual DbSet<store_order> store_order { get; set; }
         public virtual DbSet<store_order_cart_info> store_order_cart_info { get; set; }
         public virtual DbSet<store_order_status> store_order_status { get; set; }
-        public virtual DbSet<store_pink> store_pink { get; set; }
+        public virtual DbSet<store_product> store_product { get; set; }
         public virtual DbSet<store_product_attr> store_product_attr { get; set; }
         public virtual DbSet<store_product_attr_result> store_product_attr_result { get; set; }
         public virtual DbSet<store_product_attr_value> store_product_attr_value { get; set; }
@@ -84,29 +65,12 @@ namespace Mapper
         public virtual DbSet<system_city> system_city { get; set; }
         public virtual DbSet<system_config> system_config { get; set; }
         public virtual DbSet<system_group_data> system_group_data { get; set; }
-        public virtual DbSet<system_store> system_store { get; set; }
-        public virtual DbSet<system_store_staff> system_store_staff { get; set; }
-        public virtual DbSet<system_user_level> system_user_level { get; set; }
         public virtual DbSet<system_user_task> system_user_task { get; set; }
         public virtual DbSet<user> user { get; set; }
         public virtual DbSet<user_address> user_address { get; set; }
         public virtual DbSet<user_avatar> user_avatar { get; set; }
         public virtual DbSet<user_bill> user_bill { get; set; }
-        public virtual DbSet<user_enter> user_enter { get; set; }
-        public virtual DbSet<user_extract> user_extract { get; set; }
-        public virtual DbSet<user_group> user_group { get; set; }
-        public virtual DbSet<user_level> user_level { get; set; }
         public virtual DbSet<user_recharge> user_recharge { get; set; }
         public virtual DbSet<user_sign> user_sign { get; set; }
-        public virtual DbSet<user_task_finish> user_task_finish { get; set; }
-        public virtual DbSet<verification_code> verification_code { get; set; }
-        public virtual DbSet<visits> visits { get; set; }
-        public virtual DbSet<wechat_live> wechat_live { get; set; }
-        public virtual DbSet<wechat_live_goods> wechat_live_goods { get; set; }
-        public virtual DbSet<wechat_media> wechat_media { get; set; }
-        public virtual DbSet<wechat_menu> wechat_menu { get; set; }
-        public virtual DbSet<wechat_reply> wechat_reply { get; set; }
-        public virtual DbSet<wechat_template> wechat_template { get; set; }
-        public virtual DbSet<store_product> store_product { get; set; }
     }
 }

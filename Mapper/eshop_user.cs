@@ -30,7 +30,9 @@ namespace Mapper
         public Nullable<System.DateTime> create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public string last_ip { get; set; }
+        public decimal now_money { get; set; }
         public decimal brokerage_price { get; set; }
+        public decimal integral { get; set; }
         public int sign_num { get; set; }
         public bool status { get; set; }
         public byte level { get; set; }
@@ -44,7 +46,5 @@ namespace Mapper
         public Nullable<long> adminid { get; set; }
         public string login_type { get; set; }
         public Nullable<bool> is_del { get; set; }
-        public decimal now_money { get; set; }
-        public decimal integral { get; set; }
     }
 }

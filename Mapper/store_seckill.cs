@@ -20,10 +20,15 @@ namespace Mapper
         public string images { get; set; }
         public string title { get; set; }
         public string info { get; set; }
+        public Nullable<decimal> price { get; set; }
+        public Nullable<decimal> cost { get; set; }
+        public Nullable<decimal> ot_price { get; set; }
+        public Nullable<decimal> give_integral { get; set; }
         public long sort { get; set; }
         public long stock { get; set; }
         public long sales { get; set; }
         public string unit_name { get; set; }
+        public decimal postage { get; set; }
         public string description { get; set; }
         public System.DateTime start_time { get; set; }
         public System.DateTime stop_time { get; set; }
@@ -38,10 +43,5 @@ namespace Mapper
         public Nullable<long> time_id { get; set; }
         public Nullable<bool> spec_type { get; set; }
         public Nullable<int> temp_id { get; set; }
-        public Nullable<decimal> price { get; set; }
-        public Nullable<decimal> cost { get; set; }
-        public Nullable<decimal> ot_price { get; set; }
-        public Nullable<decimal> give_integral { get; set; }
-        public decimal postage { get; set; }
     }
 }

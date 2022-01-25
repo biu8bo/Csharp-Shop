@@ -105,28 +105,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="alipay_config.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="app_version.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="article.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="column_config.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="dept.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="dict.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="dict_detail.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="email_config.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="eshoppingModel.Context.cs">
@@ -158,9 +146,6 @@
     </Compile>
     <Compile Include="Interceptor\Log4netHelper.cs" />
     <Compile Include="Interceptor\EFCommandInterceptor.cs" />
-    <Compile Include="job.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="local_storage.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
@@ -176,47 +161,14 @@
     <Compile Include="menu.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="monitor_server.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="picture.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="qiniu_config.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="qiniu_content.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="quartz_job.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="quartz_log.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="role.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="shipping_templates.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="shipping_templates_free.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="shipping_templates_region.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="store_bargain.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="store_bargain_user.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="store_bargain_user_help.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="store_canvas.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="store_cart.cs">
@@ -250,9 +202,6 @@
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="store_order_status.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="store_pink.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product.cs">
@@ -294,15 +243,6 @@
     <Compile Include="system_group_data.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="system_store.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="system_store_staff.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="system_user_level.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="system_user_task.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
@@ -318,49 +258,10 @@
     <Compile Include="user_bill.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="user_enter.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_extract.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_group.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_level.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="user_recharge.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="user_sign.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="user_task_finish.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="verification_code.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="visits.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_live.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_live_goods.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_media.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_menu.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_reply.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="wechat_template.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
