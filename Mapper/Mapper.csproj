@@ -177,9 +177,6 @@
     <Compile Include="store_category.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="store_combination.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="store_coupon.cs">
       <DependentUpon>eshoppingModel.tt</DependentUpon>
     </Compile>

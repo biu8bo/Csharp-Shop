@@ -8,13 +8,16 @@ namespace Service.ProductService
 {
   public  class StoreProductAttrValue
     {
+
         public decimal id { get; set; }
         public decimal product_id { get; set; }
         public string sku { get; set; }
         public long stock { get; set; }
         public Nullable<long> sales { get; set; }
+        public decimal price { get; set; }
         public string image { get; set; }
         public string unique { get; set; }
+        public decimal cost { get; set; }
         public string bar_code { get; set; }
         public Nullable<decimal> ot_price { get; set; }
         public decimal weight { get; set; }

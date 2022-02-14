@@ -23,7 +23,7 @@ namespace Commons.Utils
             target= JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(source));
         }
 
-        public static T ConvertTo(object source, T target)
+        public static T ConvertTo(object source)
         {
             return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(source));
         }

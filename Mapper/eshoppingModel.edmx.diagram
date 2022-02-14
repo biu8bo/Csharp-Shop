@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="20bf3c64c67c4ee0a6b83b9708d85831" Name="Diagram1" ZoomLevel="111">
+      <Diagram DiagramId="20bf3c64c67c4ee0a6b83b9708d85831" Name="Diagram1" ZoomLevel="78">
         <EntityTypeShape EntityType="eshoppingModel.article" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="eshoppingModel.column_config" Width="1.5" PointX="7.75" PointY="6.75" />
         <EntityTypeShape EntityType="eshoppingModel.dict" Width="1.5" PointX="2.75" PointY="1.125" />
@@ -23,7 +23,6 @@
         <EntityTypeShape EntityType="eshoppingModel.quartz_log" Width="1.5" PointX="13.75" PointY="0.75" />
         <EntityTypeShape EntityType="eshoppingModel.store_cart" Width="1.5" PointX="13.75" PointY="4.75" />
         <EntityTypeShape EntityType="eshoppingModel.store_category" Width="1.5" PointX="13.75" PointY="9.75" />
-        <EntityTypeShape EntityType="eshoppingModel.store_combination" Width="1.5" PointX="13.75" PointY="13.75" />
         <EntityTypeShape EntityType="eshoppingModel.store_coupon" Width="1.5" PointX="15.75" PointY="0.75" />
         <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue" Width="1.5" PointX="2.75" PointY="15.75" />
         <EntityTypeShape EntityType="eshoppingModel.store_coupon_issue_user" Width="1.5" PointX="4.75" PointY="15.75" />
