@@ -9,15 +9,18 @@
 
 namespace Mapper
 {
+    using Interceptor;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.Entity.Infrastructure.Interception;
+
     public partial class eshoppingEntities : DbContext
     {
         public eshoppingEntities()
             : base("name=eshoppingEntities")
         {
+            DbInterception.Add(new EFCommandInterceptor());
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -43,7 +46,6 @@ namespace Mapper
         public virtual DbSet<quartz_log> quartz_log { get; set; }
         public virtual DbSet<store_cart> store_cart { get; set; }
         public virtual DbSet<store_category> store_category { get; set; }
-        public virtual DbSet<store_combination> store_combination { get; set; }
         public virtual DbSet<store_coupon> store_coupon { get; set; }
         public virtual DbSet<store_coupon_issue> store_coupon_issue { get; set; }
         public virtual DbSet<store_coupon_issue_user> store_coupon_issue_user { get; set; }

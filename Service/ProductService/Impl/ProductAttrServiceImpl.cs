@@ -15,7 +15,7 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                return ObjectUtils<List<StoreProductAttr>>.ConvertTo(db.store_product_attr.Where(e => e.product_id == pid).ToList(), new List<StoreProductAttr>());
+                return ObjectUtils<List<StoreProductAttr>>.ConvertTo(db.store_product_attr.Where(e => e.product_id == pid).ToList());
             }
         }
 
@@ -23,7 +23,7 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                return ObjectUtils<List<StoreProductAttrValue>>.ConvertTo(db.store_product_attr_value.Where(e => e.product_id == pid).ToList(), new List<StoreProductAttrValue>());
+                return ObjectUtils<List<StoreProductAttrValue>>.ConvertTo(db.store_product_attr_value.Where(e => e.product_id == pid).ToList());
             }
         }
     }
