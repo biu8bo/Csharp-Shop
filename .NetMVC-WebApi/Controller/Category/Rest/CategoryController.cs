@@ -1,4 +1,5 @@
 ﻿using Commons.BaseModels;
+using MVC卓越项目.Commons.Attribute;
 using Service.Service;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,9 @@ namespace MVC卓越项目.Controller.Category.Rest
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [CacheEnable]
         [Route("category")]
-        public ApiResult<List<CategoryVO>> Get()
+        public ApiResult<List<CategoryVO>> category()
         {
         
             return ApiResult<List<CategoryVO>>.ok(categoryService.GetCategories());

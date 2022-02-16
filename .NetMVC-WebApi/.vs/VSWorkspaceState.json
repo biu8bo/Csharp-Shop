@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\App_Data\\Log",
     "\\App_Start",
     "\\Controller",
+    "\\Controller\\Category",
+    "\\Controller\\Category\\Rest",
     "\\Controller\\Index",
     "\\Controller\\Index\\Rest"
   ],
-  "SelectedNode": "\\MVC卓越项目.sln",
+  "SelectedNode": "\\Controller\\Category\\Rest\\CategoryController.cs",
   "PreviewInSolutionExplorer": false
 }
