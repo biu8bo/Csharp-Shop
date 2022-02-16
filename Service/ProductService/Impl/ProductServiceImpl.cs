@@ -94,7 +94,10 @@ namespace Service.Service
                 {
                     where.And(e => e.is_new == true);
                 }
-
+                if (ObjectUtils<bool>.isNotNull(productParam.cid))
+                {
+                    where.And(e => e.cate_id == productParam.cid);
+                }
                 //构造SQL
                 IQueryable<store_product> query = db.store_product.Where(where.GetExpression());
                 //如果是销量排序

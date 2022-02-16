@@ -20,5 +20,8 @@ namespace Service.Service
 
         //销量排序
         public string salesOrder { get; set; }
+
+        //类型id
+        public string cid { get; set; }
     }
 }

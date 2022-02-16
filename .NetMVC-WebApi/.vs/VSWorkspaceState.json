@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\App_Data",
+    "\\App_Data\\Log",
     "\\Controller",
     "\\Controller\\Index",
     "\\Controller\\Index\\Rest"

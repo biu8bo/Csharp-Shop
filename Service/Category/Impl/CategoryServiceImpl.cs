@@ -14,7 +14,6 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-
                 List<store_category> result = db.store_category.Where(e => e.is_del == false&&e.is_show==true).OrderBy(e=>e.id).ToList();
                 List<CategoryVO> categories = new List<CategoryVO>();
                 for (int i = 0; i < result.Count; i++)
@@ -38,8 +37,6 @@ namespace Service.Service
                         );
                         categories.Add(parentItem);
                     }
-
-                  
                 }
          
                 return categories;
