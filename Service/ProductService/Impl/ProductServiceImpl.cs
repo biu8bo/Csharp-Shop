@@ -94,6 +94,7 @@ namespace Service.Service
                 {
                     where.And(e => e.is_new == true);
                 }
+                 //分类ID
                 if (ObjectUtils<bool>.isNotNull(productParam.cid))
                 {
                     where.And(e => e.cate_id == productParam.cid);
