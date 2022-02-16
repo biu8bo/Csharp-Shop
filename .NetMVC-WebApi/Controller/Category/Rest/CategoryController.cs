@@ -1,4 +1,5 @@
-﻿using Service.Service;
+﻿using Commons.BaseModels;
+using Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,16 @@ namespace MVC卓越项目.Controller.Category.Rest
     {
         private readonly ICategoryService categoryService = Bootstrapper.Resolve<ICategoryService>();
         
+        /// <summary>
+        /// 商品分类数据
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        [Route("gets")]
-        public IEnumerable<string> Get()
+        [Route("category")]
+        public ApiResult<List<CategoryVO>> Get()
         {
-            categoryService.GetCategories();
-            return new string[] { "value1", "value2" };
+        
+            return ApiResult<List<CategoryVO>>.ok(categoryService.GetCategories());
         }
     }
 }

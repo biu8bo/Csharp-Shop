@@ -375,7 +375,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controller\Index\Rest\IndexController.cs" />
     <Compile Include="Controller\Product\Rest\ProductController.cs" />
-    <Compile Include="Controller\Product\Rest\ProductReplyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

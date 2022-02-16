@@ -138,10 +138,10 @@
     <Compile Include="CollectService\ICollectService.cs" />
     <Compile Include="CollectService\Impl\CollectServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductAttrServiceImpl.cs" />
-    <Compile Include="ProductService\Impl\ProductReplyImpl.cs" />
+    <Compile Include="ProductService\Impl\ProductReplyServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductServiceImpl.cs" />
     <Compile Include="ProductService\IProductAttrService.cs" />
-    <Compile Include="ProductService\IProductReply.cs" />
+    <Compile Include="ProductService\IProductReplyService.cs" />
     <Compile Include="ProductService\IProductService.cs" />
     <Compile Include="ProductService\Param\ProductParam.cs" />
     <Compile Include="ProductService\VO\ProductReply.cs" />

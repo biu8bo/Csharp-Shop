@@ -22,7 +22,7 @@ namespace Service.Service
     {
         private readonly IProductAttrService iProductAttrService = Bootstrapper.Resolve<IProductAttrService>();
         private readonly ICollectService iCollectService = Bootstrapper.Resolve<ICollectService>();
-        private readonly IProductReply iProductReply = Bootstrapper.Resolve<IProductReply>();
+        private readonly IProductReplyService iProductReply = Bootstrapper.Resolve<IProductReplyService>();
         public PageModel selectProductsByPage(int page, int limit)
         {
             using (var db = new eshoppingEntities())
