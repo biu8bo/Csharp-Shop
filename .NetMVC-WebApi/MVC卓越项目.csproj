@@ -369,6 +369,7 @@
   <ItemGroup>
     <Compile Include="Controller\Auth\Rest\LoginController.cs" />
     <Compile Include="Controller\Category\Rest\CategoryController.cs" />
+    <Compile Include="Controller\Collect\Rest\CollectController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -398,7 +399,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Log\" />
+    <Folder Include="Controller\Collect\Param\" />
     <Folder Include="Controller\Product\Param\" />
+    <Folder Include="Views\Collect\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.config">

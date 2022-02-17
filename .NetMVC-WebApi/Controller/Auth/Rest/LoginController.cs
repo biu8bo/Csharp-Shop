@@ -23,30 +23,24 @@ namespace MVC卓越项目.Controller.Auth
       public  ApiResult<eshop_user> Login([FromBody] LoginParam loginParam)
         {
            string ip = Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
-           string ipv4 = string.Empty;
             // 利用 Dns.GetHostEntry 方法，由获取的 IPv6 位址反查 DNS 纪录，<br> // 再逐一判断何者为 IPv4 协议，即可转为 IPv4 位址。
             if (string.IsNullOrEmpty(ip))
             {
                 ip = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
             }
 
-            
-            foreach (IPAddress ipAddr in Dns.GetHostEntry(ip).AddressList)
-            {
-                if (ipAddr.AddressFamily.ToString() == "InterNetwork")
-                {
-                   ipv4 = ipAddr.ToString();
-                }
-            }
-            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam, ipv4),"登陆成功");
+
+            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam, ip),"登陆成功");
         }
         [AuthCheck]
         [HttpPost]
         [Route("logout")]
+
+        ///退出登录
         public ApiResult<eshop_user> Logout()
         {
             return ApiResult<eshop_user>.ok(iAuthService.Logout(Request.Headers.GetValues("Authorization").First()));
         }
-
+        //注册
     }
 }

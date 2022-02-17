@@ -1,8 +1,11 @@
 ﻿using Commons.Utils;
 using Mapper;
 using MVC卓越项目.Commons.ExceptionHandler;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +25,7 @@ namespace Service.Service
             //获取数据库有无记录
             store_product_relation productRelation = this.isProductRelation(pid, uid, type);
             //如果是收藏并且有记录
-            if (type.Equals("collect")&&!ObjectUtils<object>.isNotNull(productRelation))
+            if (type.Equals("collect")&&ObjectUtils<object>.isNotNull(productRelation))
             {
                 //取消收藏
                 this.delRroductRelation(pid,uid,type);
@@ -30,27 +33,37 @@ namespace Service.Service
             }
             using (var db = new eshoppingEntities())
             {
-                //如果是足迹并且有记录
-                if (type.Equals("foot")&& ObjectUtils<object>.isNotNull(productRelation))
+                var tran = db.Database.BeginTransaction();  //开启事务
+                try
                 {
-                    //更新时间
-                    
-                    productRelation = db.store_product_relation.Where(e => e.product_id == pid && e.uid == uid && e.type == type && e.is_del == false).FirstOrDefault();
-                    productRelation.update_time = DateTime.Now;
-                }
-                else
-                {
-                    db.store_product_relation.Add(new store_product_relation()
+                    //如果是足迹并且有记录
+                    if (type.Equals("foot") && ObjectUtils<object>.isNotNull(productRelation))
                     {
-                        product_id = pid,
-                        uid = uid,
-                        type = type,
-                        create_time =  DateTime.Now,
-                        update_time =  DateTime.Now,
-                        is_del = false
-                    });
+                        //更新时间
+
+                        productRelation = db.store_product_relation.Where(e => e.product_id == pid && e.uid == uid && e.type == type && e.is_del == false).FirstOrDefault();
+                        productRelation.update_time = DateTime.Now;
+                    }
+                    else
+                    {
+                        db.store_product_relation.Add(new store_product_relation()
+                        {
+                            product_id = pid,
+                            uid = uid,
+                            type = type,
+                            create_time = DateTime.Now,
+                            update_time = DateTime.Now,
+                            is_del = false
+                        });
+                    }
+                    db.SaveChanges();
+                    tran.Commit();  //必须调用Commit()，不然数据不会保存
                 }
-                db.SaveChanges();
+                catch (Exception)
+                {
+
+                    tran.Rollback();
+                }
             }
         }
         /// <summary>
@@ -63,15 +76,14 @@ namespace Service.Service
         {
             using (eshoppingEntities db = new eshoppingEntities())
             {
-                store_product_relation relation  =  new store_product_relation()
-                {
-                    product_id = pid,
-                    uid = uid,
-                    type = type
-                };
-                db.store_product_relation.Attach(relation) ;
-                db.store_product_relation.Remove(relation);
-                db.SaveChanges();
+                var tran = db.Database.BeginTransaction();
+                var parameters = new DbParameter[] {
+                                      new MySqlParameter { ParameterName = "pid", Value = pid},
+                                      new MySqlParameter { ParameterName = "uid", Value = uid},
+                                      new MySqlParameter { ParameterName = "type", Value = type},
+                                  };
+                db.Database.ExecuteSqlCommand($"Delete FROM store_product_relation WHERE product_id = @pid and uid = @uid and type = @type", parameters);
+                tran.Commit();
             }
         }
 
