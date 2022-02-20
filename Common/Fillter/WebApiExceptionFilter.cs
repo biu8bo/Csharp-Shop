@@ -59,7 +59,8 @@ namespace MVC卓越项目.Commons.Fillter
                    new JsonMediaTypeFormatter(),
                    "application/json"
                  )
-            }; ;
+            };
+
             // 回传
             actionExecutedContext.Response = httpResponseMessage;
             base.OnException(actionExecutedContext);

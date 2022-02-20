@@ -31,8 +31,10 @@ namespace MVC卓越项目.Commons.Utils
         /// <returns></returns>
         public static bool SetStringValue(string key, string value)
         {
+          
             return db.StringSet(key, value);
         }
+
         /// <summary>
         /// 保存单个key value
         /// </summary>
@@ -79,6 +81,15 @@ namespace MVC卓越项目.Commons.Utils
             return db.StringGet(key);
         }
 
+        /// <summary>
+        /// 获取键和过期时间
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static RedisValueWithExpiry GetStringWithExpiry(string key)
+        {
+          return  db.StringGetWithExpiry(key);
+        }
         /// <summary>
         /// Delete the value for string key 
         /// </summary>

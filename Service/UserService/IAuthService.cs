@@ -1,5 +1,6 @@
 ﻿using Mapper;
 using MVC卓越项目.Controller.Auth.Param;
+using Service.UserService.Param;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,5 +24,10 @@ namespace Service.Service
         /// </summary>
         /// <returns></returns>
          bool Logout(string token);
+
+        Hashtable Register(RegisterParam registerParam, string ip);
+
+
+        int verify(string phone);
     }
 }
