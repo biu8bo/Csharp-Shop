@@ -9,6 +9,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -32,7 +33,7 @@ namespace Service.Service
             RedisValueWithExpiry flag = RedisHelper.GetStringWithExpiry("verify:" + phone);
             if (!flag.Value.IsNullOrEmpty)
             {
-                throw new ApiException(500,$"请等待{(int)flag.Expiry.Value.TotalSeconds}秒");
+                throw new ApiException(501, $"请等待{(int)flag.Expiry.Value.TotalSeconds}秒");
             }
             else
             {
@@ -41,35 +42,70 @@ namespace Service.Service
                 RedisHelper.SetStringKey("verify:" + phone, verify, TimeSpan.FromMilliseconds(60 * 1000));
                 return verify;
             }
-            
+
         }
 
-       /// <summary>
-       /// 注册
-       /// </summary>
-       /// <param name="registerParam"></param>
-       /// <param name="ip"></param>
-       /// <returns></returns>
-        public Hashtable Register(RegisterParam registerParam,string ip )
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="registerParam"></param>
+        /// <param name="ip"></param>
+        /// <returns></returns>
+        public Hashtable Register(RegisterParam registerParam, string ip)
         {
-            using (var db = new eshoppingEntities())
+
+
+            string code = registerParam.vertity;
+
+            if (String.IsNullOrEmpty(code))
             {
-                var tran = db.Database.BeginTransaction();
-                eshop_user user =    new eshop_user();
-                user.add_ip = ip;
-                user.username = registerParam.username;
-                user.password = registerParam.password;
-                user.now_money = 0;
-                user.create_time = DateTime.Now;
-                user.update_time = DateTime.Now;
-                user.last_ip = ip;
-                user.phone = registerParam.phone;
-                db.eshop_user.Add(user);
-                db.SaveChanges();
-                tran.Commit();
+                throw new ApiException(500, "请输入验证码！");
             }
 
-            return null;
+            string redisCode = RedisHelper.GetStringValue("verify:" + registerParam.phone);
+            if (string.IsNullOrEmpty(redisCode))
+            {
+                throw new ApiException(500, "请先获取验证码！");
+            }
+
+            if (redisCode.Equals(code))
+            {
+           
+                    using (var db = new eshoppingEntities())
+                    {
+                        var tran = db.Database.BeginTransaction();
+                          eshop_user result1 = db.eshop_user.FirstOrDefault(e => e.phone == registerParam.phone);
+                    if (result1 is null)
+                    {
+                        throw new ApiException(501, "该手机号已被注册！");
+                    }
+                        eshop_user user = new eshop_user();
+                        user.add_ip = ip;
+                        user.user_type = "h5";
+                        user.addres = "";
+                        user.login_type = "";
+                        user.username = registerParam.username;
+                        user.password = registerParam.password;
+                        user.now_money = 0;
+                        user.create_time = DateTime.Now;
+                        user.update_time = DateTime.Now;
+                        user.last_ip = ip;
+                        user.phone = registerParam.phone;
+                        db.eshop_user.Add(user);
+                        db.SaveChanges();
+                        tran.Commit();
+                    }
+            }
+            else
+            {
+                throw new ApiException(500, "验证码错误！");
+            }
+            return new Hashtable()
+            {
+                {"user", registerParam.username},
+            { "phone",registerParam.phone},
+                { "msg","注册成功"}
+            };
 
         }
         /// <summary>
@@ -82,7 +118,7 @@ namespace Service.Service
             using (var db = new eshoppingEntities())
             {
                 var tran = db.Database.BeginTransaction();
-                eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del==false).FirstOrDefault();
+                eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del == false).FirstOrDefault();
                 if (result == null)
                 {
                     logger.WriteInfo($"IP[{ip}]:用户尝试登录 用户名:{loginParam.Username}  登录失败！");
@@ -90,7 +126,7 @@ namespace Service.Service
                 }
                 else
                 {
-                    if (result.status==false)
+                    if (result.status == false)
                     {
                         throw new AuthException("该用户已被封禁！");
                     }
@@ -107,7 +143,7 @@ namespace Service.Service
                     //将用户名设为键 写入缓存
                     RedisHelper.SetStringKey("USER:" + result.username + ":" + token, result, TimeSpan.FromMilliseconds(Convert.ToDouble(exTime)));
 
-                    logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 登陆成功！" );
+                    logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 登陆成功！");
                     Hashtable hashtable = new Hashtable();
                     hashtable.Add("token", token);
                     hashtable.Add("USER", result);

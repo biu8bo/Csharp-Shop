@@ -31,9 +31,9 @@ namespace MVC卓越项目.Commons.Fillter
             {
                 origin = strings.FirstOrDefault();
                 actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Origin", origin);
-                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourheaderfeild");
-                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Methods", "Get, Post, Put, Options, Delete");
-                actionExecutedContext.Response.Headers.Add("Access-Control-Expose-Headers", "Cache-Control, Content-Language, Content-Type, Expires, Last-Modified, Pragma");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type,Content-Length,Authorization,Accept,X-Requested-With");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Methods", "Get,Post,Put,Options,Delete");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Expose-Headers", "Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma");
                 actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
                 actionExecutedContext.Response.Headers.Add("Access-Control-Max-Age", "60");
             }

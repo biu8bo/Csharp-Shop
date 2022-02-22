@@ -79,7 +79,7 @@ namespace MVC卓越项目.Commons.Attribute
                 }
                 else
                 {
-                    throw new AuthException();
+                    throw new AuthException("请先登录");
                 }
             }
         }

@@ -13,12 +13,14 @@ namespace Service.UserService.Param
        public string username { get; set; }
 
         //密码
-        public string password { get => password; set => Md5Utils.Md5(value); }
+        public string password { get; set; }
 
         //手机号码
         public string phone { get; set; }
        
         //验证码
         public string vertity { get; set; }
+
+
      }
 }

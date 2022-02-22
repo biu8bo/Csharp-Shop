@@ -1,6 +1,8 @@
 ﻿using Commons.BaseModels;
+using Commons.Utils;
 using Mapper;
 using MVC卓越项目.Commons.Attribute;
+using MVC卓越项目.Commons.ExceptionHandler;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Controller.Auth.Param;
 using Service.Service;
@@ -40,14 +42,19 @@ namespace MVC卓越项目.Controller.Auth
 
         [HttpPost]
         [Route("register")]
-        public ApiResult<eshop_user> Register([FromBody] RegisterParam registerParam)
+        public ApiResult<Hashtable> Register([FromBody] RegisterParam registerParam)
         {
-            return ApiResult<eshop_user>.ok(iAuthService.Register(registerParam, getIP()), "登陆成功");
+            registerParam.password = Md5Utils.Md5(registerParam.password); 
+            return ApiResult<Hashtable>.ok(iAuthService.Register(registerParam, getIP()), "注册成功");
         }
         [HttpGet]
-        [Route("vertify")]
+        [Route("register/vertify")]
         public ApiResult<int> vertify(string phone)
         {
+            if (String.IsNullOrEmpty(phone))
+            {
+                throw new ApiException(500,"请输入手机号码");
+            }
             int vertifyCode =  iAuthService.verify(phone);
             return ApiResult<int>.ok(vertifyCode);
 
