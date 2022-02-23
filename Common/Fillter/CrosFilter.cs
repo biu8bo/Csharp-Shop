@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+
 
 namespace MVC卓越项目.Commons.Fillter
 {
@@ -11,7 +10,6 @@ namespace MVC卓越项目.Commons.Fillter
     /// </summary
     public class CrosFilter : ActionFilterAttribute
     {
-
         /// <summary>
         /// 跨域拦截器
         /// </summary>
@@ -37,7 +35,7 @@ namespace MVC卓越项目.Commons.Fillter
                 actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
                 actionExecutedContext.Response.Headers.Add("Access-Control-Max-Age", "60");
             }
-           
+
             //传递给下一个过滤器
             base.OnActionExecuted(actionExecutedContext);
 

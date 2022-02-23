@@ -367,7 +367,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Auth\Rest\LoginController.cs" />
+    <Compile Include="Controller\Auth\Rest\AuthController.cs" />
     <Compile Include="Controller\Category\Rest\CategoryController.cs" />
     <Compile Include="Controller\Collect\Rest\CollectController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
@@ -401,7 +401,6 @@
     <Folder Include="App_Data\Log\" />
     <Folder Include="Controller\Collect\Param\" />
     <Folder Include="Controller\Product\Param\" />
-    <Folder Include="Views\Collect\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.config">
@@ -448,7 +447,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:8888/</IISUrl>
+          <IISUrl>http://192.168.2.34:8889/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:8888/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
