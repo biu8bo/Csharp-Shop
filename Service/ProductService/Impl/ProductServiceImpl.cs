@@ -144,6 +144,10 @@ namespace Service.Service
             using (var db = new eshoppingEntities())
             {
                 store_product storeProduct = db.store_product.Where(e => e.id == pid && e.is_del == false && e.is_show == true).FirstOrDefault();
+                if (storeProduct is null)
+                {
+                    throw new ApiException(500,"商品不存在！");
+                }
                 storeProduct.browse += 1;
                 db.SaveChanges();
             }

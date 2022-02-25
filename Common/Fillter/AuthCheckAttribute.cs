@@ -73,14 +73,9 @@ namespace MVC卓越项目.Commons.Attribute
                     base.OnActionExecuting(actionContext);
                     return;
                 }
-                if (e is AuthException)
-                {
-                    throw e;
-                }
-                else
-                {
-                    throw new AuthException("请先登录");
-                }
+
+                throw new ApiException(401,"暂未登录！"); ;
+               
             }
         }
         public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)

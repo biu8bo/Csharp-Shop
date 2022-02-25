@@ -27,5 +27,6 @@ namespace MVC卓越项目.Controller.Category.Rest
         
             return ApiResult<List<CategoryVO>>.ok(categoryService.GetCategories());
         }
+
     }
 }

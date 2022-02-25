@@ -1,4 +1,7 @@
-﻿using Mapper;
+﻿using Commons.BaseModels;
+using Mapper;
+using Service.CollectService.Param;
+using Service.CollectService.VO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,5 +41,8 @@ namespace Service.Service
         /// <param name="type"></param>
         /// <returns></returns>
         store_product_relation isProductRelation(long pid, long uid, string type);
+
+
+        PageModel getCollectsByType(CollectParam collectParam,long uid);
     }
 }

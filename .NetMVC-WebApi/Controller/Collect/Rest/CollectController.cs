@@ -40,6 +40,26 @@ namespace MVC卓越项目.Controller.Collect.Rest
             collectService.delRroductRelation(collectParam.pid, LocalUser.getUidByUser(), collectParam.type);
             return ApiResult<int>.ok();
         }
+        [HttpPost]
+        [Route("getCollect")]
+        [AuthCheck]
+        public ApiResult<PageModel> getCollect([FromBody] CollectParam collectParam)
+        {
+            return ApiResult<PageModel>.ok(collectService.getCollectsByType(collectParam, LocalUser.getUidByUser()));
+        }
+        /// <summary>
+        /// 批量删除收藏/足迹
+        /// </summary>
+        /// <param name="collectParam"></param>
+        /// <returns></returns>
+         [HttpPost]
+        [Route("delCollectBatch")]
+        [AuthCheck]
+        public ApiResult<int> delCollectWithBatch([FromBody] CollectBatchParam collectParam)
+        {
+            collectService.delRroductRelationWithBatch(collectParam.pid, LocalUser.getUidByUser(), collectParam.type);
+            return ApiResult<int>.ok();
+        }
 
     }
 }

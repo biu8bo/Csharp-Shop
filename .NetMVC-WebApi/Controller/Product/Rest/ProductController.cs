@@ -1,6 +1,7 @@
 ﻿using Commons.BaseModels;
 using Mapper;
 using MVC卓越项目.Commons.Attribute;
+using MVC卓越项目.Commons.ExceptionHandler;
 using MVC卓越项目.Commons.Utils;
 using Service.ProductService;
 using Service.Service;
@@ -31,6 +32,10 @@ namespace MVC卓越项目.Controller.Product
         [AuthCheck(required =false)]
         public ApiResult<ProductVO> getProductInfo(long id)
         {
+            if (id<0)
+            {
+                throw new ApiException(500,"商品不存在！");
+            }
             long uid = LocalUser.getUidByUser();
             //浏览量增加
             productService.incBrowseNum(id);

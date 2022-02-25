@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MVC卓越项目.Commons.ExceptionHandler;
+using Newtonsoft.Json;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,22 @@ namespace MVC卓越项目.Commons.Utils
     /// <summary>
     /// Redis读写帮助类
     /// </summary>
-    public class RedisHelper
+    public  class RedisHelper
     {
         private static string RedisConnectionStr = ConfigurationManager.AppSettings["RedisConnectionStr"];
         private static ConnectionMultiplexer redis { get; set; }
         private static IDatabase db { get; set; }
         static RedisHelper()
         {
-            redis = ConnectionMultiplexer.Connect(RedisConnectionStr);
-            db = redis.GetDatabase();
+            try
+            {
+                redis = ConnectionMultiplexer.Connect(RedisConnectionStr);
+                db = redis.GetDatabase();
+            }
+            catch (Exception e)
+            {
+                throw new ApiException(500,"Redis缓存连接超时！");
+            }
         }
         #region string类型操作
         /// <summary>
@@ -35,6 +43,18 @@ namespace MVC卓越项目.Commons.Utils
             return db.StringSet(key, value);
         }
 
+        /// <summary>
+        /// 删除一组key
+        /// </summary>
+        /// <returns></returns>
+        public static long DeleteKeyByLike(string pattern)
+        {
+
+            var _server = redis.GetServer(redis.GetEndPoints()[0]); //默认一个服务器
+
+            var keys = _server.Keys(database: db.Database, pattern: pattern); //StackExchange.Redis 会根据redis版本决定用keys还是   scan(>2.8) 
+            return db.KeyDelete(keys.ToArray()); //删除一组key
+        }
         /// <summary>
         /// 保存单个key value
         /// </summary>

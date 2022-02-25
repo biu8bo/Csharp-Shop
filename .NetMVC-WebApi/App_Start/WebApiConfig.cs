@@ -17,9 +17,11 @@ namespace MVC卓越项目
         {
 
 
+        
+            
+            config.Filters.Add(new CrosFilter());
             //全局异常处理器注册
             config.Filters.Add(new WebApiExceptionFilter());
-            config.Filters.Add(new CrosFilter());
             //开启特性路由 
             config.MapHttpAttributeRoutes();
 

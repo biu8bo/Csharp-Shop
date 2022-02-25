@@ -1,7 +1,11 @@
-﻿using Commons.Utils;
+﻿using Commons.BaseModels;
+using Commons.Utils;
 using Mapper;
 using MVC卓越项目.Commons.ExceptionHandler;
+using MVC卓越项目.Commons.Utils;
 using MySql.Data.MySqlClient;
+using Service.CollectService.Param;
+using Service.CollectService.VO;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -46,7 +50,8 @@ namespace Service.Service
                         productRelation.update_time = DateTime.Now;
                     }
                     else
-                    {
+                    { 
+                        //没有记录就添加记录
                         db.store_product_relation.Add(new store_product_relation()
                         {
                             product_id = pid,
@@ -62,7 +67,7 @@ namespace Service.Service
                 }
                 catch (Exception)
                 {
-
+                    //出错回滚
                     tran.Rollback();
                 }
             }
@@ -83,7 +88,7 @@ namespace Service.Service
                                       new MySqlParameter { ParameterName = "uid", Value = uid},
                                       new MySqlParameter { ParameterName = "type", Value = type},
                                   };
-                db.Database.ExecuteSqlCommand($"Delete FROM store_product_relation WHERE product_id = @pid and uid = @uid and type = @type", parameters);
+                db.Database.ExecuteSqlCommand($"UPDATE `eshopping`.`store_product_relation` SET `is_del` = 1 WHERE product_id = @pid and uid = @uid and type = @type", parameters);
                 tran.Commit();
             }
         }
@@ -99,6 +104,7 @@ namespace Service.Service
           pids.ForEach(e => this.delRroductRelation(e, uid, type));
         }
 
+
         //查询收藏和足迹存在
         public store_product_relation isProductRelation(long pid, long uid, string type)
         {
@@ -107,5 +113,25 @@ namespace Service.Service
              return   db.store_product_relation.Where(e=>e.product_id == pid&&e.uid == uid && e.type == type&&e.is_del == false).FirstOrDefault();
             }
         }
+
+        //分页查询 收藏/足迹 type == collect/foot
+        public PageModel getCollectsByType(CollectParam collectParam,long uid)
+        {
+            using (var db = new eshoppingEntities())
+            {
+              return  new PageUtils<Object>(collectParam.Page, collectParam.Limit).StartPage(db.store_product_relation.Where(e => e.is_del == false && e.uid == uid && e.type.Equals(collectParam.type)).Join(db.store_product, relation => relation
+                   .product_id, product => product.id, (relation, product) => new
+                   {
+                       id = relation.id,
+                       pid = relation.product_id,
+                       image = product.image,
+                       storeName = product.store_name,
+                       storeInfo = product.store_info,
+                       price = product.price,
+                       time = relation.update_time
+                   }).OrderByDescending(e=>e.time));
+            }
+        }
+
     }
 }

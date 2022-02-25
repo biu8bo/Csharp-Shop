@@ -60,8 +60,8 @@ namespace MVC卓越项目.Commons.Utils
                 throw new ApiException(500,"你没有使用OrderBy或OrderByDescending方法就直接调用分页方法！");
             }
             //计算是否有下一页
-            int s = page.Total / (this.pageSize * (this.pageNum - 1) + this.pageSize);
-            if (s == 0)
+            float s = page.Total / (this.pageSize * (this.pageNum - 1) + this.pageSize * 1.0f);
+            if (s<=1)
             {
                 page.HasNext = false;
             }

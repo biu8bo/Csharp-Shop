@@ -63,6 +63,18 @@ namespace MVC卓越项目.Commons.Fillter
 
             // 回传
             actionExecutedContext.Response = httpResponseMessage;
+            //解决报错产生的跨域问题
+            if (actionExecutedContext.Request.Headers.Contains("Origin"))
+            {
+                //尝试获取orgin头
+                IEnumerable<string> strings = actionExecutedContext.Request.Headers.GetValues("Origin");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Origin", strings.FirstOrDefault());
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type,Content-Length,Authorization,Accept,X-Requested-With");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Methods", "Get,Post,Put,Options,Delete");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Expose-Headers", "Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+                actionExecutedContext.Response.Headers.Add("Access-Control-Max-Age", "60");
+            }
             base.OnException(actionExecutedContext);
         }
 

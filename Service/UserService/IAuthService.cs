@@ -25,9 +25,24 @@ namespace Service.Service
         /// <returns></returns>
          bool Logout(string token);
 
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="registerParam"></param>
+        /// <param name="ip"></param>
+        /// <returns></returns>
         Hashtable Register(RegisterParam registerParam, string ip);
 
-
+        /// <summary>
+        /// 发送验证码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         int verify(string phone);
+
+        /// <summary>
+        /// 踢出用户
+        /// </summary>
+        void kictOutUser(string username);
     }
 }

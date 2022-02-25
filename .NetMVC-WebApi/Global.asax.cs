@@ -30,8 +30,7 @@ namespace MVC卓越项目
                 Response.Headers.Add("Access-Control-Expose-Headers", "Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma");
                 Response.Headers.Add("Access-Control-Allow-Credentials", "true");
                 Response.Headers.Add("Access-Control-Max-Age", "60");
-                //对输出的内容进行缓冲，执行page.Response.Flush()时，会等所有内容缓冲完毕，将内容发送到客户端
-                //这样就不会出错，造成页面卡死状态，让用户无限制等下去
+                //对输出的内容进行缓冲
                 Response.Flush();
             }
         }

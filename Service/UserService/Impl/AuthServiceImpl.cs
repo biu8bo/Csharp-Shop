@@ -140,6 +140,8 @@ namespace Service.Service
                     string exTime = ConfigurationManager.AppSettings["tokenExpired"];
                     //获取token
                     string token = JwtHelper.getJwtEncode(result);
+                    //踢出原来的用户
+                    kictOutUser(result.username);
                     //将用户名设为键 写入缓存
                     RedisHelper.SetStringKey("USER:" + result.username + ":" + token, result, TimeSpan.FromMilliseconds(Convert.ToDouble(exTime)));
 
@@ -158,7 +160,16 @@ namespace Service.Service
             //获取当前接口用户
             eshop_user user = LocalUser.getUser();
             logger.WriteInfo($"用户：{user.username} 退出登录");
+            //踢出用户
             return RedisHelper.DeleteStringKey("USER:" + user.username + ":" + token);
+        }
+
+        /// <summary>
+        /// 踢出用户
+        /// </summary>
+        public void kictOutUser(string username)
+        {
+            RedisHelper.DeleteKeyByLike($"USER:{username}*");
         }
     }
 }

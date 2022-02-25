@@ -191,7 +191,9 @@
     <Compile Include="Category\VO\CategoryVO.cs" />
     <Compile Include="CollectService\ICollectService.cs" />
     <Compile Include="CollectService\Impl\CollectServiceImpl.cs" />
+    <Compile Include="CollectService\Param\CollectBatchParam.cs" />
     <Compile Include="CollectService\Param\CollectParam.cs" />
+    <Compile Include="CollectService\VO\CollectVO.cs" />
     <Compile Include="ProductService\Impl\ProductAttrServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductReplyServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductServiceImpl.cs" />
