@@ -11,10 +11,13 @@ namespace Mapper
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class store_cart
     {
-        public long id { get; set; }
+
+        public store_product_attr_value store_product_attr_value;
+        public decimal id { get; set; }
         public decimal uid { get; set; }
         public string type { get; set; }
         public decimal product_id { get; set; }

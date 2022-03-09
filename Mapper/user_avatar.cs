@@ -17,7 +17,7 @@ namespace Mapper
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public user_avatar()
         {
-            this.user = new HashSet<user>();
+            this.users = new HashSet<user>();
         }
     
         public long id { get; set; }
@@ -27,6 +27,6 @@ namespace Mapper
         public Nullable<System.DateTime> create_time { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user> user { get; set; }
+        public virtual ICollection<user> users { get; set; }
     }
 }

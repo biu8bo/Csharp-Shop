@@ -17,8 +17,8 @@ namespace MVC卓越项目
         {
 
 
-        
-            
+            //全局删除循环引用
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
             config.Filters.Add(new CrosFilter());
             //全局异常处理器注册
             config.Filters.Add(new WebApiExceptionFilter());

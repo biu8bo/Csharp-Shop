@@ -54,10 +54,10 @@ namespace MVC卓越项目.Commons.Utils
             {
                 page.Data = queryObject.Skip(pageSize * (pageNum - 1)).Take(pageSize).ToList();
             }
-            catch
+            catch(Exception e)
             {
 
-                throw new ApiException(500,"你没有使用OrderBy或OrderByDescending方法就直接调用分页方法！");
+                throw new ApiException(500,e + "你没有使用OrderBy或OrderByDescending方法就直接调用分页方法！");
             }
             //计算是否有下一页
             float s = page.Total / (this.pageSize * (this.pageNum - 1) + this.pageSize * 1.0f);

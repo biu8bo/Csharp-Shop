@@ -14,6 +14,12 @@ namespace Mapper
     
     public partial class store_order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public store_order()
+        {
+            this.store_order_cart_info = new HashSet<store_order_cart_info>();
+        }
+    
         public decimal id { get; set; }
         public string order_id { get; set; }
         public string extend_order_id { get; set; }
@@ -36,7 +42,7 @@ namespace Mapper
         public string pay_type { get; set; }
         public System.DateTime create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
-        public bool status { get; set; }
+        public int status { get; set; }
         public bool refund_status { get; set; }
         public string refund_reason_wap_img { get; set; }
         public string refund_reason_wap_explain { get; set; }
@@ -69,5 +75,8 @@ namespace Mapper
         public Nullable<bool> is_channel { get; set; }
         public Nullable<bool> is_remind { get; set; }
         public Nullable<bool> is_system_del { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<store_order_cart_info> store_order_cart_info { get; set; }
     }
 }

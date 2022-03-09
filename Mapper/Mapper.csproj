@@ -106,187 +106,187 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="article.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="column_config.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="dict.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="dict_detail.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
-    <Compile Include="eshoppingModel.Context.cs">
+    <Compile Include="eshopping.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>eshoppingModel.Context.tt</DependentUpon>
+      <DependentUpon>eshopping.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="eshoppingModel.cs">
+    <Compile Include="eshopping.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
-    <Compile Include="eshoppingModel.Designer.cs">
+    <Compile Include="eshoppingEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>eshoppingModel.edmx</DependentUpon>
+      <DependentUpon>eshoppingEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="eshop_user.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="express.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="gen_config.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="gen_test.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="Interceptor\Log4netHelper.cs" />
     <Compile Include="Interceptor\EFCommandInterceptor.cs" />
     <Compile Include="local_storage.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="log.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="material.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="material_group.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="menu.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="picture.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="quartz_job.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="quartz_log.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_cart.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_category.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_coupon.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_coupon_issue.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_coupon_issue_user.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_coupon_user.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_customer.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_order.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_order_cart_info.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_order_status.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_attr.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_attr_result.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_attr_value.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_relation.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_reply.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_product_rule.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_seckill.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="store_visit.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="system_attachment.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="system_city.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="system_config.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="system_group_data.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="system_user_task.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user_address.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user_avatar.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user_bill.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user_recharge.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
     <Compile Include="user_sign.cs">
-      <DependentUpon>eshoppingModel.tt</DependentUpon>
+      <DependentUpon>eshopping.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EntityDeploy Include="eshoppingModel.edmx">
+    <EntityDeploy Include="eshoppingEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>eshoppingModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>eshoppingEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="eshoppingModel.edmx.diagram">
-      <DependentUpon>eshoppingModel.edmx</DependentUpon>
+    <None Include="eshoppingEntities.edmx.diagram">
+      <DependentUpon>eshoppingEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="eshoppingModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>eshoppingModel.Context.cs</LastGenOutput>
-      <DependentUpon>eshoppingModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="eshoppingModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>eshoppingModel.edmx</DependentUpon>
-      <LastGenOutput>eshoppingModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="eshopping.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eshoppingEntities.edmx</DependentUpon>
+      <LastGenOutput>eshopping.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="eshopping.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eshoppingEntities.edmx</DependentUpon>
+      <LastGenOutput>eshopping.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

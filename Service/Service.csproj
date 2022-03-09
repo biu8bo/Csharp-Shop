@@ -76,8 +76,8 @@
     <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\MySql.Data.8.0.26\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\.NetMVC-WebApi\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\.NetMVC-WebApi\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\Pipelines.Sockets.Unofficial.2.2.0\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
@@ -186,14 +186,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\ICategoryService.cs" />
-    <Compile Include="Category\Impl\CategoryServiceImpl.cs" />
-    <Compile Include="Category\VO\CategoryVO.cs" />
+    <Compile Include="CartService\ICartService.cs" />
+    <Compile Include="CartService\Impl\CartServiceImpl.cs" />
+    <Compile Include="CartService\Param\CartParam.cs" />
+    <Compile Include="CategoryService\ICategoryService.cs" />
+    <Compile Include="CategoryService\Impl\CategoryServiceImpl.cs" />
+    <Compile Include="CategoryService\VO\CategoryVO.cs" />
     <Compile Include="CollectService\ICollectService.cs" />
     <Compile Include="CollectService\Impl\CollectServiceImpl.cs" />
     <Compile Include="CollectService\Param\CollectBatchParam.cs" />
     <Compile Include="CollectService\Param\CollectParam.cs" />
     <Compile Include="CollectService\VO\CollectVO.cs" />
+    <Compile Include="OrderService\Enum\OrderTypeEnum.cs" />
+    <Compile Include="OrderService\Impl\OrderServiceImpl.cs" />
+    <Compile Include="OrderService\IOrderService.cs" />
+    <Compile Include="OrderService\Param\OrderTypeParam.cs" />
+    <Compile Include="OrderService\VO\UserOrderVO.cs" />
     <Compile Include="ProductService\Impl\ProductAttrServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductReplyServiceImpl.cs" />
     <Compile Include="ProductService\Impl\ProductServiceImpl.cs" />
@@ -230,5 +238,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,875 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eshoppingEntitiesStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="articles">
+      <EntityTypeMapping TypeName="eshoppingEntities.article">
+        <MappingFragment StoreEntitySet="article">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="image_input" ColumnName="image_input" />
+          <ScalarProperty Name="synopsis" ColumnName="synopsis" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="share_title" ColumnName="share_title" />
+          <ScalarProperty Name="share_synopsis" ColumnName="share_synopsis" />
+          <ScalarProperty Name="visit" ColumnName="visit" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="mer_id" ColumnName="mer_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_banner" ColumnName="is_banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="column_config">
+      <EntityTypeMapping TypeName="eshoppingEntities.column_config">
+        <MappingFragment StoreEntitySet="column_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="column_name" ColumnName="column_name" />
+          <ScalarProperty Name="column_type" ColumnName="column_type" />
+          <ScalarProperty Name="dict_name" ColumnName="dict_name" />
+          <ScalarProperty Name="extra" ColumnName="extra" />
+          <ScalarProperty Name="form_show" ColumnName="form_show" />
+          <ScalarProperty Name="form_type" ColumnName="form_type" />
+          <ScalarProperty Name="key_type" ColumnName="key_type" />
+          <ScalarProperty Name="list_show" ColumnName="list_show" />
+          <ScalarProperty Name="not_null" ColumnName="not_null" />
+          <ScalarProperty Name="query_type" ColumnName="query_type" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="date_annotation" ColumnName="date_annotation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dicts">
+      <EntityTypeMapping TypeName="eshoppingEntities.dict">
+        <MappingFragment StoreEntitySet="dict">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dict_detail">
+      <EntityTypeMapping TypeName="eshoppingEntities.dict_detail">
+        <MappingFragment StoreEntitySet="dict_detail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="dict_id" ColumnName="dict_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eshop_user">
+      <EntityTypeMapping TypeName="eshoppingEntities.eshop_user">
+        <MappingFragment StoreEntitySet="eshop_user">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="partner_id" ColumnName="partner_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="add_ip" ColumnName="add_ip" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="last_ip" ColumnName="last_ip" />
+          <ScalarProperty Name="now_money" ColumnName="now_money" />
+          <ScalarProperty Name="brokerage_price" ColumnName="brokerage_price" />
+          <ScalarProperty Name="integral" ColumnName="integral" />
+          <ScalarProperty Name="sign_num" ColumnName="sign_num" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="spread_uid" ColumnName="spread_uid" />
+          <ScalarProperty Name="spread_time" ColumnName="spread_time" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="is_promoter" ColumnName="is_promoter" />
+          <ScalarProperty Name="pay_count" ColumnName="pay_count" />
+          <ScalarProperty Name="spread_count" ColumnName="spread_count" />
+          <ScalarProperty Name="addres" ColumnName="addres" />
+          <ScalarProperty Name="adminid" ColumnName="adminid" />
+          <ScalarProperty Name="login_type" ColumnName="login_type" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expresses">
+      <EntityTypeMapping TypeName="eshoppingEntities.express">
+        <MappingFragment StoreEntitySet="express">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gen_config">
+      <EntityTypeMapping TypeName="eshoppingEntities.gen_config">
+        <MappingFragment StoreEntitySet="gen_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="table_name" ColumnName="table_name" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
+          <ScalarProperty Name="module_name" ColumnName="module_name" />
+          <ScalarProperty Name="pack" ColumnName="pack" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="api_path" ColumnName="api_path" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="api_alias" ColumnName="api_alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gen_test">
+      <EntityTypeMapping TypeName="eshoppingEntities.gen_test">
+        <MappingFragment StoreEntitySet="gen_test">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="local_storage">
+      <EntityTypeMapping TypeName="eshoppingEntities.local_storage">
+        <MappingFragment StoreEntitySet="local_storage">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="suffix" ColumnName="suffix" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="operate" ColumnName="operate" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logs">
+      <EntityTypeMapping TypeName="eshoppingEntities.log">
+        <MappingFragment StoreEntitySet="log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="exception_detail" ColumnName="exception_detail" />
+          <ScalarProperty Name="log_type" ColumnName="log_type" />
+          <ScalarProperty Name="method" ColumnName="method" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="request_ip" ColumnName="request_ip" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="browser" ColumnName="browser" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="materials">
+      <EntityTypeMapping TypeName="eshoppingEntities.material">
+        <MappingFragment StoreEntitySet="material">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="create_id" ColumnName="create_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="material_group">
+      <EntityTypeMapping TypeName="eshoppingEntities.material_group">
+        <MappingFragment StoreEntitySet="material_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="create_id" ColumnName="create_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="eshoppingEntities.menu">
+        <MappingFragment StoreEntitySet="menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="i_frame" ColumnName="i_frame" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="component" ColumnName="component" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="cache" ColumnName="cache" />
+          <ScalarProperty Name="hidden" ColumnName="hidden" />
+          <ScalarProperty Name="component_name" ColumnName="component_name" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="permission" ColumnName="permission" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pictures">
+      <EntityTypeMapping TypeName="eshoppingEntities.picture">
+        <MappingFragment StoreEntitySet="picture">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="delete_url" ColumnName="delete_url" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="md5code" ColumnName="md5code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quartz_job">
+      <EntityTypeMapping TypeName="eshoppingEntities.quartz_job">
+        <MappingFragment StoreEntitySet="quartz_job">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bean_name" ColumnName="bean_name" />
+          <ScalarProperty Name="cron_expression" ColumnName="cron_expression" />
+          <ScalarProperty Name="is_pause" ColumnName="is_pause" />
+          <ScalarProperty Name="job_name" ColumnName="job_name" />
+          <ScalarProperty Name="method_name" ColumnName="method_name" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quartz_log">
+      <EntityTypeMapping TypeName="eshoppingEntities.quartz_log">
+        <MappingFragment StoreEntitySet="quartz_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="baen_name" ColumnName="baen_name" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="cron_expression" ColumnName="cron_expression" />
+          <ScalarProperty Name="exception_detail" ColumnName="exception_detail" />
+          <ScalarProperty Name="is_success" ColumnName="is_success" />
+          <ScalarProperty Name="job_name" ColumnName="job_name" />
+          <ScalarProperty Name="method_name" ColumnName="method_name" />
+          <ScalarProperty Name="params" ColumnName="params" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_cart">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_cart">
+        <MappingFragment StoreEntitySet="store_cart">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_attr_unique" ColumnName="product_attr_unique" />
+          <ScalarProperty Name="cart_num" ColumnName="cart_num" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_pay" ColumnName="is_pay" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="is_new" ColumnName="is_new" />
+          <ScalarProperty Name="combination_id" ColumnName="combination_id" />
+          <ScalarProperty Name="seckill_id" ColumnName="seckill_id" />
+          <ScalarProperty Name="bargain_id" ColumnName="bargain_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_category">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_category">
+        <MappingFragment StoreEntitySet="store_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="cate_name" ColumnName="cate_name" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_coupon">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_coupon">
+        <MappingFragment StoreEntitySet="store_coupon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="integral" ColumnName="integral" />
+          <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
+          <ScalarProperty Name="use_min_price" ColumnName="use_min_price" />
+          <ScalarProperty Name="coupon_time" ColumnName="coupon_time" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_coupon_issue">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_coupon_issue">
+        <MappingFragment StoreEntitySet="store_coupon_issue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="ctype" ColumnName="ctype" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="total_count" ColumnName="total_count" />
+          <ScalarProperty Name="remain_count" ColumnName="remain_count" />
+          <ScalarProperty Name="is_permanent" ColumnName="is_permanent" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_coupon_issue_user">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_coupon_issue_user">
+        <MappingFragment StoreEntitySet="store_coupon_issue_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="issue_coupon_id" ColumnName="issue_coupon_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_coupon_user">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_coupon_user">
+        <MappingFragment StoreEntitySet="store_coupon_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="coupon_title" ColumnName="coupon_title" />
+          <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
+          <ScalarProperty Name="use_min_price" ColumnName="use_min_price" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="use_time" ColumnName="use_time" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_fail" ColumnName="is_fail" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_customer">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_customer">
+        <MappingFragment StoreEntitySet="store_customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="is_enable" ColumnName="is_enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_order">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_order">
+        <MappingFragment StoreEntitySet="store_order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="extend_order_id" ColumnName="extend_order_id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="user_address" ColumnName="user_address" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="freight_price" ColumnName="freight_price" />
+          <ScalarProperty Name="total_num" ColumnName="total_num" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="total_postage" ColumnName="total_postage" />
+          <ScalarProperty Name="pay_price" ColumnName="pay_price" />
+          <ScalarProperty Name="pay_postage" ColumnName="pay_postage" />
+          <ScalarProperty Name="deduction_price" ColumnName="deduction_price" />
+          <ScalarProperty Name="coupon_id" ColumnName="coupon_id" />
+          <ScalarProperty Name="coupon_price" ColumnName="coupon_price" />
+          <ScalarProperty Name="paid" ColumnName="paid" />
+          <ScalarProperty Name="pay_time" ColumnName="pay_time" />
+          <ScalarProperty Name="pay_type" ColumnName="pay_type" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="refund_status" ColumnName="refund_status" />
+          <ScalarProperty Name="refund_reason_wap_img" ColumnName="refund_reason_wap_img" />
+          <ScalarProperty Name="refund_reason_wap_explain" ColumnName="refund_reason_wap_explain" />
+          <ScalarProperty Name="refund_reason_time" ColumnName="refund_reason_time" />
+          <ScalarProperty Name="refund_reason_wap" ColumnName="refund_reason_wap" />
+          <ScalarProperty Name="refund_reason" ColumnName="refund_reason" />
+          <ScalarProperty Name="refund_price" ColumnName="refund_price" />
+          <ScalarProperty Name="delivery_sn" ColumnName="delivery_sn" />
+          <ScalarProperty Name="delivery_name" ColumnName="delivery_name" />
+          <ScalarProperty Name="delivery_type" ColumnName="delivery_type" />
+          <ScalarProperty Name="delivery_id" ColumnName="delivery_id" />
+          <ScalarProperty Name="gain_integral" ColumnName="gain_integral" />
+          <ScalarProperty Name="use_integral" ColumnName="use_integral" />
+          <ScalarProperty Name="pay_integral" ColumnName="pay_integral" />
+          <ScalarProperty Name="back_integral" ColumnName="back_integral" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="unique" ColumnName="unique" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mer_id" ColumnName="mer_id" />
+          <ScalarProperty Name="is_mer_check" ColumnName="is_mer_check" />
+          <ScalarProperty Name="combination_id" ColumnName="combination_id" />
+          <ScalarProperty Name="pink_id" ColumnName="pink_id" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="seckill_id" ColumnName="seckill_id" />
+          <ScalarProperty Name="bargain_id" ColumnName="bargain_id" />
+          <ScalarProperty Name="verify_code" ColumnName="verify_code" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="shipping_type" ColumnName="shipping_type" />
+          <ScalarProperty Name="is_channel" ColumnName="is_channel" />
+          <ScalarProperty Name="is_remind" ColumnName="is_remind" />
+          <ScalarProperty Name="is_system_del" ColumnName="is_system_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_order_cart_info">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_order_cart_info">
+        <MappingFragment StoreEntitySet="store_order_cart_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="cart_info" ColumnName="cart_info" />
+          <ScalarProperty Name="unique" ColumnName="unique" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_order_status">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_order_status">
+        <MappingFragment StoreEntitySet="store_order_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="change_type" ColumnName="change_type" />
+          <ScalarProperty Name="change_message" ColumnName="change_message" />
+          <ScalarProperty Name="change_time" ColumnName="change_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product">
+        <MappingFragment StoreEntitySet="store_product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mer_id" ColumnName="mer_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="slider_image" ColumnName="slider_image" />
+          <ScalarProperty Name="store_name" ColumnName="store_name" />
+          <ScalarProperty Name="store_info" ColumnName="store_info" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+          <ScalarProperty Name="cate_id" ColumnName="cate_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="vip_price" ColumnName="vip_price" />
+          <ScalarProperty Name="ot_price" ColumnName="ot_price" />
+          <ScalarProperty Name="postage" ColumnName="postage" />
+          <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_benefit" ColumnName="is_benefit" />
+          <ScalarProperty Name="is_best" ColumnName="is_best" />
+          <ScalarProperty Name="is_new" ColumnName="is_new" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_postage" ColumnName="is_postage" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="mer_use" ColumnName="mer_use" />
+          <ScalarProperty Name="give_integral" ColumnName="give_integral" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="is_seckill" ColumnName="is_seckill" />
+          <ScalarProperty Name="is_bargain" ColumnName="is_bargain" />
+          <ScalarProperty Name="is_good" ColumnName="is_good" />
+          <ScalarProperty Name="ficti" ColumnName="ficti" />
+          <ScalarProperty Name="browse" ColumnName="browse" />
+          <ScalarProperty Name="code_path" ColumnName="code_path" />
+          <ScalarProperty Name="is_sub" ColumnName="is_sub" />
+          <ScalarProperty Name="temp_id" ColumnName="temp_id" />
+          <ScalarProperty Name="spec_type" ColumnName="spec_type" />
+          <ScalarProperty Name="is_integral" ColumnName="is_integral" />
+          <ScalarProperty Name="integral" ColumnName="integral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_attr">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_attr">
+        <MappingFragment StoreEntitySet="store_product_attr">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="attr_name" ColumnName="attr_name" />
+          <ScalarProperty Name="attr_values" ColumnName="attr_values" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_attr_result">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_attr_result">
+        <MappingFragment StoreEntitySet="store_product_attr_result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="result" ColumnName="result" />
+          <ScalarProperty Name="change_time" ColumnName="change_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_attr_value">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_attr_value">
+        <MappingFragment StoreEntitySet="store_product_attr_value">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="unique" ColumnName="unique" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="bar_code" ColumnName="bar_code" />
+          <ScalarProperty Name="ot_price" ColumnName="ot_price" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="brokerage" ColumnName="brokerage" />
+          <ScalarProperty Name="brokerage_two" ColumnName="brokerage_two" />
+          <ScalarProperty Name="pink_price" ColumnName="pink_price" />
+          <ScalarProperty Name="pink_stock" ColumnName="pink_stock" />
+          <ScalarProperty Name="seckill_price" ColumnName="seckill_price" />
+          <ScalarProperty Name="seckill_stock" ColumnName="seckill_stock" />
+          <ScalarProperty Name="integral" ColumnName="integral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_relation">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_relation">
+        <MappingFragment StoreEntitySet="store_product_relation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_reply">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_reply">
+        <MappingFragment StoreEntitySet="store_product_reply">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="unique" ColumnName="unique" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="product_score" ColumnName="product_score" />
+          <ScalarProperty Name="service_score" ColumnName="service_score" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="pics" ColumnName="pics" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="merchant_reply_content" ColumnName="merchant_reply_content" />
+          <ScalarProperty Name="merchant_reply_time" ColumnName="merchant_reply_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="is_reply" ColumnName="is_reply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_product_rule">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_product_rule">
+        <MappingFragment StoreEntitySet="store_product_rule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rule_name" ColumnName="rule_name" />
+          <ScalarProperty Name="rule_value" ColumnName="rule_value" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_seckill">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_seckill">
+        <MappingFragment StoreEntitySet="store_seckill">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="ot_price" ColumnName="ot_price" />
+          <ScalarProperty Name="give_integral" ColumnName="give_integral" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+          <ScalarProperty Name="postage" ColumnName="postage" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="stop_time" ColumnName="stop_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_postage" ColumnName="is_postage" />
+          <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+          <ScalarProperty Name="time_id" ColumnName="time_id" />
+          <ScalarProperty Name="spec_type" ColumnName="spec_type" />
+          <ScalarProperty Name="temp_id" ColumnName="temp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="store_visit">
+      <EntityTypeMapping TypeName="eshoppingEntities.store_visit">
+        <MappingFragment StoreEntitySet="store_visit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_type" ColumnName="product_type" />
+          <ScalarProperty Name="cate_id" ColumnName="cate_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_attachment">
+      <EntityTypeMapping TypeName="eshoppingEntities.system_attachment">
+        <MappingFragment StoreEntitySet="system_attachment">
+          <ScalarProperty Name="att_id" ColumnName="att_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="att_dir" ColumnName="att_dir" />
+          <ScalarProperty Name="satt_dir" ColumnName="satt_dir" />
+          <ScalarProperty Name="att_size" ColumnName="att_size" />
+          <ScalarProperty Name="att_type" ColumnName="att_type" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="image_type" ColumnName="image_type" />
+          <ScalarProperty Name="module_type" ColumnName="module_type" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="invite_code" ColumnName="invite_code" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_city">
+      <EntityTypeMapping TypeName="eshoppingEntities.system_city">
+        <MappingFragment StoreEntitySet="system_city">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="area_code" ColumnName="area_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="merger_name" ColumnName="merger_name" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_config">
+      <EntityTypeMapping TypeName="eshoppingEntities.system_config">
+        <MappingFragment StoreEntitySet="system_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_group_data">
+      <EntityTypeMapping TypeName="eshoppingEntities.system_group_data">
+        <MappingFragment StoreEntitySet="system_group_data">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_user_task">
+      <EntityTypeMapping TypeName="eshoppingEntities.system_user_task">
+        <MappingFragment StoreEntitySet="system_user_task">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="task_type" ColumnName="task_type" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="level_id" ColumnName="level_id" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="is_show" ColumnName="is_show" />
+          <ScalarProperty Name="is_must" ColumnName="is_must" />
+          <ScalarProperty Name="illustrate" ColumnName="illustrate" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="eshoppingEntities.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="avatar_id" ColumnName="avatar_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="last_password_reset_time" ColumnName="last_password_reset_time" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_address">
+      <EntityTypeMapping TypeName="eshoppingEntities.user_address">
+        <MappingFragment StoreEntitySet="user_address">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="post_code" ColumnName="post_code" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_avatar">
+      <EntityTypeMapping TypeName="eshoppingEntities.user_avatar">
+        <MappingFragment StoreEntitySet="user_avatar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_bill">
+      <EntityTypeMapping TypeName="eshoppingEntities.user_bill">
+        <MappingFragment StoreEntitySet="user_bill">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="pm" ColumnName="pm" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_recharge">
+      <EntityTypeMapping TypeName="eshoppingEntities.user_recharge">
+        <MappingFragment StoreEntitySet="user_recharge">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="give_price" ColumnName="give_price" />
+          <ScalarProperty Name="recharge_type" ColumnName="recharge_type" />
+          <ScalarProperty Name="paid" ColumnName="paid" />
+          <ScalarProperty Name="pay_time" ColumnName="pay_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="refund_price" ColumnName="refund_price" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_sign">
+      <EntityTypeMapping TypeName="eshoppingEntities.user_sign">
+        <MappingFragment StoreEntitySet="user_sign">
+          <ScalarProperty Name="int" ColumnName="int" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

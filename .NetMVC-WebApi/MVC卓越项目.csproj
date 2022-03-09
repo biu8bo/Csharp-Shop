@@ -368,6 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Auth\Rest\AuthController.cs" />
+    <Compile Include="Controller\Cart\CartController.cs" />
     <Compile Include="Controller\Category\Rest\CategoryController.cs" />
     <Compile Include="Controller\Collect\Rest\CollectController.cs" />
     <Compile Include="Controller\ExceptionRedirect\Rest\ExceptionController.cs" />
@@ -375,6 +376,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controller\Index\Rest\IndexController.cs" />
+    <Compile Include="Controller\Order\Rest\OrderController.cs" />
     <Compile Include="Controller\Product\Rest\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -401,6 +403,7 @@
     <Folder Include="App_Data\Log\" />
     <Folder Include="Controller\Collect\Param\" />
     <Folder Include="Controller\Product\Param\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.config">

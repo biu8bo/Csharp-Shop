@@ -20,5 +20,8 @@ namespace Mapper
         public decimal product_id { get; set; }
         public string cart_info { get; set; }
         public string unique { get; set; }
+    
+        public virtual store_cart store_cart { get; set; }
+        public virtual store_product store_product { get; set; }
     }
 }

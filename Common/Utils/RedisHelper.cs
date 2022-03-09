@@ -20,15 +20,10 @@ namespace MVC卓越项目.Commons.Utils
         private static IDatabase db { get; set; }
         static RedisHelper()
         {
-            try
-            {
+            
                 redis = ConnectionMultiplexer.Connect(RedisConnectionStr);
                 db = redis.GetDatabase();
-            }
-            catch (Exception e)
-            {
-                throw new ApiException(500,"Redis缓存连接超时！");
-            }
+           
         }
         #region string类型操作
         /// <summary>
