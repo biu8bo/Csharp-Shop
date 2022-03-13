@@ -17,12 +17,12 @@ namespace Commons.BaseModels
             return (ApiResult<T>)new ApiResult<T>().setCode(HttpStatusCode.OK).setIsSuccess(true).setMsg("请求成功");
         }
 
-        public static ApiResult<T> ok(Object data)
+        public static ApiResult<T> ok(T data)
         {
 
             return (ApiResult<T>)new ApiResult<T>().setCode(HttpStatusCode.OK).setIsSuccess(true).setMsg("请求成功").setData(data);
         }
-        public static ApiResult<T> ok(Object data, String message)
+        public static ApiResult<T> ok(T data, String message)
         {
 
             return (ApiResult<T>)new ApiResult<T>().setCode(HttpStatusCode.OK).setIsSuccess(true).setMsg(message).setData(data);

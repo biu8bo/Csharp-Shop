@@ -12,6 +12,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Rest.Order
 {
+    /// <summary>
+    /// 订单模块
+    /// </summary>
     [RoutePrefix("api")]
    public  class OrderController : ApiController
     {
@@ -19,10 +22,10 @@ namespace MVC卓越项目.Controller.Rest.Order
         [HttpPost]
         [Route("order")]
         [AuthCheck]
-      public  ApiResult<PageModel> GetOrderList(OrderTypeParam orderTypeParam)
+      public  ApiResult<object> GetOrderList(OrderTypeParam orderTypeParam)
         {
             object a = orderService.getOrderInfoByType(orderTypeParam, LocalUser.getUidByUser());
-            return ApiResult<PageModel>.ok(a);
+            return ApiResult<object>.ok(a);
         }
     }
 }

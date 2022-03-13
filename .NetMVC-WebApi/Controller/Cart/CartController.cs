@@ -1,4 +1,5 @@
 ﻿using Commons.BaseModels;
+using Mapper;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
 using Service.CartService.Param;
@@ -11,6 +12,9 @@ using System.Web.Http;
 namespace MVC卓越项目.Controller.Cart
 {
 
+    /// <summary>
+    /// 购物车模块
+    /// </summary>
     [RoutePrefix("api")]
     public class CartController : ApiController
     {
@@ -19,18 +23,49 @@ namespace MVC卓越项目.Controller.Cart
 
         [Route("addCart")]
         [AuthCheck]
-        public ApiResult<int> addCart([FromBody]CartParam cartParam)
+        public ApiResult<int> addCart([FromBody] CartParam cartParam)
         {
             cartService.addCart(cartParam, LocalUser.getUidByUser());
             return ApiResult<int>.ok();
 
         }
-        [Route("getCart")]
+
+        /// <summary>
+        /// 获取购物车数据
+        /// </summary>
+        /// <returns></returns>
+        [Route("getCartList")]
         [AuthCheck]
-        public ApiResult<Object> getCart([FromBody] CartParam cartParam)
+        public ApiResult<Object> getCart()
         {
 
             return ApiResult<Object>.ok(cartService.getCartList(LocalUser.getUidByUser()));
+
+        }
+
+        /// <summary>
+        /// 修改购物车数量
+        /// </summary>
+        /// <param name="cartParam"></param>
+        /// <returns></returns>
+        [Route("updateNum")]
+        [AuthCheck]
+        public ApiResult<Object> updateNum([FromBody] store_cart cartParam)
+        {
+            cartService.updateCartNum(cartParam);
+            return ApiResult<Object>.ok();
+
+        }
+
+
+        [Route("delCart")]
+        [AuthCheck]
+        [HttpPost]
+        public ApiResult<Object> delCart([FromUri]int cid)
+        {
+            
+            cartService.delCartBathById(cid);
+            return ApiResult<Object>.ok();
 
         }
     }

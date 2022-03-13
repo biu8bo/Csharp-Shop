@@ -10,6 +10,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Category.Rest
 {
+    /// <summary>
+    /// 商品分类
+    /// </summary>
     [RoutePrefix("api")]
     public class CategoryController : ApiController
     {

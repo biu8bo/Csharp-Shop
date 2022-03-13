@@ -11,6 +11,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Collect.Rest
 {
+    /// <summary>
+    /// 足迹与收藏模块
+    /// </summary>
     [RoutePrefix("api")]
     public class CollectController : ApiController
     {

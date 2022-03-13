@@ -1,4 +1,5 @@
 ﻿using Mapper;
+using MVC卓越项目.Commons.Utils;
 using Service.CartService.Param;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,8 @@ namespace Service.Service
                 //存在就++
                 else
                 {
+                    //更新操作时间
+                    cart.update_time = DateTime.Now;
                     cart.cart_num += cartParam.num;
                 }
                 db.SaveChanges();
@@ -42,12 +45,14 @@ namespace Service.Service
             }
         }
 
+    
         public Object getCartList(long uid)
         {
             using (var db = new eshoppingEntities())
             {
                 return db.store_cart.Where(e=>e.uid==uid&&e.is_pay==false&&e.is_del==false).Join(db.store_product_attr_value,e=>e.product_attr_unique,e=>e.unique,(cart,value)=>new { 
                 cart=cart,
+                truePrice = value.price,
                 sku=value.sku
                 }).Join(db.store_product,e=>e.cart.product_id,e=>e.id,(cart,product)=>new
                 {
@@ -58,5 +63,34 @@ namespace Service.Service
                
             }
         }
+
+        public void updateCartNum(store_cart cart)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                long uid = LocalUser.getUidByUser();
+                var result = db.store_cart.Where(e => e.id == cart.id&&e.uid==uid).FirstOrDefault();
+                result.cart_num = cart.cart_num;
+                if (cart.cart_num<1)
+                {
+                    delCartBathById((int)result.id);
+                }
+                db.SaveChanges();
+            }
+        }
+
+
+        public void delCartBathById(int id)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                db.Entry(new store_cart()
+                {
+                    id = id
+                }).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+            }
+        }
+
     }
 }

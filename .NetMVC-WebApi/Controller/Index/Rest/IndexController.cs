@@ -64,9 +64,9 @@ namespace MVC卓越项目.Controller.Auth
         [CacheEnable]
         [Route("bastList")]
         [HttpGet]
-        public ApiResult<List<system_group_data>> bastList()
+        public ApiResult<PageModel> bastList()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1,6,ProductEnum.TYPE_1));
+            return ApiResult<PageModel>.ok(indexService.GetList(1,6,ProductEnum.TYPE_1));
         }
         /// <summary>
         /// 热门推荐
@@ -75,9 +75,9 @@ namespace MVC卓越项目.Controller.Auth
         [CacheEnable]
         [Route("hotList")]
         [HttpGet]
-        public ApiResult<List<system_group_data>> hotList()
+        public ApiResult<PageModel> hotList()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 6, ProductEnum.TYPE_2));
+            return ApiResult<PageModel>.ok(indexService.GetList(1, 6, ProductEnum.TYPE_2));
         }
         /// <summary>
         /// 猜你喜欢
@@ -86,9 +86,9 @@ namespace MVC卓越项目.Controller.Auth
         [CacheEnable]
         [Route("guessLike")]
         [HttpGet]
-        public ApiResult<List<system_group_data>> guessLike()
+        public ApiResult<PageModel> guessLike()
         {
-            return ApiResult<List<system_group_data>>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_4));
+            return ApiResult<PageModel>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_4));
         }
         /// <summary>
         /// 热门搜索

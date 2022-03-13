@@ -19,24 +19,27 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Auth
 {
+    /// <summary>
+    /// 权限模块
+    /// </summary>
     [RoutePrefix("api")]
     public class LoginController : ApiController
     {
         private readonly IAuthService iAuthService = Bootstrapper.Resolve<IAuthService>();
         [HttpPost]
         [Route("login")]
-      public  ApiResult<eshop_user> Login([FromBody] LoginParam loginParam)
+      public  ApiResult<Hashtable> Login([FromBody] LoginParam loginParam)
         {
-            return ApiResult<eshop_user>.ok(iAuthService.Login(loginParam, getIP()),"登陆成功");
+            return ApiResult<Hashtable>.ok(iAuthService.Login(loginParam, getIP()),"登陆成功");
         }
         [AuthCheck]
         [HttpPost]
         [Route("logout")]
 
         ///退出登录
-        public ApiResult<eshop_user> Logout()
+        public ApiResult<bool> Logout()
         {
-            return ApiResult<eshop_user>.ok(iAuthService.Logout(Request.Headers.GetValues("Authorization").First()));
+            return ApiResult<bool>.ok(iAuthService.Logout(Request.Headers.GetValues("Authorization").First()));
         }
         //注册
 

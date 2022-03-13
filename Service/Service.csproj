@@ -186,6 +186,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressService\IAddressService.cs" />
+    <Compile Include="AddressService\Impl\AddressServiceImpl.cs" />
     <Compile Include="CartService\ICartService.cs" />
     <Compile Include="CartService\Impl\CartServiceImpl.cs" />
     <Compile Include="CartService\Param\CartParam.cs" />

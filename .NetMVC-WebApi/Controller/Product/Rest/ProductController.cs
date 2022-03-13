@@ -14,6 +14,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.Product
 {
+    /// <summary>
+    /// 商品模块
+    /// </summary>
     [RoutePrefix("api")]
     public class ProductController : ApiController
     {

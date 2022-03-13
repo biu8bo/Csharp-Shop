@@ -26,5 +26,13 @@ namespace Service.Service
         /// <param name="uid"></param>
         /// <returns></returns>
        Object getCartList(long uid);
+
+        /// <summary>
+        /// 批量删除购物车
+        /// </summary>
+        void delCartBathById(int id);
+
+
+         void updateCartNum(store_cart cart);
     }
 }

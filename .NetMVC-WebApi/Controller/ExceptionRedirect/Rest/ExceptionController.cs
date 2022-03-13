@@ -8,10 +8,11 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.ExceptionRedirect.Rest
 {
-    [RoutePrefix("Exception")]
-    ///
+    /// <summary>
     /// 异常处理模块
-    ///
+    /// </summary>
+    [RoutePrefix("Exception")]
+    
     public class ExceptionController : ApiController
     {
         [Route("MethodNotFound")]
