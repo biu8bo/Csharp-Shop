@@ -412,6 +412,7 @@
   <ItemGroup>
     <Folder Include="App_Data\Log\" />
     <Folder Include="Controller\Collect\Param\" />
+    <Folder Include="Controller\Order\VO\" />
     <Folder Include="Controller\Product\Param\" />
     <Folder Include="Views\Cart\" />
   </ItemGroup>

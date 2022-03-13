@@ -9,6 +9,7 @@
 
 namespace Mapper
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -18,6 +19,7 @@ namespace Mapper
         public Nullable<long> avatar_id { get; set; }
         public string email { get; set; }
         public Nullable<long> enabled { get; set; }
+
         public string password { get; set; }
         public string username { get; set; }
         public Nullable<long> dept_id { get; set; }

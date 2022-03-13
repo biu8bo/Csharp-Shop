@@ -1,10 +1,12 @@
 ﻿using Commons.BaseModels;
 using Commons.Utils;
 using Mapper;
+using MVC卓越项目;
 using MVC卓越项目.Commons.Utils;
 using Newtonsoft.Json;
 using Service.OrderService.Enum;
 using Service.OrderService.Param;
+using Service.OrderService.VO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +18,52 @@ namespace Service.Service
 {
     public class OrderServiceImpl : IOrderService
     {
+      
+        public OrderConfirmVO confirmOrder(CartIDIDsParam cartIDsParam,long uid)
+        {
+
+            OrderConfirmVO orderConfirmVO = new OrderConfirmVO();
+            using (var db = new eshoppingEntities())
+            {
+                var tran = db.Database.BeginTransaction();
+                List<store_cart> storeCarts = new List<store_cart>();
+                decimal price = 0;
+               //购物车中的信息
+               cartIDsParam.cartIds.ForEach(id => {
+                    
+                    store_cart cart = db.store_cart.Where(e => e.id == id&&e.uid==uid).FirstOrDefault();
+                    cart.productInfo = db.store_product.Where(e => e.id == cart.product_id).FirstOrDefault();
+                    cart.attrInfo = db.store_product_attr_value.Where(e => e.unique == cart.product_attr_unique).FirstOrDefault();
+                    //计算价格 
+                    price += cart.attrInfo.price*cart.cart_num;  
+                    storeCarts.Add(cart);
+                });
+
+                orderConfirmVO.priceGroup = new Hashtable() { { "totalPrice", price } };
+                orderConfirmVO.cartInfo = storeCarts;
+                //获取地址信息
+                orderConfirmVO.addressInfo = db.user_address.Where(e => e.is_default == true && e.uid == uid).FirstOrDefault();
+                //userInfo
+                orderConfirmVO.userInfo = db.eshop_user.Where(e => e.uid == uid).FirstOrDefault();
+                orderConfirmVO.orderKey = cacheOrderInfo(orderConfirmVO,uid);
+                tran.Commit();
+                return orderConfirmVO;
+            }
+        }
+        /// <summary>
+        /// 将生成的订单信息存入缓存
+        /// </summary>
+        /// <param name="orderConfirmVO"></param>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+      string cacheOrderInfo(OrderConfirmVO orderConfirmVO,long uid)
+        {
+            string resultJson = JsonConvert.SerializeObject(orderConfirmVO);
+            string md5 = Md5Utils.Md5(uid + resultJson);
+            RedisHelper.SetStringKey("Order:"+md5,resultJson, TimeSpan.FromMilliseconds(1000 * 60 * 10));
+            return md5;
+        }
+
         public PageModel getOrderInfoByType(OrderTypeParam orderTypeParam, long uid)
         {
             using (var db = new eshoppingEntities())

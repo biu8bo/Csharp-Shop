@@ -1,4 +1,5 @@
 ﻿using Commons.BaseModels;
+using Mapper;
 using Service.OrderService.Param;
 using Service.OrderService.VO;
 using System;
@@ -14,13 +15,18 @@ namespace Service.Service
     /// </summary>
  public interface IOrderService
     {
-   /// <summary>
-   /// 通过用户ID和订单类型查询订单信息
-   /// </summary>
-   /// <param name="orderTypeParam"></param>
-   /// <param name="uid"></param>
-   /// <returns></returns>
-       PageModel getOrderInfoByType(OrderTypeParam orderTypeParam, long uid);
-        
+        /// <summary>
+        /// 通过用户ID和订单类型查询订单信息
+        /// </summary>
+        /// <param name="orderTypeParam"></param>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        PageModel getOrderInfoByType(OrderTypeParam orderTypeParam, long uid);
+        /// <summary>
+        /// 确认订单
+        /// </summary>
+        /// <param name="orderIDsParam"></param>
+        /// <returns></returns>
+        OrderConfirmVO confirmOrder(CartIDIDsParam cartIDsParam, long uid);
     }
 }

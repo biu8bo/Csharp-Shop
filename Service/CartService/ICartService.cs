@@ -18,7 +18,7 @@ namespace Service.Service
         /// </summary>
         /// <param name="cartParam"></param>
         /// <param name="uid"></param>
-        void addCart(CartParam cartParam,long uid);
+        decimal addCart(CartParam cartParam,long uid);
 
         /// <summary>
         /// 获取购物车数据

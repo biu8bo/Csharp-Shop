@@ -14,6 +14,7 @@ namespace Mapper
     
     public partial class store_product
     {
+       
         public decimal id { get; set; }
         public Nullable<long> mer_id { get; set; }
         public string image { get; set; }

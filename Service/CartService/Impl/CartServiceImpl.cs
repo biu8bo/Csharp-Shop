@@ -12,26 +12,30 @@ namespace Service.Service
 
     public class CartServiceImpl : ICartService
     {
-        public void addCart(CartParam cartParam, long uid)
+        public decimal addCart(CartParam cartParam, long uid)
         {
             using (var db = new eshoppingEntities())
             {
                 var tran = db.Database.BeginTransaction();
                 store_cart  cart = db.store_cart.Where(e => e.uid == uid && e.is_del == false && e.is_pay == false && e.product_id == cartParam.productId && e.product_attr_unique == cartParam.unique).FirstOrDefault();
-
+               
                 //不存在数据就创建数据
                 if (cart is null)
                 {
-                    db.store_cart.Add(new store_cart()
+                    store_cart store_Cart = new store_cart()
                     {
                         uid = uid,
-                        type="product",
+                        type = "product",
                         product_id = cartParam.productId,
                         product_attr_unique = cartParam.unique,
                         cart_num = cartParam.num,
                         create_time = DateTime.Now,
                         update_time = DateTime.Now
-                    });
+                    };
+                    db.store_cart.Add(store_Cart);
+                    db.SaveChanges();
+                    tran.Commit();
+                    return store_Cart.id;
                 }
                 //存在就++
                 else
@@ -39,9 +43,12 @@ namespace Service.Service
                     //更新操作时间
                     cart.update_time = DateTime.Now;
                     cart.cart_num += cartParam.num;
+                    db.SaveChanges();
+                    tran.Commit();
+                    return cart.id;
                 }
-                db.SaveChanges();
-                tran.Commit();
+               
+              
             }
         }
 

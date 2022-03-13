@@ -21,12 +21,16 @@ namespace MVC卓越项目.Controller.Cart
 
         private readonly ICartService cartService = Bootstrapper.Resolve<ICartService>();
 
+        /// <summary>
+        /// 添加到购物车
+        /// </summary>
+        /// <param name="cartParam"></param>
+        /// <returns></returns>
         [Route("addCart")]
         [AuthCheck]
-        public ApiResult<int> addCart([FromBody] CartParam cartParam)
+        public ApiResult<decimal> addCart([FromBody] CartParam cartParam)
         {
-            cartService.addCart(cartParam, LocalUser.getUidByUser());
-            return ApiResult<int>.ok();
+            return ApiResult<decimal>.ok(cartService.addCart(cartParam, LocalUser.getUidByUser()));
 
         }
 
