@@ -384,6 +384,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controller\Index\Rest\IndexController.cs" />
+    <Compile Include="Controller\Order\Param\PayParam.cs" />
     <Compile Include="Controller\Order\Rest\OrderController.cs" />
     <Compile Include="Controller\Product\Rest\ProductController.cs" />
     <Compile Include="Global.asax.cs">

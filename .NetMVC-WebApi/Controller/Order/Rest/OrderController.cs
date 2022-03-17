@@ -1,6 +1,7 @@
 ﻿using Commons.BaseModels;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
+using MVC卓越项目.Controller.Order.Param;
 using Service.OrderService.Param;
 using Service.OrderService.VO;
 using Service.Service;
@@ -20,6 +21,11 @@ namespace MVC卓越项目.Controller.Rest.Order
    public  class OrderController : ApiController
     {
         private readonly IOrderService orderService = Bootstrapper.Resolve<IOrderService>();
+        /// <summary>
+        /// 获取所有订单信息
+        /// </summary>
+        /// <param name="orderTypeParam"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("order")]
         [AuthCheck]
@@ -29,6 +35,26 @@ namespace MVC卓越项目.Controller.Rest.Order
             return ApiResult<object>.ok(a);
         }
 
+
+       public class UpdateAddressParam
+        {
+           public int addressId;
+            public string orderKey;
+        }
+        /// <summary>
+        /// 更新订单地址信息
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("updateOrderAddress")]
+        [AuthCheck]
+       
+        public ApiResult<object> updateOrderAddress(UpdateAddressParam param)
+        {
+            object a = orderService.updateOrderAddress(param.addressId, param.orderKey);
+            return ApiResult<object>.ok(a);
+        }
         /// <summary>
         /// 确认订单
         /// </summary>
@@ -40,6 +66,21 @@ namespace MVC卓越项目.Controller.Rest.Order
         public ApiResult<OrderConfirmVO> Confirm([FromBody]CartIDIDsParam cartIDIDsParam)
         {
             return ApiResult<OrderConfirmVO>.ok(orderService.confirmOrder(cartIDIDsParam, LocalUser.getUidByUser()));
+        }
+
+
+        /// <summary>
+        /// 支付接口
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("payOrder")]
+        [AuthCheck]
+        public ApiResult<OrderConfirmVO> pay([FromBody]PayParam payParam)
+        {
+            orderService.payOrder(payParam.orderKey, payParam.mark, LocalUser.getUidByUser());
+            return ApiResult<OrderConfirmVO>.ok();
         }
     }
 }

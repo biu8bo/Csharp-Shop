@@ -28,5 +28,17 @@ namespace Service.Service
         /// <param name="orderIDsParam"></param>
         /// <returns></returns>
         OrderConfirmVO confirmOrder(CartIDIDsParam cartIDsParam, long uid);
+        /// <summary>
+        /// 更新订单地址
+        /// </summary>
+        /// <param name="addressId"></param>
+        /// <param name="orderKey"></param>
+        /// <returns></returns>
+        OrderConfirmVO updateOrderAddress(int addressId,string orderKey);
+
+        /// <summary>
+        /// 支付订单
+        /// </summary>
+        void payOrder(string orderKey,string mark, long uid);
     }
 }

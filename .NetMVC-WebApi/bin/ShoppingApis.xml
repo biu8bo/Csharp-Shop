@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MVC卓越项目</name>
+    </assembly>
+    <members>
+        <member name="T:MVC卓越项目.SwaggerConfig.HttpAuthHeaderFilter">
+            <summary>
+            全局token配置
+            </summary>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Address.AddressController">
+            <summary>
+            用户地址模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Address.AddressController.GetAddressList">
+            <summary>
+            获取用户全部地址信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Address.AddressController.addAddress(Mapper.user_address)">
+            <summary>
+            添加地址
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Address.AddressController.editAddress(Mapper.user_address)">
+            <summary>
+            编辑地址
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Address.AddressController.delAddress(System.Int32)">
+            <summary>
+            删除地址
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Auth.LoginController">
+            <summary>
+            权限模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.LoginController.getIP">
+            <summary>
+            获取ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Auth.IndexController">
+            <summary>
+            首页模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.banner">
+            <summary>
+            banner 轮播图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.menu">
+            <summary>
+            首页菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.bastList">
+            <summary>
+            精品推荐
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.hotList">
+            <summary>
+            热门推荐
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.guessLike">
+            <summary>
+            猜你喜欢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Auth.IndexController.hotSearch">
+            <summary>
+            热门搜索
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Cart.CartController">
+            <summary>
+            购物车模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Cart.CartController.addCart(Service.CartService.Param.CartParam)">
+            <summary>
+            添加到购物车
+            </summary>
+            <param name="cartParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Cart.CartController.getCart">
+            <summary>
+            获取购物车数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Cart.CartController.updateNum(Mapper.store_cart)">
+            <summary>
+            修改购物车数量
+            </summary>
+            <param name="cartParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Category.Rest.CategoryController">
+            <summary>
+            商品分类
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Category.Rest.CategoryController.category">
+            <summary>
+            商品分类数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Collect.Rest.CollectController">
+            <summary>
+            足迹与收藏模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Collect.Rest.CollectController.addCollect(Service.CollectService.Param.CollectParam)">
+            <summary>
+            添加收藏
+            </summary>
+            <param name="collectParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Collect.Rest.CollectController.delCollect(Service.CollectService.Param.CollectParam)">
+            <summary>
+            删除收藏
+            </summary>
+            <param name="collectParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Collect.Rest.CollectController.delCollectWithBatch(Service.CollectService.Param.CollectBatchParam)">
+            <summary>
+            批量删除收藏/足迹
+            </summary>
+            <param name="collectParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.ExceptionRedirect.Rest.ExceptionController">
+            <summary>
+            异常处理模块
+            </summary>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Rest.Order.OrderController">
+            <summary>
+            订单模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Rest.Order.OrderController.GetOrderList(Service.OrderService.Param.OrderTypeParam)">
+            <summary>
+            获取所有订单信息
+            </summary>
+            <param name="orderTypeParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Rest.Order.OrderController.updateOrderAddress(MVC卓越项目.Controller.Rest.Order.OrderController.UpdateAddressParam)">
+            <summary>
+            更新订单地址信息
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Rest.Order.OrderController.Confirm(Service.OrderService.Param.CartIDIDsParam)">
+            <summary>
+            确认订单
+            </summary>
+            <param name="cartIDIDsParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MVC卓越项目.Controller.Rest.Order.OrderController.pay(MVC卓越项目.Controller.Order.Param.PayParam)">
+            <summary>
+            支付接口
+            </summary>
+            <param name="payParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MVC卓越项目.Controller.Product.ProductController">
+            <summary>
+            商品模块
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.WebApiApplication.Application_BeginRequest">
+            <summary>
+            跨域设置
+            </summary>
+        </member>
+        <member name="M:MVC卓越项目.Swagger.SwaggerHelpTools.#ctor(Swashbuckle.Swagger.ISwaggerProvider,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="swaggerProvider"></param>
+            <param name="xml">xml文档路径</param>
+        </member>
+        <member name="M:MVC卓越项目.Swagger.SwaggerHelpTools.GetControllerDesc">
+            <summary>
+            从API文档中读取控制器描述
+            </summary>
+            <returns>所有控制器描述</returns>
+        </member>
+    </members>
+</doc>

@@ -8,6 +8,8 @@ namespace Service.OrderService.Enum
 {
 public  static   class OrderTypeEnum
     {
+        public const string CreateOrder = "订单生成";
+        public const string PaySuccess = "用户付款成功";
         /// <summary>
         /// 未支付
         /// </summary>
