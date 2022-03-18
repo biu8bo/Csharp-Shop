@@ -222,6 +222,10 @@
     <Compile Include="IndexService\IIndexService.cs" />
     <Compile Include="UserService\IAuthService.cs" />
     <Compile Include="UserService\Impl\AuthServiceImpl.cs" />
+    <Compile Include="UserService\Impl\RechargeServiceImpl.cs" />
+    <Compile Include="UserService\Impl\UserServiceImpl.cs" />
+    <Compile Include="UserService\IRechargeService.cs" />
+    <Compile Include="UserService\IUserService.cs" />
     <Compile Include="UserService\Param\LoginParam.cs" />
     <Compile Include="UserService\Param\RegisterParam.cs" />
   </ItemGroup>

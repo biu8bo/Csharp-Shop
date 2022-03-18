@@ -146,6 +146,8 @@ namespace Service.Service
                     RedisHelper.SetStringKey("USER:" + result.username + ":" + token, result, TimeSpan.FromMilliseconds(Convert.ToDouble(exTime)));
 
                     logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 登陆成功！");
+                    //不返回密码
+                    result.password = null;
                     Hashtable hashtable = new Hashtable();
                     hashtable.Add("token", token);
                     hashtable.Add("USER", result);

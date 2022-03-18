@@ -15,6 +15,7 @@ namespace Service.Service
     /// </summary>
  public interface IOrderService
     {
+        store_order GetOrderInfoByOrderID(string orderId, long uid);
         /// <summary>
         /// 通过用户ID和订单类型查询订单信息
         /// </summary>
@@ -40,5 +41,18 @@ namespace Service.Service
         /// 支付订单
         /// </summary>
         void payOrder(string orderKey,string mark, long uid);
+
+        /// <summary>
+        /// 取消支付
+        /// </summary>
+        /// <param name="orderKey"></param>
+        /// <param name="uid"></param>
+        void CancelOrder(string orderKey,long uid);
+        /// <summary>
+        /// 付款
+        /// </summary>
+        /// <param name="orderKey"></param>
+        /// <param name="uid"></param>
+        void HandlerPay(string orderKey, long uid);
     }
 }

@@ -82,5 +82,33 @@ namespace MVC卓越项目.Controller.Rest.Order
             orderService.payOrder(payParam.orderKey, payParam.mark, LocalUser.getUidByUser());
             return ApiResult<OrderConfirmVO>.ok();
         }
+        /// <summary>
+        /// 取消订单
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("cancelOrder")]
+        [AuthCheck]
+        public ApiResult<OrderConfirmVO> CancelOrder([FromBody] PayParam payParam)
+        {
+            orderService.CancelOrder(payParam.orderKey, LocalUser.getUidByUser());
+            return ApiResult<OrderConfirmVO>.ok();
+        }
+
+
+        /// <summary>
+        /// 付款
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("handlerPay")]
+        [AuthCheck]
+        public ApiResult<OrderConfirmVO> HandlerPay([FromBody] PayParam payParam)
+        {
+            orderService.HandlerPay(payParam.orderKey, LocalUser.getUidByUser());
+            return ApiResult<OrderConfirmVO>.ok();
+        }
     }
 }

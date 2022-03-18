@@ -63,7 +63,7 @@ namespace Service.Service
         string cacheOrderInfo(OrderConfirmVO orderConfirmVO, long uid)
         {
             string resultJson = JsonConvert.SerializeObject(orderConfirmVO);
-            string md5 = Md5Utils.Md5(uid + resultJson);
+            string md5 = Md5Utils.Md5(uid + resultJson+DateTime.Now.Millisecond.ToString());
             RedisHelper.SetStringKey("Order:" + md5, resultJson, timespan);
             return md5;
         }
@@ -74,13 +74,13 @@ namespace Service.Service
             {
 
                 PageModel pageModel = null;
-                IQueryable<store_order> query = db.Set<store_order>().Include("store_order_cart_info").Include("store_order_cart_info.store_product").Include("store_order_cart_info.store_cart").Where(e => e.uid == uid);
+                IQueryable<store_order> query = db.Set<store_order>().Include("store_order_cart_info").Include("store_order_cart_info.store_product").Include("store_order_cart_info.store_cart").Where(e => e.uid == uid&&e.is_del==false);
                 //未支付状态
                 if (orderTypeParam.orderType == OrderTypeEnum.NoPay)
                 {
 
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>().StartPage(query.Where(e => e.paid == false).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -91,11 +91,11 @@ namespace Service.Service
                     }
                     return pageModel;
                 }
-                //未发货
+                //待发货
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitSend)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>().StartPage(query.Where(e => e.paid == true && e.status == 0).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -106,11 +106,11 @@ namespace Service.Service
                     }
                     return pageModel;
                 }
-                //已经收货
+                //待收货
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitGet)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>().StartPage(query.Where(e => e.paid == true && e.status == 1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -121,10 +121,11 @@ namespace Service.Service
                     }
                     return pageModel;
                 }
+                //待回复
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitReplay)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>().StartPage(query.Where(e => e.paid == true && e.status == 2).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -135,10 +136,10 @@ namespace Service.Service
                     }
                     return pageModel;
                 }//已完成
-                else if (orderTypeParam.orderType == OrderTypeEnum.Success)
+                else
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>().StartPage(query.Where(e => e.paid == true && e.status == -1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == -1).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -150,7 +151,7 @@ namespace Service.Service
                     return pageModel;
                 }
             }
-            return null;
+       
         }
         /// <summary>
         /// 修改订单地址信息
@@ -182,6 +183,10 @@ namespace Service.Service
                 var tran = db.Database.BeginTransaction();
                 eshop_user user = db.Database.SqlQuery<eshop_user>($"SELECT eshop_user.* FROM eshop_user where uid = {uid} FOR UPDATE").FirstOrDefault();
                 OrderConfirmVO orderConfirmVO = RedisHelper.GetStringKey<OrderConfirmVO>("Order:" + orderKey);
+                if (orderConfirmVO is null)
+                {
+                    throw new ApiException(500, "订单已关闭!,请刷新当前页面重新提交");
+                }
                 decimal totalPrice = Convert.ToDecimal(orderConfirmVO.priceGroup["totalPrice"]);
                 decimal userMoney = user.now_money - totalPrice;
                 bool PlayState = true;
@@ -197,7 +202,7 @@ namespace Service.Service
                 //计算数据
                 orderConfirmVO.cartInfo.ForEach(e =>
                 {
-                    cartID += e.id + ",";
+                    cartID += Convert.ToInt32(e.id) + ",";
                     totalNum += e.cart_num;
                 });
                 //去除尾部分号
@@ -235,39 +240,58 @@ namespace Service.Service
                 });
                 db.store_order.Add(store_Order);
                 RedisHelper.DeleteStringKey("Order:" + orderKey);
-                db.SaveChanges();
-                if (userMoney < 0)
+                try
                 {
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    throw new ApiException(500,"该订单已关闭!,请刷新当前页面重新提交");
                    
-
-                    tran.Commit
-                         ();
-                    throw new ApiException(400, "余额不足,支付失败");
                 }
 
 
-
                 //成功支付的流程
-
                 //删除购物车数据
                 orderConfirmVO.cartInfo.ForEach(e =>
                 {
                     store_cart _Cart = db.store_cart.Where(x => x.id == e.id).FirstOrDefault();
+
                     string md5str = Md5Utils.Md5(JsonConvert.SerializeObject(e.productInfo));
                     store_order_cart_info add = new store_order_cart_info()
                     {
                         oid = store_Order.id,
                         cart_id = e.id,
                         product_id = e.product_id,
-                        cart_info = JsonConvert.SerializeObject(e.productInfo),
+                        cart_info = JsonConvert.SerializeObject(new {
+
+                            productInfo = e.productInfo,
+                            attrInfo = e.attrInfo
+                        }),
                         unique = md5str,
                     };
                     db.store_order_cart_info.Add(add);
                     _Cart.is_del = true;
                      db.Entry(_Cart).State = System.Data.Entity.EntityState.Modified;
                 });
+                //余额不足
+                if (userMoney < 0)
+                {
+                    db.SaveChanges();
+                    tran.Commit();
+                    throw new ApiException(400, "余额不足,支付失败");
+                }
+                //成功支付 加入记录
+                db.store_order_status.Add(new store_order_status()
+                {
+                    oid = store_Order.id,
+                    change_message = OrderTypeEnum.PaySuccess,
+                    change_type = "pay_success",
+                    change_time = DateTime.Now
+                });
                 //扣钱
                 user.now_money = userMoney;
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 db.eshop_user.Attach(user);
                 db.SaveChanges();
              
@@ -277,6 +301,60 @@ namespace Service.Service
                 tran.Commit();
             }
 
+        }
+        /// <summary>
+        /// 取消订单
+        /// </summary>
+        /// <param name="orderKey"></param>
+        /// <param name="uid"></param>
+        public void CancelOrder(string orderKey, long uid)
+        {
+            using (eshoppingEntities db = new eshoppingEntities())
+            {
+                 store_order orderInfo = db.store_order.Where(e=>e.order_id==orderKey&&e.uid==uid&&e.paid==false).FirstOrDefault();
+                orderInfo.is_del = true;
+                db.SaveChanges();
+            }
+        }
+
+        public void HandlerPay(string orderKey, long uid)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var tran = db.Database.BeginTransaction();
+                store_order orderInfo =  db.store_order.Where(e=>e.paid==false&&e.uid==uid&&e.order_id==orderKey).FirstOrDefault();
+                //行锁获取用户数据
+                eshop_user user = db.Database.SqlQuery<eshop_user>($"SELECT eshop_user.* FROM eshop_user where uid = {uid} FOR UPDATE").FirstOrDefault();
+                //查询余额
+                decimal money = user.now_money - orderInfo.pay_price;
+                if (money<0)
+                {
+                    throw new ApiException(400,"余额不足,请及时充值!");
+                }
+                orderInfo.paid = true;
+                orderInfo.status =0;
+                user.now_money = money;
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+                //成功支付 加入记录
+                db.store_order_status.Add(new store_order_status()
+                {
+                    oid = orderInfo.id,
+                    change_message = OrderTypeEnum.PaySuccess,
+                    change_type = "pay_success",
+                    change_time = DateTime.Now
+                });
+                db.SaveChanges();
+                tran.Commit();
+            }
+        }
+
+        public store_order GetOrderInfoByOrderID(string orderId, long uid)
+        {
+            using (var db =  new eshoppingEntities())
+            {
+                return db.Set<store_order>().Include("store_order_cart_info").Where(e => e.order_id == orderId&&e.uid== uid).FirstOrDefault();
+            }
         }
     }
 }

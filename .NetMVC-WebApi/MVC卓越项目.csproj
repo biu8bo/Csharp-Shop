@@ -375,7 +375,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controller\Address\AddressController.cs" />
-    <Compile Include="Controller\Auth\Rest\AuthController.cs" />
+    <Compile Include="Controller\User\Rest\AuthController.cs" />
     <Compile Include="Controller\Cart\CartController.cs" />
     <Compile Include="Controller\Category\Rest\CategoryController.cs" />
     <Compile Include="Controller\Collect\Rest\CollectController.cs" />
@@ -387,6 +387,7 @@
     <Compile Include="Controller\Order\Param\PayParam.cs" />
     <Compile Include="Controller\Order\Rest\OrderController.cs" />
     <Compile Include="Controller\Product\Rest\ProductController.cs" />
+    <Compile Include="Controller\User\Rest\RechargeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

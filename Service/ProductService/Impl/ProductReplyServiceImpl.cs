@@ -31,17 +31,23 @@ namespace Service.Service
                 user => user.uid,         //外部的key
                 (reply, user) => new        //结果
                 {
+                    pid=reply.product_id,
                     id = reply.id,
                     comment = reply.comment,
                     username = user.username,
                     nickname = user.nickname,
                     createTime  = reply.create_time,
                     isReply = reply.is_reply,
+                    oid = reply.oid,
+                    unique = reply.unique,
                     productScore = reply.product_score,
                     serviceScore = reply.service_score,
                     avatar = user.avatar,
                     pics = reply.pics
-                }).OrderBy(e=>e.id));
+                }).GroupJoin(db.store_order_cart_info,e=>e.unique,e=>e.unique, (a,b)=>new { 
+                   commentInfo = a,
+                    productInfo = b.FirstOrDefault()
+                }).OrderBy(e=>e.commentInfo.id));
             }
         }
     }
