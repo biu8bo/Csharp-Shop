@@ -90,6 +90,7 @@
     <Reference Include="System.Diagnostics.PerformanceCounter, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\System.Diagnostics.PerformanceCounter.5.0.0\lib\net461\System.Diagnostics.PerformanceCounter.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
       <Private>True</Private>
@@ -158,6 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fillter\BackAuthCheckAttribute.cs" />
     <Compile Include="Fillter\AuthCheckAttribute.cs" />
     <Compile Include="Fillter\CacheEnableAttribute.cs" />
     <Compile Include="Fillter\WebApiResultFilterAttribute.cs" />
@@ -169,6 +171,7 @@
     <Compile Include="BaseModels\PageModel.cs" />
     <Compile Include="Fillter\CrosFilter.cs" />
     <Compile Include="IocContainer\Bootstrapper.cs" />
+    <Compile Include="Utils\ArithmeticUtils.cs" />
     <Compile Include="Utils\ExpressionExtensions.cs" />
     <Compile Include="Utils\ObjectUtils.cs" />
     <Compile Include="Utils\PageUtils.cs" />

@@ -19,10 +19,19 @@ namespace Commons.BaseModels
         //页面对象
         private Object data;
 
+        private int PageTotal;
         public int PageNum { get => pageNum; set => pageNum = value; }
         public int PageSize { get => pageSize; set => pageSize = value; }
         public int Total { get => total; set => total = value; }
         public bool HasNext { get => hasNext; set => hasNext = value; }
         public Object Data { get => data; set => data = value; }
+        public int PageTotal1
+        {
+            get{
+                return total / pageSize * 10;
+            }
+
+            set{ PageTotal = value; }
+        }
     }
 }

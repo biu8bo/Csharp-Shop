@@ -18,9 +18,9 @@ using System.Web.Http.Filters;
 namespace MVC卓越项目.Commons.Attribute
 {
     /// <summary>
-    /// 权限拦截器
+    /// 后台权限拦截器
     /// </summary>
-    public class AuthCheckAttribute : ActionFilterAttribute
+    public class BackAuthCheckAttribute : ActionFilterAttribute
     {
         /// <summary>
         /// 是否必须登录
@@ -37,9 +37,9 @@ namespace MVC卓越项目.Commons.Attribute
                 //获取token
                 string token = actionContext.Request.Headers.GetValues("Authorization").FirstOrDefault();
                 //尝试获取用户对象
-                eshop_user user = JwtHelper<eshop_user>.getUserByToken(token);
+                user user = JwtHelper<user>.getUserByToken(token);
                 //从缓存获取用户
-                eshop_user redisUser = RedisHelper.GetStringKey<eshop_user>("USER:" + user.username + ":" + token);
+                user redisUser = RedisHelper.GetStringKey<user>("BackUser:" + user.username + ":" + token);
                 if (ObjectUtils<eshop_user>.isNull(redisUser))
                 {
                     throw new AuthException("登录状态过期,请重新登陆!");

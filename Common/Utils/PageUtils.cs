@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MVC卓越项目.Commons.Utils
 {
     /// <summary>
-    /// 分页模型
+    /// 分页工具
     /// </summary>
     public class PageUtils<T>
     {

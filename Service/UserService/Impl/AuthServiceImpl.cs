@@ -139,7 +139,7 @@ namespace Service.Service
                     //获取设置登录的过期时间
                     string exTime = ConfigurationManager.AppSettings["tokenExpired"];
                     //获取token
-                    string token = JwtHelper.getJwtEncode(result);
+                    string token = JwtHelper<eshop_user>.getJwtEncode(result);
                     //踢出原来的用户
                     kictOutUser(result.username);
                     //将用户名设为键 写入缓存
@@ -172,6 +172,67 @@ namespace Service.Service
         public void kictOutUser(string username)
         {
             RedisHelper.DeleteKeyByLike($"USER:{username}*");
+        }
+
+        public Hashtable BackEndLogin(LoginParam loginParam)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                //判断验证码是否正确
+                string ocode = RedisHelper.GetStringKey<string>(loginParam.Uuid);
+                if (ocode is null)
+                {
+                    throw new ApiException(500,"验证码已过期!,请重启获取");
+                }
+                //删除验证码
+                RedisHelper.DeleteStringKey(loginParam.Uuid);
+                if (!ocode.Equals(loginParam.Code))
+                {
+                  
+                    throw new ApiException(500, "验证码输入错误!");
+                }
+                var tran = db.Database.BeginTransaction();
+                user result = db.users.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del == false).FirstOrDefault();
+                if (result == null)
+                {
+
+                    throw new ApiException(500, "用户名或密码错误！");
+                }
+                else
+                {
+                    if (result.enabled == 0)
+                    {
+                        throw new AuthException("该账户已被封禁！");
+                    }
+                    //修改登录时间
+                    result.update_time = DateTime.Now;
+                    //修改IP
+
+                    db.SaveChanges();
+                    tran.Commit();
+                    //获取设置登录的过期时间
+                    string exTime = ConfigurationManager.AppSettings["tokenExpired"];
+                    //获取token
+                    string token = JwtHelper<user>.getJwtEncode(result);
+                    //踢出原来的用户
+                    RedisHelper.DeleteKeyByLike($"BackUser:{result.username}*");
+                    //将用户名设为键 写入缓存
+                    RedisHelper.SetStringKey("BackUser:" + result.username + ":" + token, result, TimeSpan.FromMilliseconds(Convert.ToDouble(exTime)));
+
+
+                    //不返回密码
+                    result.password = null;
+                    Hashtable hashtable = new Hashtable();
+                    hashtable.Add("token", token);
+                    hashtable.Add("user", result);
+                    return hashtable;
+                }
+            }
+        }
+
+        public bool LogoutBackEnd(string token)
+        {
+            return RedisHelper.DeleteStringKey("BackUser:" + LocalUser.getBackEndUser().username + ":" + token);
         }
     }
 }

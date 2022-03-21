@@ -21,7 +21,10 @@ namespace MVC卓越项目.Commons.Utils
         //线程资源隔离
         public static ThreadLocal<Hashtable> threadLocalTable = new ThreadLocal<Hashtable>(()=>new Hashtable());
 
-        //获取user实例
+        /// <summary>
+        /// 获取前端user实例
+        /// </summary>
+        /// <returns></returns>
         public static eshop_user getUser()
         {
             eshop_user userInfo = null;
@@ -29,9 +32,24 @@ namespace MVC卓越项目.Commons.Utils
             userInfo= threadLocalTable.Value["USER"] as eshop_user;
            
             return userInfo;
-        } 
+        }
+        /// <summary>
+        /// 获取后台user实例
+        /// </summary>
+        /// <returns></returns>
+        public static user getBackEndUser()
+        {
+            user userInfo = null;
 
-        //获取UID
+            userInfo = threadLocalTable.Value["USER"] as user;
+
+            return userInfo;
+        }
+
+        /// <summary>
+        /// 获取前端UID
+        /// </summary>
+        /// <returns></returns>
         public static long getUidByUser()
         {
             eshop_user userInfo = getUser();
@@ -41,7 +59,16 @@ namespace MVC卓越项目.Commons.Utils
             }
            return userInfo.uid;
         }
-
+        //获取UID
+        public static long getUidByUserBackEnd()
+        {
+            user userInfo = getBackEndUser();
+            if (userInfo == null)
+            {
+                return 0;
+            }
+            return userInfo.id;
+        }
         /// <summary>
         /// 清空ThreadLocalTable
         /// </summary>

@@ -24,7 +24,11 @@ namespace Service.Service
         /// </summary>
         /// <returns></returns>
          bool Logout(string token);
-
+        /// <summary>
+        /// 退出后台用户登录
+        /// </summary>
+        /// <returns></returns>
+        bool LogoutBackEnd(string token);
         /// <summary>
         /// 注册
         /// </summary>
@@ -44,5 +48,12 @@ namespace Service.Service
         /// 踢出用户
         /// </summary>
         void kictOutUser(string username);
+
+        /// <summary>
+        /// 后台登录
+        /// </summary>
+        /// <param name="loginParam"></param>
+        /// <returns></returns>
+        Hashtable BackEndLogin(LoginParam loginParam);
     }
 }

@@ -12,7 +12,7 @@ using System.Web;
 
 namespace MVC卓越项目.Commons.Utils
 {
-    public class JwtHelper
+    public class JwtHelper<T>
     {
 
         //私钥  web.config中配置
@@ -23,7 +23,7 @@ namespace MVC卓越项目.Commons.Utils
         /// </summary>
         /// <param name="payload">不敏感的用户数据</param>
         /// <returns></returns>
-        public static string getJwtEncode(eshop_user eshopUser)
+        public static string getJwtEncode(T eshopUser)
         {
             //SHA256 算法加密
             IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
@@ -41,7 +41,7 @@ namespace MVC卓越项目.Commons.Utils
         /// </summary>
         /// <param name="token">jwtToken</param>
         /// <returns></returns>
-        public static eshop_user getUserByToken(string token)
+        public static T getUserByToken(string token)
         {
             //json序列化
             IJsonSerializer serializer = new JsonNetSerializer();
@@ -52,7 +52,7 @@ namespace MVC卓越项目.Commons.Utils
             IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
             //获取jwt解码器
             IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
-            var userInfo = decoder.DecodeToObject<eshop_user>(token, secret, verify: true);//token为之前生成的字符串
+            var userInfo = decoder.DecodeToObject<T>(token, secret, verify: true);//token为之前生成的字符串
             return userInfo;
         }
 

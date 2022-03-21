@@ -10,7 +10,8 @@ namespace MVC卓越项目.Controller.Auth.Param
     {
         string username;
         string password;
-
+        string code;
+        string uuid;
         /// <summary>
         /// 用户名
         /// </summary>
@@ -19,5 +20,7 @@ namespace MVC卓越项目.Controller.Auth.Param
         /// 密码经过md5加密
         /// </summary>
         public string Password { get => password; set => password = Md5Utils.Md5(value); }
+        public string Code { get => code; set => code = value; }
+        public string Uuid { get => uuid; set => uuid = value; }
     }
 }

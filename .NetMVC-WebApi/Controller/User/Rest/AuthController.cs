@@ -26,39 +26,58 @@ namespace MVC卓越项目.Controller.Auth
     public class LoginController : ApiController
     {
         private readonly IAuthService iAuthService = Bootstrapper.Resolve<IAuthService>();
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="loginParam"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("login")]
-      public  ApiResult<Hashtable> Login([FromBody] LoginParam loginParam)
+        public ApiResult<Hashtable> Login([FromBody] LoginParam loginParam)
         {
-            return ApiResult<Hashtable>.ok(iAuthService.Login(loginParam, getIP()),"登陆成功");
+            return ApiResult<Hashtable>.ok(iAuthService.Login(loginParam, getIP()), "登陆成功");
         }
+
+        /// <summary>
+        /// 退出登录
+        /// </summary>
+        /// <returns></returns>
         [AuthCheck]
         [HttpPost]
         [Route("logout")]
 
-        ///退出登录
+
         public ApiResult<bool> Logout()
         {
             return ApiResult<bool>.ok(iAuthService.Logout(Request.Headers.GetValues("Authorization").First()));
         }
-        //注册
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="registerParam"></param>
+        /// <returns></returns>
 
         [HttpPost]
         [Route("register")]
         public ApiResult<Hashtable> Register([FromBody] RegisterParam registerParam)
         {
-            registerParam.password = Md5Utils.Md5(registerParam.password); 
+            registerParam.password = Md5Utils.Md5(registerParam.password);
             return ApiResult<Hashtable>.ok(iAuthService.Register(registerParam, getIP()), "注册成功");
         }
+        /// <summary>
+        /// 获取验证码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("register/vertify")]
         public ApiResult<int> vertify(string phone)
         {
             if (String.IsNullOrEmpty(phone))
             {
-                throw new ApiException(500,"请输入手机号码");
+                throw new ApiException(500, "请输入手机号码");
             }
-            int vertifyCode =  iAuthService.verify(phone);
+            int vertifyCode = iAuthService.verify(phone);
             return ApiResult<int>.ok(vertifyCode);
 
         }

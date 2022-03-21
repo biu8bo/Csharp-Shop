@@ -12,6 +12,7 @@ namespace Service.Service
         public int pid { get; set; }
         public string cate_name { get; set; }
         public Nullable<int> sort { get; set; }
+        public string label;
         public string pic { get; set; }
         public Nullable<bool> is_show { get; set; }
         public Nullable<System.DateTime> create_time { get; set; }
