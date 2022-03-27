@@ -12,6 +12,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.User.Rest
 {
+    /// <summary>
+    /// 用户充值模块
+    /// </summary>
     [RoutePrefix("api/recharge")]
     public class RechargeController:ApiController
     {

@@ -56,5 +56,7 @@ namespace Mapper
         public Nullable<bool> spec_type { get; set; }
         public Nullable<bool> is_integral { get; set; }
         public Nullable<int> integral { get; set; }
+
+        public store_category store_Category;
     }
 }

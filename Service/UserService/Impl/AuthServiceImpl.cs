@@ -1,4 +1,5 @@
-﻿using Commons.Utils;
+﻿using Commons.BaseModels;
+using Commons.Utils;
 using Mapper;
 using MVC卓越项目.Commons.ExceptionHandler;
 using MVC卓越项目.Commons.Utils;
@@ -59,46 +60,48 @@ namespace Service.Service
 
             if (String.IsNullOrEmpty(code))
             {
-                throw new ApiException(500, "请输入验证码！");
+                throw new ApiException(501, "请输入验证码！");
             }
 
             string redisCode = RedisHelper.GetStringValue("verify:" + registerParam.phone);
             if (string.IsNullOrEmpty(redisCode))
             {
-                throw new ApiException(500, "请先获取验证码！");
+                throw new ApiException(501, "请先获取验证码！");
             }
 
             if (redisCode.Equals(code))
             {
-           
-                    using (var db = new eshoppingEntities())
-                    {
-                        var tran = db.Database.BeginTransaction();
-                          eshop_user result1 = db.eshop_user.FirstOrDefault(e => e.phone == registerParam.phone);
-                    if (result1 is null)
+
+                using (var db = new eshoppingEntities())
+                {
+                    var tran = db.Database.BeginTransaction();
+                    eshop_user result1 = db.eshop_user.Where(e => e.phone == registerParam.phone).FirstOrDefault();
+                    if (!(result1 is null))
                     {
                         throw new ApiException(501, "该手机号已被注册！");
                     }
-                        eshop_user user = new eshop_user();
-                        user.add_ip = ip;
-                        user.user_type = "h5";
-                        user.addres = "";
-                        user.login_type = "";
-                        user.username = registerParam.username;
-                        user.password = registerParam.password;
-                        user.now_money = 0;
-                        user.create_time = DateTime.Now;
-                        user.update_time = DateTime.Now;
-                        user.last_ip = ip;
-                        user.phone = registerParam.phone;
-                        db.eshop_user.Add(user);
-                        db.SaveChanges();
-                        tran.Commit();
-                    }
+                    eshop_user user = new eshop_user();
+                    user.add_ip = ip;
+                    user.user_type = "h5";
+                    user.addres = "";
+                    user.login_type = "";
+                    user.username = registerParam.username;
+                    user.password = registerParam.password;
+                    user.now_money = 0;
+                    user.create_time = DateTime.Now;
+                    user.update_time = DateTime.Now;
+                    user.last_ip = ip;
+                    user.phone = registerParam.phone;
+                    user.status = true;
+                    user.is_del = false;
+                    db.eshop_user.Add(user);
+                    db.SaveChanges();
+                    tran.Commit();
+                }
             }
             else
             {
-                throw new ApiException(500, "验证码错误！");
+                throw new ApiException(501, "验证码错误！");
             }
             return new Hashtable()
             {
@@ -132,6 +135,7 @@ namespace Service.Service
                     }
                     //修改登录时间
                     result.update_time = DateTime.Now;
+                    result.addres = "局域网";
                     //修改IP
                     result.last_ip = ip;
                     db.SaveChanges();
@@ -182,13 +186,13 @@ namespace Service.Service
                 string ocode = RedisHelper.GetStringKey<string>(loginParam.Uuid);
                 if (ocode is null)
                 {
-                    throw new ApiException(500,"验证码已过期!,请重启获取");
+                    throw new ApiException(500, "验证码已过期!,请重启获取");
                 }
                 //删除验证码
                 RedisHelper.DeleteStringKey(loginParam.Uuid);
                 if (!ocode.Equals(loginParam.Code))
                 {
-                  
+
                     throw new ApiException(500, "验证码输入错误!");
                 }
                 var tran = db.Database.BeginTransaction();
@@ -233,6 +237,48 @@ namespace Service.Service
         public bool LogoutBackEnd(string token)
         {
             return RedisHelper.DeleteStringKey("BackUser:" + LocalUser.getBackEndUser().username + ":" + token);
+        }
+
+        public PageModel getOnlineUsers(QueryData queryData)
+        {
+          IEnumerable<RedisKey>  keys =  RedisHelper.GetKeyByLike("USER:*");
+           
+          keys =  keys.Skip((queryData.Page - 1) * queryData.Limit).Take(queryData.Limit);
+
+            LinkedList<eshop_user> users = new LinkedList<eshop_user>();
+            foreach (var item in keys)
+            {
+                try
+                {
+                    string token = item.ToString();
+                    token = token.Split(':')[2];
+                    users.AddLast(JwtHelper<eshop_user>.getUserByToken(token));
+                }
+                catch (Exception)
+                {
+                }
+            }
+            PageModel pageModel = new PageModel();
+            if (!(queryData.username is null))
+            {
+                IEnumerable<eshop_user> data = users.Where(e => e.username == queryData.username);
+                pageModel.PageSize = queryData.Limit;
+                pageModel.PageNum = queryData.Page;
+                pageModel.Total = data.Count();
+                pageModel.Data = data;
+            }
+            else
+            {
+                pageModel.PageSize = queryData.Limit;
+                pageModel.PageNum = queryData.Page;
+                pageModel.Total = keys.Count();
+                pageModel.Data = users;
+
+            }
+          
+           
+            
+            return pageModel;
         }
     }
 }

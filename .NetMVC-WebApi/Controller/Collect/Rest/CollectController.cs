@@ -64,5 +64,13 @@ namespace MVC卓越项目.Controller.Collect.Rest
             return ApiResult<int>.ok();
         }
 
+        [HttpGet]
+        [Route("getAllCollectInfo")]
+        [BackAuthCheck]
+        public ApiResult<PageModel> GetAllCollectInfo([FromUri]CollectParam collectParam)
+        {
+          
+            return ApiResult<PageModel>.ok(collectService.GetCollects(collectParam));
+        }
     }
 }

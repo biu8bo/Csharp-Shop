@@ -52,12 +52,16 @@ namespace MVC卓越项目.Commons.Utils
             //获取当前分页查询
             try
             {
+                if (pageNum<=0)
+                {
+                    pageNum = 1;
+                }
                 page.Data = queryObject.Skip(pageSize * (pageNum - 1)).Take(pageSize).ToList();
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
-                throw new ApiException(500,e + "你没有使用OrderBy或OrderByDescending方法就直接调用分页方法！");
+                throw new ApiException(500,"在Skip方法前你必须使用OrderBy或OrderByDescending方法！");
             }
             //计算是否有下一页
             float s = page.Total / (this.pageSize * (this.pageNum - 1) + this.pageSize * 1.0f);

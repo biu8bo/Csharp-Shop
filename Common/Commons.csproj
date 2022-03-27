@@ -159,6 +159,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseModels\QueryData.cs" />
     <Compile Include="Fillter\BackAuthCheckAttribute.cs" />
     <Compile Include="Fillter\AuthCheckAttribute.cs" />
     <Compile Include="Fillter\CacheEnableAttribute.cs" />

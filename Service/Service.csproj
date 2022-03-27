@@ -181,6 +181,9 @@
     <Reference Include="Unity.Mvc4, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\Unity.Mvc4.1.6.0.0\lib\net45\Unity.Mvc4.dll</HintPath>
     </Reference>
+    <Reference Include="Z.EntityFramework.Extensions, Version=6.13.15.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\.NetMVC-WebApi\packages\Z.EntityFramework.Extensions.6.13.15\lib\net45\Z.EntityFramework.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\MySql.Data.8.0.26\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
@@ -213,6 +216,7 @@
     <Compile Include="ProductService\IProductReplyService.cs" />
     <Compile Include="ProductService\IProductService.cs" />
     <Compile Include="ProductService\Param\ProductParam.cs" />
+    <Compile Include="ProductService\VO\AttrResult.cs" />
     <Compile Include="ProductService\VO\ProductReply.cs" />
     <Compile Include="ProductService\VO\ProductVO.cs" />
     <Compile Include="ProductService\VO\StoreProductAttr.cs" />

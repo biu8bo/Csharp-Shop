@@ -27,14 +27,14 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                
-                return new PageUtils<store_product>(page, limit).StartPage(db.store_product.Where(e=>e.is_show==true&&e.is_del == false).OrderBy(e => e.id));
+
+                return new PageUtils<store_product>(page, limit).StartPage(db.store_product.Where(e => e.is_show == true && e.is_del == false).OrderBy(e => e.id));
             }
         }
 
-        public PageModel selectPageByIQuery(int page, int limit,IQueryable<store_product> iquery)
+        public PageModel selectPageByIQuery(int page, int limit, IQueryable<store_product> iquery)
         {
-            return new PageUtils<store_product>(page, limit).StartPage(iquery.Where(e => e.is_show == true && e.is_del == false).OrderBy(e=>e.id));
+            return new PageUtils<store_product>(page, limit).StartPage(iquery.Where(e => e.is_show == true && e.is_del == false).OrderBy(e => e.id));
         }
 
         public ProductVO getProductById(long pid, long uid)
@@ -42,24 +42,24 @@ namespace Service.Service
             //查询商品基本信息
             using (var db = new eshoppingEntities())
             {
-                store_product storeProduct = db.store_product.Where(e => e.id == pid && e.is_del == false &&e.is_show==true).FirstOrDefault();
+                store_product storeProduct = db.store_product.Where(e => e.id == pid && e.is_del == false && e.is_show == true).FirstOrDefault();
                 if (ObjectUtils<object>.isNull(storeProduct))
                 {
-                    throw new ApiException(500,"商品已下架或不存在!");
+                    throw new ApiException(500, "商品已下架或不存在!");
                 }
                 ProductVO productVO = new ProductVO();
-                ObjectUtils<ProductVO>.ConvertTo(storeProduct,ref productVO);
+                ObjectUtils<ProductVO>.ConvertTo(storeProduct, ref productVO);
                 //查询规格
-               List<StoreProductAttr> storeProductAttrs = iProductAttrService.GetProductAttr(pid);
+                List<StoreProductAttr> storeProductAttrs = iProductAttrService.GetProductAttr(pid);
                 //查询规格详情
                 List<StoreProductAttrValue> storeProductAttrValues = iProductAttrService.GetProductAttrValue(pid);
                 productVO.storeProductAttrs = storeProductAttrs;
                 productVO.storeProductAttrValues = storeProductAttrValues;
 
-                if (uid!=0L)
+                if (uid != 0L)
                 {
                     //查询是否已经收藏
-                    productVO.isCollect=ObjectUtils<object>.isNotNull(iCollectService.isProductRelation(pid, uid, "collect"));
+                    productVO.isCollect = ObjectUtils<object>.isNotNull(iCollectService.isProductRelation(pid, uid, "collect"));
                     iCollectService.addRroductRelation(pid, uid, "foot");
                 }
                 else
@@ -76,7 +76,7 @@ namespace Service.Service
             using (var db = new eshoppingEntities())
             {
                 QueryExpressionUtils<store_product> where = new QueryExpressionUtils<store_product>();
-                where.And(e => e.is_show == true&&e.is_del == false);
+                where.And(e => e.is_show == true && e.is_del == false);
 
                 //如果关键词不为空
                 if (ObjectUtils<string>.isNotNull(productParam.keyword))
@@ -84,18 +84,18 @@ namespace Service.Service
                     where.And(e => e.keyword.Contains(productParam.keyword));
                 }
                 //如果是积分商品
-                if (ObjectUtils<bool>.isNotNull(productParam.isIntegral)&&productParam.isIntegral==true)
+                if (ObjectUtils<bool>.isNotNull(productParam.isIntegral) && productParam.isIntegral == true)
                 {
                     where.And(e => e.is_integral == true);
-       
+
                 }
                 //如果是新品
-                 if (ObjectUtils<bool>.isNotNull(productParam.isNew)&& productParam.isNew==true)
+                if (ObjectUtils<bool>.isNotNull(productParam.isNew) && productParam.isNew == true)
                 {
                     where.And(e => e.is_new == true);
                 }
 
-                 //分类ID
+                //分类ID
                 if (ObjectUtils<bool>.isNotNull(productParam.cid))
                 {
                     where.And(e => e.cate_id == productParam.cid);
@@ -110,14 +110,14 @@ namespace Service.Service
                     if (productParam.salesOrder.Equals("asc"))
                     {
                         return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e => e.sales));
-                
+
                     }
                     //降序
                     else
                     {
                         return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderByDescending(e => e.sales));
                     }
-                  
+
                 }
                 // 如果是价格排序
 
@@ -136,7 +136,7 @@ namespace Service.Service
                     }
 
                 }
-                return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e=>e.id));
+                return new PageUtils<store_product>(productParam.Page, productParam.Limit).StartPage(query.OrderBy(e => e.id));
             }
         }
         public void incBrowseNum(long pid)
@@ -146,9 +146,78 @@ namespace Service.Service
                 store_product storeProduct = db.store_product.Where(e => e.id == pid && e.is_del == false && e.is_show == true).FirstOrDefault();
                 if (storeProduct is null)
                 {
-                    throw new ApiException(500,"商品不存在！");
+                    throw new ApiException(500, "商品不存在！");
                 }
                 storeProduct.browse += 1;
+                db.SaveChanges();
+            }
+        }
+
+        public PageModel selectAllProducts(ProductParam param)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var query = db.store_product.Where(e => e.is_del == false && e.is_show == param.is_show);
+                if (!(param.cid is null))
+                {
+                    query = query.Where(e => e.cate_id == param.cid);
+                  
+                }
+
+                if (!(param.value is null))
+                {
+                    query = query.Where(e => e.store_name.Contains(param.value));
+                }
+
+
+
+                return new PageUtils<Object>(param.Page, param.Limit).StartPage(query.Join(db.store_category, e => e.cate_id, e => e.id.ToString(), (a, b) => new
+                {
+                    Product = a,
+                    Category = b
+                }
+                  ).OrderBy(a => a.Product.id));
+            }
+        }
+
+        public void AddProduct(store_product product)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                product.create_time = DateTime.Now;
+                db.store_product.Add(product);
+                db.SaveChanges();
+            }
+        }
+
+        public void EditProduct(store_product product)
+        {
+            product.update_time = DateTime.Now;
+            using (var db = new eshoppingEntities())
+            {
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public void DelProduct(store_product product)
+        {
+            using (var db = new eshoppingEntities())
+            {
+
+                var result = db.store_product.Find(product.id);
+                result.is_del = true;
+                db.SaveChanges();
+            }
+        }
+
+        public void OnSalesStatus(ProductParam param)
+        {
+            using (var db = new eshoppingEntities())
+            {
+
+                var result = db.store_product.Find(param.id);
+                result.is_show = param.status;
                 db.SaveChanges();
             }
         }

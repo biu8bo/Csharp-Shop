@@ -42,7 +42,18 @@ namespace Service.Service
         /// <returns></returns>
         store_product_relation isProductRelation(long pid, long uid, string type);
 
-
+        /// <summary>
+        /// 通过类型查询
+        /// </summary>
+        /// <param name="collectParam"></param>
+        /// <param name="uid"></param>
+        /// <returns></returns>
         PageModel getCollectsByType(CollectParam collectParam,long uid);
+        /// <summary>
+        /// 后台查询所有足迹收藏信息
+        /// </summary>
+        /// <param name="collectParam"></param>
+        /// <returns></returns>
+        PageModel GetCollects(CollectParam collectParam);
     }
 }

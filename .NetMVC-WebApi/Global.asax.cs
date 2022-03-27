@@ -1,6 +1,8 @@
 ﻿using MVC卓越项目.Commons.Fillter;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +43,24 @@ namespace MVC卓越项目
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings
+            //{
+            //    ContractResolver = new CamelCasePropertyNamesContractResolver(),        //小驼峰命名法,格式化日期时间
+            //    Formatting = Formatting.Indented,
+            //DateFormatString = "yyyy-MM-dd HH:mm:ss"
+            //};
+            //JsonSerializerSettings settings = new JsonSerializerSettings();
+            //JsonConvert.DefaultSettings = new Func<JsonSerializerSettings>(() =>
+            //{
+            //    //驼峰命名
+            //    settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            //    //日期类型默认格式化处理
+            //    settings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+            //    settings.Formatting = Formatting.Indented;
+            //    //空值处理
+            //    settings.NullValueHandling = NullValueHandling.Ignore;
+            //    return settings;
+            //});
             //载入log4j配置文件
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
             //初始化IOC容器

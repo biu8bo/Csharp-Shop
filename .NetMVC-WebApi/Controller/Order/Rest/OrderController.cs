@@ -110,5 +110,18 @@ namespace MVC卓越项目.Controller.Rest.Order
             orderService.HandlerPay(payParam.orderKey, LocalUser.getUidByUser());
             return ApiResult<OrderConfirmVO>.ok();
         }
+        /// <summary>
+        /// 获取全部订单信息
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("order/get")]
+        [BackAuthCheck]
+        public ApiResult<PageModel> GetOrders([FromUri] OrderTypeParam payParam)
+        {
+           
+            return ApiResult<PageModel>.ok(orderService.GetOrders(payParam));
+        }
     }
 }

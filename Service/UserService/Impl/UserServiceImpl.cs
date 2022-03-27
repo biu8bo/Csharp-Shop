@@ -1,4 +1,6 @@
-﻿using Mapper;
+﻿using Commons.BaseModels;
+using Mapper;
+using MVC卓越项目.Commons.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -52,6 +54,26 @@ namespace Service.Service
                 var result = db.eshop_user.Where(e => e.uid == uid).FirstOrDefault();
                 result.password = null;
                 return result;
+            }
+        }
+
+        public PageModel getUsers(QueryData queryData)
+        {
+            using (var db  = new eshoppingEntities())
+            {
+                 return    new PageUtils<eshop_user>(queryData.Page, queryData.Limit).StartPage(db.eshop_user.Where(e => e.is_del == false).OrderBy(e => e.uid));
+            }
+        }
+
+        public void UpdateUserInfo(Dictionary<string, object> eshop_User)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                eshop_user User = db.eshop_user.Find(Convert.ToInt64(eshop_User["uid"]));
+                User.real_name = eshop_User["real_name"].ToString();
+                User.phone = eshop_User["phone"].ToString();
+                User.mark = eshop_User["mark"].ToString();
+                db.SaveChanges();
             }
         }
     }

@@ -18,7 +18,8 @@ namespace Service.Service
         public Nullable<System.DateTime> create_time { get; set; }
         public Nullable<System.DateTime> update_time { get; set; }
         public Nullable<bool> is_del { get; set; }
-
+        public int value { get; set; }
+         public bool isDisabled { get; set; }
         public List<CategoryVO> categories;
     }
 }

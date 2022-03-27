@@ -19,7 +19,8 @@ namespace Mapper
         {
             this.store_order_cart_info = new HashSet<store_order_cart_info>();
         }
-    
+        public eshop_user userDto;
+        public string statusInfo;
         public decimal id { get; set; }
         public string order_id { get; set; }
         public string extend_order_id { get; set; }

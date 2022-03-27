@@ -14,6 +14,11 @@ namespace Service.Service
     public interface IProductService
     {
         /// <summary>
+        /// 查询所有商品信息
+        /// </summary>
+        /// <returns></returns>
+        PageModel selectAllProducts(ProductParam param);
+        /// <summary>
         /// 分页查询商品信息
         /// </summary>
         /// <param name="page"></param>
@@ -48,5 +53,28 @@ namespace Service.Service
         /// </summary>
         /// <param name="productParam"></param>
         PageModel searchProducts(ProductParam productParam);
+
+
+        /// <summary>
+        /// 添加商品
+        /// </summary>
+        /// <param name="product"></param>
+        void AddProduct(store_product product);
+
+        /// <summary>
+        /// 编辑商品
+        /// </summary>
+        /// <param name="product"></param>
+        void EditProduct(store_product product);
+
+        /// <summary>
+        /// 删除商品
+        /// </summary>
+        /// <param name="product"></param>
+        void DelProduct(store_product product);
+
+        //修改在售状态
+        void OnSalesStatus(ProductParam param);
+
     }
 }

@@ -13,6 +13,7 @@ namespace Commons.BaseModels
         private int limit=10;
         //查询字符串
         private string queryString;
+
         /// <summary>
         /// 页数
         /// </summary>
@@ -25,5 +26,6 @@ namespace Commons.BaseModels
         /// 查询字符串
         /// </summary>
         public string QueryString { get => queryString; set => queryString = value; }
+
     }
 }

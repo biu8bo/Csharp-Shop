@@ -13,16 +13,25 @@ namespace MVC卓越项目.Commons.Utils
     /// <summary>
     /// Redis读写帮助类
     /// </summary>
-    public  class RedisHelper
+    public static class RedisHelper
     {
         private static string RedisConnectionStr = ConfigurationManager.AppSettings["RedisConnectionStr"];
         private static ConnectionMultiplexer redis { get; set; }
         private static IDatabase db { get; set; }
         static RedisHelper()
         {
-            
+
+            try
+            {
                 redis = ConnectionMultiplexer.Connect(RedisConnectionStr);
                 db = redis.GetDatabase();
+
+            }
+            catch
+            {
+
+                throw new ApiException(500,"Redis缓存数据库连接超时");
+            }
            
         }
         #region string类型操作
@@ -49,6 +58,21 @@ namespace MVC卓越项目.Commons.Utils
 
             var keys = _server.Keys(database: db.Database, pattern: pattern); //StackExchange.Redis 会根据redis版本决定用keys还是   scan(>2.8) 
             return db.KeyDelete(keys.ToArray()); //删除一组key
+        }
+
+        /// <summary>
+        /// 获取一组key
+        /// </summary>
+        /// <param name="pattern"></param>
+        /// <returns></returns>
+        public static IEnumerable<RedisKey> GetKeyByLike(string pattern)
+        {
+
+            var _server = redis.GetServer(redis.GetEndPoints()[0]); //默认一个服务器
+
+            var keys = _server.Keys(database: db.Database, pattern: pattern); //StackExchange.Redis 会根据redis版本决定用keys还是   scan(>2.8) 
+            
+            return keys; //获取一组key
         }
         /// <summary>
         /// 保存单个key value

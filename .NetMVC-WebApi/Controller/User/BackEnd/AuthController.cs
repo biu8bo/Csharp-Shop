@@ -70,7 +70,10 @@ namespace MVC卓越项目.Controller.User.BackRest
             iAuthService.LogoutBackEnd(token.FirstOrDefault());
             return ApiResult<Hashtable>.ok();
         }
-
+        /// <summary>
+        /// 获取后台管理员信息
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("info")]
         [BackAuthCheck]
@@ -83,6 +86,36 @@ namespace MVC卓越项目.Controller.User.BackRest
                 return ApiResult<user>.ok(db.users.Where(e => e.id == uid).FirstOrDefault());
             }
            
+        }
+        /// <summary>
+        /// 获取平台全部在线用户
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("online")]
+        [BackAuthCheck]
+        public ApiResult<PageModel> GetOnlineUsers([FromUri]QueryData queryData)
+        {
+           
+           return ApiResult<PageModel>.ok(iAuthService.getOnlineUsers(queryData));
+        }
+
+
+        /// <summary>
+        /// 强制退出用户登录
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("online/delete")]
+        [BackAuthCheck]
+        public ApiResult<PageModel> DeleteOnlineUsers([FromBody] List<string> data)
+        {
+            data.ForEach(e =>
+            {
+                RedisHelper.DeleteKeyByLike($"USER:{e}*");
+
+            });
+            return ApiResult<PageModel>.ok();
         }
     }
 }

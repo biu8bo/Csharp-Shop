@@ -133,5 +133,20 @@ namespace Service.Service
             }
         }
 
+        public PageModel GetCollects(CollectParam collectParam)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                return new PageUtils<Object>(collectParam.Page, collectParam.Limit).StartPage(db.store_product_relation.Where(e => e.type == collectParam.type).Join(db.store_product,e=>e.product_id,e=>e.id,(c,p)=> new { 
+                product = p,
+                collect = c
+                
+                }).Join(db.eshop_user,e=>e.collect.uid,e=>e.uid,(data,user)=>new {
+                data = data,
+                user =user
+                
+                }).OrderBy(e => e.data.collect.update_time));
+            }
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace Service.OrderService.Param
   public  class OrderTypeParam:QueryParam
     {
         public int orderType { get; set; }
+
+        public int orderStatus { get; set; }
     }
 }

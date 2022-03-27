@@ -31,16 +31,16 @@ namespace MVC卓越项目.Controller.Category.Rest
             return ApiResult<List<CategoryVO>>.ok(categoryService.GetCategories());
         }
         /// <summary>
-        /// 商品分类数据
+        /// 商品分类数据+树形结构
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [BackAuthCheck]
         [Route("getCategory")]
         public ApiResult<List<CategoryVO>> getCategory()
         {
             return ApiResult<List<CategoryVO>>.ok(categoryService.GetCategoriesBackEnd());
         }
-
 
         [HttpPost]
         [BackAuthCheck]

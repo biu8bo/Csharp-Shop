@@ -54,5 +54,11 @@ namespace Service.Service
         /// <param name="orderKey"></param>
         /// <param name="uid"></param>
         void HandlerPay(string orderKey, long uid);
+
+        /// <summary>
+        /// 获取全部订单信息
+        /// </summary>
+        /// <returns></returns>
+        PageModel GetOrders(OrderTypeParam orderTypeParam);
     }
 }

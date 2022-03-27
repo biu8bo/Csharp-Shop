@@ -1,4 +1,5 @@
-﻿using Commons.Utils;
+﻿using Commons.BaseModels;
+using Commons.Utils;
 using Mapper;
 using Service.ProductService;
 using System;
@@ -14,7 +15,7 @@ namespace Service.Service
     /// </summary>
   public  interface IProductAttrService
     {
-        /// <summary>
+        /// <summary> 
         ///  获取 商品属性信息
         /// </summary>
         /// <param name="pid"></param>
@@ -27,6 +28,20 @@ namespace Service.Service
         /// <param name="pid"></param>
         /// <returns></returns>
         List<StoreProductAttrValue> GetProductAttrValue(long pid);
+
+        /// <summary>
+        /// 获取所有规格模板集合
+        /// </summary>
+        /// <param name="queryParam"></param>
+        /// <returns></returns>
+        PageModel GetStoreProductRules(QueryParam queryParam);
+
+        /// <summary>
+        /// 获取商品的规格sku参数
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        store_product_attr_result GetProductAttrResultByID(int id);
 
     }
 }

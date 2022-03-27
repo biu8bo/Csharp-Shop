@@ -32,7 +32,10 @@ namespace Service.Service
         /// </summary>
         void delCartBathById(int id);
 
-
+        /// <summary>
+        /// 更新购物车商品数量
+        /// </summary>
+        /// <param name="cart"></param>
          void updateCartNum(store_cart cart);
     }
 }

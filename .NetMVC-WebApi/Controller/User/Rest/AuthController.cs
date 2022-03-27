@@ -87,14 +87,41 @@ namespace MVC卓越项目.Controller.Auth
         /// <returns></returns>
         public string getIP()
         {
-            string ip = Convert.ToString(System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
-            // 利用 Dns.GetHostEntry 方法，由获取的 IPv6 位址反查 DNS 纪录，<br> // 再逐一判断何者为 IPv4 协议，即可转为 IPv4 位址。
-            if (string.IsNullOrEmpty(ip))
+            string userIP = "";
+            try
             {
-                ip = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                if (System.Web.HttpContext.Current == null
+            || System.Web.HttpContext.Current.Request == null
+            || System.Web.HttpContext.Current.Request.ServerVariables == null)
+                    return "";
+                string CustomerIP = "";
+                //CDN加速后取到的IP simone 090805
+                CustomerIP = System.Web.HttpContext.Current.Request.Headers["Cdn-Src-Ip"];
+                if (!string.IsNullOrEmpty(CustomerIP))
+                {
+                    return CustomerIP;
+                }
+                CustomerIP = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                if (!String.IsNullOrEmpty(CustomerIP))
+                {
+                    return CustomerIP;
+                }
+                if (System.Web.HttpContext.Current.Request.ServerVariables["HTTP_VIA"] != null)
+                {
+                    CustomerIP = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                    if (CustomerIP == null)
+                        CustomerIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                }
+                else
+                {
+                    CustomerIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+                }
+                if (string.Compare(CustomerIP, "unknown", true) == 0)
+                    return System.Web.HttpContext.Current.Request.UserHostAddress;
+                return CustomerIP;
             }
-            return ip;
-
+            catch { }
+            return userIP;
         }
     }
 }

@@ -8,8 +8,11 @@ namespace Service.Service
 {
     public class ProductParam : QueryParam
     {
+        public long id { get; set; }
         //关键字
         public string keyword { get; set; }
+        public string value { get; set; }
+        public bool is_show { get; set; }
 
         //是否积分
         public Nullable<bool> isIntegral { get; set; }
@@ -23,5 +26,7 @@ namespace Service.Service
 
         //类型id
         public string cid { get; set; }
+
+        public bool status { get; set; }
     }
 }

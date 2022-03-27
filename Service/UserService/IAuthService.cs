@@ -1,4 +1,5 @@
-﻿using Mapper;
+﻿using Commons.BaseModels;
+using Mapper;
 using MVC卓越项目.Controller.Auth.Param;
 using Service.UserService.Param;
 using System;
@@ -55,5 +56,12 @@ namespace Service.Service
         /// <param name="loginParam"></param>
         /// <returns></returns>
         Hashtable BackEndLogin(LoginParam loginParam);
+
+        /// <summary>
+        /// 获取当前全部在线用户
+        /// </summary>
+        /// <param name="queryParam"></param>
+        /// <returns></returns>
+        PageModel getOnlineUsers(QueryData queryParam);
     }
 }

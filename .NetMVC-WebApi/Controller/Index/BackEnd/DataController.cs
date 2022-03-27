@@ -6,6 +6,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -15,7 +16,7 @@ namespace MVC卓越项目.Controller.Index.BackEnd
     /// <summary>
     /// 后台数据模块
     /// </summary>
-    [RoutePrefix("api/data")]
+    [RoutePrefix("api")]
     public class DataController : ApiController
     {
         /// <summary>
@@ -23,7 +24,7 @@ namespace MVC卓越项目.Controller.Index.BackEnd
         /// </summary>
         /// <returns></returns>
         [BackAuthCheck]
-        [Route("count")]
+        [Route("data/count")]
         [HttpGet]
         public ApiResult<Hashtable> getCount()
         {
@@ -33,16 +34,40 @@ namespace MVC卓越项目.Controller.Index.BackEnd
                 long goodsCount = db.store_product.Where(e => e.is_del == false).Count();
                 long orderCount = db.store_order.Where(e => e.is_del == false).Count();
                 decimal priceCount = db.store_order.Where(e => e.is_del == false).Sum(e => e.pay_price);
+                long todayCount = db.Database.SqlQuery<int>("SELECT Count(*) FROM `store_order` where DATE_FORMAT(create_time, '%Y%m%d' )   = DATE_FORMAT(NOW(), '%Y%m%d' )").FirstOrDefault();
+                long proCount = db.Database.SqlQuery<int>("SELECT Count(*) FROM `store_order` where DATE_FORMAT(create_time, '%Y%m%d' )   = DATE_FORMAT(NOW()- INTERVAL 1 DAY, '%Y%m%d' )").FirstOrDefault();
+
+                long lastWeekCount = db.Database.SqlQuery<long>("SELECT Count(*) FROM store_order WHERE is_del = 0 and date_sub(curdate(), interval 7 day) <= date(CREATE_TIME)").FirstOrDefault();
+                long monthCount = db.Database.SqlQuery<long>("SELECT Count(*) FROM store_order WHERE is_del = 0 and DATE_FORMAT(CREATE_TIME, '%Y%m' ) = DATE_FORMAT( CURDATE( ) ,'%Y%m' )").FirstOrDefault();
                 Hashtable hashtable = new Hashtable() {
                     {"userCount",userCount },
                     {"goodsCount",goodsCount },
                     {"orderCount",orderCount },
                     {"priceCount",priceCount },
+                    {"todayCount",todayCount },
+                    {"proCount",proCount },
+                    {"lastWeekCount",lastWeekCount },
+                    {"monthCount",monthCount },
+
                 };
                 return ApiResult<Hashtable>.ok(hashtable);
             }
         }
-
+        /// <summary>
+        ///获取系统配置
+        /// </summary>
+        /// <returns></returns>
+        [BackAuthCheck]
+        [Route("yxSystemGroupData")]
+        [HttpGet]
+        public ApiResult<List<system_group_data>> GetYxSystemGroupData(string groupName)
+        {
+            using (var db = new eshoppingEntities())
+            {
+               
+                return ApiResult<List<system_group_data>>.ok(db.system_group_data.Where(e => e.group_name == groupName).ToList());
+            }
+        }
 
         /// <summary>
         /// 获取销量最高的5个商品
@@ -50,7 +75,7 @@ namespace MVC卓越项目.Controller.Index.BackEnd
         /// <returns></returns>
         [BackAuthCheck]
         [HttpGet]
-        [Route("orderCount")]
+        [Route("data/orderCount")]
         public ApiResult<Hashtable> getOrderCount()
         {
             using (var db = new eshoppingEntities())
@@ -74,7 +99,7 @@ namespace MVC卓越项目.Controller.Index.BackEnd
         /// <returns></returns>
         [BackAuthCheck]
         [HttpGet]
-        [Route("chart")]
+        [Route("data/chart")]
         public ApiResult<Hashtable> chartData()
         {
             using (var db = new eshoppingEntities())
