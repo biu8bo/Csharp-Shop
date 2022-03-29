@@ -60,5 +60,33 @@ namespace Service.Service
         /// </summary>
         /// <returns></returns>
         PageModel GetOrders(OrderTypeParam orderTypeParam);
+
+        /// <summary>
+        /// 订单备注
+        /// </summary>
+        /// <param name="order"></param>
+        void OrderMark(store_order order);
+
+        /// <summary>
+        /// 修改订单信息
+        /// </summary>
+        /// <param name="order"></param>
+        void EditOrderInfo(store_order order);
+        /// <summary>
+        /// 发货
+        /// </summary>
+        /// <param name="order"></param>
+        void DeliverGoods(DeliverParam express);
+
+        /// <summary>
+        /// 确认收货
+        /// </summary>
+        /// <param name="orderId"></param>
+        void DeliverOK(string orderId);
+        /// <summary>
+        /// 订单详情获取
+        /// </summary>
+        /// <param name="orderID"></param>
+        store_order GetOrderDetail(string orderID);
     }
 }

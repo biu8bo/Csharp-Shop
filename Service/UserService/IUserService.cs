@@ -30,7 +30,10 @@ namespace Service.Service
         /// <returns></returns>
         PageModel getUsers(QueryData queryData);
 
-
+        /// <summary>
+        /// 更新用户信息
+        /// </summary>
+        /// <param name="eshop_User"></param>
         void UpdateUserInfo(Dictionary<string, object> eshop_User);
     }
 }

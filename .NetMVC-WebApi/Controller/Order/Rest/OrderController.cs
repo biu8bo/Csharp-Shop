@@ -1,4 +1,5 @@
 ﻿using Commons.BaseModels;
+using Mapper;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Controller.Order.Param;
@@ -122,6 +123,77 @@ namespace MVC卓越项目.Controller.Rest.Order
         {
            
             return ApiResult<PageModel>.ok(orderService.GetOrders(payParam));
+        }
+        /// <summary>
+        /// 订单备注
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("order/remark")]
+        [BackAuthCheck]
+        public ApiResult<int> OrderRemark([FromBody] store_order payParam)
+        {
+            orderService.OrderMark(payParam);
+            return ApiResult<int>.ok();
+        }
+
+        /// <summary>
+        /// 修改订单
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("order/edit")]
+        [BackAuthCheck]
+        public ApiResult<int> EditOrderInfo([FromBody] store_order payParam)
+        {
+            orderService.EditOrderInfo(payParam);
+            return ApiResult<int>.ok();
+        }
+
+
+        /// <summary>
+        /// 发货
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("order/deliver")]
+        [BackAuthCheck]
+        public ApiResult<int> DeliverGoods([FromBody] DeliverParam payParam)
+        {
+            orderService.DeliverGoods(payParam);
+            return ApiResult<int>.ok();
+        }
+
+
+        /// <summary>
+        /// 确认收货
+        /// </summary>
+        /// <param name="payParam"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("deliverOK/{orderId}")]
+        [AuthCheck]
+        public ApiResult<int> DeliverOK(string orderId)
+        {
+            orderService.DeliverOK(orderId);
+            return ApiResult<int>.ok();
+        }
+
+        /// <summary>
+        /// 获取订单详情
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("order/{orderId}")]
+        [AuthCheck]
+        public ApiResult<store_order> GetOrder(string orderId)
+        {
+         
+            return ApiResult<store_order>.ok(orderService.GetOrderDetail(orderId));
         }
     }
 }

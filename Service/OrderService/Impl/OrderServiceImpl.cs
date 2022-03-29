@@ -12,6 +12,7 @@ using Service.OrderService.VO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,11 @@ namespace Service.Service
                 cartIDsParam.cartIds.ForEach(id =>
                 {
                     store_cart cart = db.store_cart.Where(e => e.id == id && e.uid == uid).FirstOrDefault();
-                    cart.productInfo = db.store_product.Where(e => e.id == cart.product_id).FirstOrDefault();
+                    cart.productInfo = db.store_product.Where(e => e.id == cart.product_id&&e.stock>=1).FirstOrDefault();
+                    if (cart.productInfo is null)
+                    {
+                        throw new ApiException(501, "商品库存不足！");
+                    }
                     cart.attrInfo = db.store_product_attr_value.Where(e => e.unique == cart.product_attr_unique).FirstOrDefault();
                     //计算价格 
                     price += cart.attrInfo.price * cart.cart_num;
@@ -139,7 +144,7 @@ namespace Service.Service
                 else
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == -1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -265,6 +270,11 @@ namespace Service.Service
                     productResult.sales++;
                     //库存减少
                     productResult.stock--;
+                    //规格库存减少
+                    store_product_attr_value skuData = db.store_product_attr_value.Where(s => s.unique == _Cart.product_attr_unique).First();
+                    skuData.stock--;
+                    skuData.sales++;
+                    db.SaveChanges();
                     string md5str = Md5Utils.Md5(JsonConvert.SerializeObject(e.productInfo));
                     store_order_cart_info add = new store_order_cart_info()
                     {
@@ -359,13 +369,22 @@ namespace Service.Service
                 var productsResult = db.store_order_cart_info.Where(e => e.oid == orderInfo.id);
                 using (var db2 = new eshoppingEntities())
                 {
-
+                    
                     foreach (var item in productsResult)
                     {
                         var result = db2.store_product.Find(item.product_id);
+                        Dictionary<string, Dictionary<string, Object>> cart = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Object>>>(item.cart_info);
+                        string unique = (string)cart["attrInfo"]["unique"];
                         result.sales++;
                         result.stock--;
-
+                        //规格库存减少
+                        using (var dbt = new eshoppingEntities())
+                        {
+                            store_product_attr_value skuData = dbt.store_product_attr_value.Where(s => s.unique == unique).FirstOrDefault();
+                            skuData.stock--;
+                            skuData.sales++;
+                        }
+                       
                     }
 
                 }
@@ -393,10 +412,35 @@ namespace Service.Service
                 if (orderTypeParam.orderStatus == -9)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.OrderByDescending(e => e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.userDto = db.eshop_user.Find(items.uid);
+
+                        if (items.is_del==true)
+                        {
+                            items.statusInfo = "已删除";
+                        }
+                        else if (items.paid==false)
+                        {
+                            items.statusInfo = "未支付";
+                        }
+                        else if (items.paid==true&&items.status==0)
+                        {
+                            items.statusInfo = "待发货";
+                        }
+                        else if (items.paid==true&&items.status==1)
+                        {
+                            items.statusInfo = "待收货";
+                        }
+                        else if (items.paid==true&&items.status==2)
+                        {
+                            items.statusInfo = "待评价";
+                        }
+                        else if (items.paid==true&&items.status==3)
+                        {
+                            items.statusInfo = "已完成";
+                        }
                         foreach (var item in items.store_order_cart_info)
                         {
                           
@@ -413,6 +457,7 @@ namespace Service.Service
                     pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
+                        items.statusInfo = "未支付";
                         items.userDto = db.eshop_user.Find(items.uid);
                         foreach (var item in items.store_order_cart_info)
                         {
@@ -429,6 +474,7 @@ namespace Service.Service
                     pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
+                        items.statusInfo = "未发货";
                         items.userDto = db.eshop_user.Find(items.uid);
                         foreach (var item in items.store_order_cart_info)
                         {
@@ -445,6 +491,7 @@ namespace Service.Service
                     pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
+                        items.statusInfo = "待收货";
                         items.userDto = db.eshop_user.Find(items.uid);
                         foreach (var item in items.store_order_cart_info)
                         {
@@ -457,10 +504,12 @@ namespace Service.Service
                 //待回复
                 else if (orderTypeParam.orderStatus == OrderTypeEnum.WaitReplay)
                 {
+                  
                     //查询订单详情，购物车信息
                     pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
+                        items.statusInfo = "待评价";
                         items.userDto = db.eshop_user.Find(items.uid);
                         foreach (var item in items.store_order_cart_info)
                         {
@@ -470,12 +519,13 @@ namespace Service.Service
                     }
                     return pageModel;
                 }//已完成
-                else
+                else if (orderTypeParam.orderStatus==4)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == -1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderBy(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
+                        items.statusInfo = "已完成";
                         items.userDto = db.eshop_user.Find(items.uid);
                         foreach (var item in items.store_order_cart_info)
                         {
@@ -485,6 +535,112 @@ namespace Service.Service
                     }
                     return pageModel;
                 }
+               // 已删除
+                else
+                {
+                    //查询订单详情，购物车信息
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(db.Set<store_order>().Include("store_order_cart_info").Include("store_order_cart_info.store_product").Include("store_order_cart_info.store_cart").Where(e => e.is_del==true&&e.paid == true).OrderBy(e => e.id));
+                    foreach (var items in ((List<store_order>)pageModel.Data))
+                    {
+                        items.statusInfo = "已删除";
+                        items.userDto = db.eshop_user.Find(items.uid);
+                        foreach (var item in items.store_order_cart_info)
+                        {
+                            item.store_cart.store_product_attr_value = db.store_product_attr_value.Where(e => e.unique == item.store_cart.product_attr_unique).FirstOrDefault();
+                        }
+
+                    }
+                    return pageModel;
+                }
+            }
+        }
+
+        public void OrderMark(store_order order)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var result = db.store_order.Find(order.id);
+                result.remark = order.remark;
+                db.SaveChanges();
+            }
+        }
+
+        public void EditOrderInfo(store_order order)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var result = db.store_order.Find(order.id);
+                result.pay_price = order.pay_price;
+                db.SaveChanges();
+            }
+        }
+
+        public void DeliverGoods(DeliverParam express)
+        {
+            using (var db =new eshoppingEntities())
+            {  //获取快递信息
+                int deliveryID = Convert.ToInt32(express.deliveryName);
+              express expressInfo =  db.expresses.Where(e => e.id == deliveryID).FirstOrDefault();
+                //获取订单信息
+                store_order order = db.store_order.Find(express.id);
+                order.delivery_name = expressInfo.name;
+                order.delivery_sn = expressInfo.code;
+                order.delivery_id = express.deliveryId;
+                order.delivery_type ="express";
+                order.update_time = DateTime.Now;
+                order.status = 1;
+                db.SaveChanges();
+
+            }
+        }
+
+        public void DeliverOK(string orderId)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var result = db.store_order.Where(e => e.order_id == orderId).FirstOrDefault();
+                result.status = 2;
+                db.SaveChanges();
+            }
+        }
+
+        public store_order GetOrderDetail(string orderID)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                long uid = LocalUser.getUidByUser();
+                store_order order = db.Set<store_order>().Include("store_order_cart_info").Include("store_order_cart_info.store_product").Include("store_order_cart_info.store_cart").Where(e => e.is_del == false&&e.uid== uid&&e.order_id==orderID).FirstOrDefault();
+
+                foreach (var item in order.store_order_cart_info)
+                {
+                    item.store_cart.store_product_attr_value= db.store_product_attr_value.Where(e => e.unique == item.store_cart.product_attr_unique).FirstOrDefault();
+                }
+                order.userDto = db.eshop_user.Find(uid);
+                if (order is null)
+                {
+                    throw new ApiException(500,"订单不存在");
+                }
+                 if (order.paid == false)
+                {
+                    order.statusInfo = "未支付";
+                }
+                else if (order.paid == true && order.status == 0)
+                {
+                    order.statusInfo = "待发货";
+                }
+                else if (order.paid == true && order.status == 1)
+                {
+                    order.statusInfo = "待收货";
+                }
+                else if (order.paid == true && order.status == 2)
+                {
+                    order.statusInfo = "待评价";
+                }
+                else if (order.paid == true && order.status == 3)
+                {
+                    order.statusInfo = "已完成";
+                }
+                return order; 
             }
         }
     }

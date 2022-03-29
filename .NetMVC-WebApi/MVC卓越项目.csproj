@@ -378,6 +378,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controller\Address\AddressController.cs" />
+    <Compile Include="Controller\Express\Rest\ExpressController.cs" />
     <Compile Include="Controller\File\FileController.cs" />
     <Compile Include="Controller\File\WithExtensionMultipartFormDataStreamProvider .cs" />
     <Compile Include="Controller\Index\BackEnd\DataController.cs" />

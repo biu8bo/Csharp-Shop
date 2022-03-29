@@ -70,15 +70,32 @@ namespace MVC卓越项目.Controller.Product.Rest
                 //开启事务
                 var  tran= db.Database.BeginTransaction();
                 //存在就删除
+                db.store_product_attr.RemoveRange(db.store_product_attr.Where(e => e.product_id == id));
                 db.store_product_attr_result.RemoveRange(db.store_product_attr_result.Where(e => e.product_id == id));
-                db.store_product_attr_result.RemoveRange(db.store_product_attr_result.Where(e => e.product_id == id));
+                db.store_product_attr_value.RemoveRange(db.store_product_attr_value.Where(e => e.product_id == id));
                 db.SaveChanges();
                 Object anony = new
                 {
                     attr = param.items,
                     value = param.attrs
-
                 };
+                List<store_product_attr> attrs = new List<store_product_attr>();
+                param.items.ForEach(e =>
+                {
+                    store_product_attr item = new store_product_attr();
+                    item.product_id = id;
+                    item.attr_name = e.value;
+                    string str = "";
+                    foreach (var S in e.detail)
+                    {
+                        str += S + ",";
+                    }
+                    str = str.Substring(0, str.Length - 1);
+                    item.attr_values = str;
+                    attrs.Add(item);
+                });
+                db.store_product_attr.AddRange(attrs);
+                db.SaveChanges();
                 db.store_product_attr_result.Add(new store_product_attr_result()
                 {
                     product_id = id,
@@ -86,6 +103,7 @@ namespace MVC卓越项目.Controller.Product.Rest
                     result = JsonConvert.SerializeObject(anony)
                 }) ;
                 List<store_product_attr_value> lists = new List<store_product_attr_value>();
+                SnowFlakeUtil snowFlakeUtil =   new SnowFlakeUtil(2);
                 foreach (var item in param.attrs)
                 {
                     string V = "";
@@ -102,7 +120,7 @@ namespace MVC卓越项目.Controller.Product.Rest
                         ot_price= item.otPrice,
                         image = item.pic,
                         integral = (long?)item.integral,
-                        unique =new SnowFlakeUtil(12).nextId().ToString(),
+                        unique = snowFlakeUtil.nextId().ToString(),
                         sku = V
 
                     };

@@ -106,7 +106,7 @@ namespace Service.Service
                         parentItem.categories = new List<CategoryVO>();
                         parentItem.label = "|----" + result[i].cate_name;
                         parentItem.value = result[i].id;
-                        parentItem.isDisabled = true;
+                        parentItem.isDisabled = false;
                         //父级ID
                         int ID = result[i].id;
                         result.ForEach(e =>

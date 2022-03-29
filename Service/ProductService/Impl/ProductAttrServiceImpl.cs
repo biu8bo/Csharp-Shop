@@ -33,7 +33,8 @@ namespace Service.Service
         {
             using (var db = new eshoppingEntities())
             {
-                return ObjectUtils<List<StoreProductAttrValue>>.ConvertTo(db.store_product_attr_value.Where(e => e.product_id == pid).ToList());
+                var data = db.store_product_attr_value.Where(e => e.product_id == pid).ToList();
+                return ObjectUtils<List<StoreProductAttrValue>>.ConvertTo(data);
             }
         }
 

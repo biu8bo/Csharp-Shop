@@ -206,6 +206,7 @@
     <Compile Include="OrderService\Impl\OrderServiceImpl.cs" />
     <Compile Include="OrderService\IOrderService.cs" />
     <Compile Include="OrderService\Param\CartIDIDsParam.cs" />
+    <Compile Include="OrderService\Param\DeliverParam.cs" />
     <Compile Include="OrderService\Param\OrderTypeParam.cs" />
     <Compile Include="OrderService\VO\OrderConfirmVO.cs" />
     <Compile Include="OrderService\VO\UserOrderVO.cs" />

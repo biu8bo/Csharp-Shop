@@ -13,10 +13,18 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.FileController
 {
+    /// <summary>
+    /// 文件上传模块
+    /// </summary>
     [RoutePrefix("api")]
     public class FileController : ApiController
     {
         private string UpPath = ConfigurationManager.AppSettings["UploadFilePath"];
+        /// <summary>
+        /// 文件上传
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("upload")]
         public async Task<HttpResponseMessage> UploadPhoto(string type = "")
