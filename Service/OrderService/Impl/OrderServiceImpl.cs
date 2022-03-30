@@ -85,7 +85,7 @@ namespace Service.Service
                 {
 
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderByDescending(e => e.id).OrderByDescending(e => e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -100,7 +100,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitSend)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderByDescending(e => e.id).OrderByDescending(e=>e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -115,7 +115,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitGet)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderByDescending(e => e.id).OrderByDescending(e => e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -130,7 +130,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderType == OrderTypeEnum.WaitReplay)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderByDescending(e => e.id).OrderByDescending(e => e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -144,7 +144,7 @@ namespace Service.Service
                 else
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderByDescending(e => e.id).OrderByDescending(e => e.update_time));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         foreach (var item in items.store_order_cart_info)
@@ -343,6 +343,10 @@ namespace Service.Service
             {
                 var tran = db.Database.BeginTransaction();
                 store_order orderInfo = db.store_order.Where(e => e.paid == false && e.uid == uid && e.order_id == orderKey).FirstOrDefault();
+                if (orderInfo is null)
+                {
+                    throw new ApiException(501,"订单不存在！");
+                }
                 //行锁获取用户数据
                 eshop_user user = db.Database.SqlQuery<eshop_user>($"SELECT eshop_user.* FROM eshop_user where uid = {uid} FOR UPDATE").FirstOrDefault();
                 //查询余额
@@ -353,6 +357,8 @@ namespace Service.Service
                 }
                 orderInfo.paid = true;
                 orderInfo.status = 0;
+                orderInfo.update_time = DateTime.Now;
+                orderInfo.pay_time = DateTime.Now;
                 user.now_money = money;
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 //成功支付 加入记录
@@ -412,7 +418,7 @@ namespace Service.Service
                 if (orderTypeParam.orderStatus == -9)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.OrderByDescending(e => e.update_time));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.userDto = db.eshop_user.Find(items.uid);
@@ -454,7 +460,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderStatus == OrderTypeEnum.NoPay)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == false).OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.statusInfo = "未支付";
@@ -471,7 +477,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderStatus == OrderTypeEnum.WaitSend)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 0).OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.statusInfo = "未发货";
@@ -488,7 +494,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderStatus == OrderTypeEnum.WaitGet)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 1).OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.statusInfo = "待收货";
@@ -506,7 +512,7 @@ namespace Service.Service
                 {
                   
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 2).OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.statusInfo = "待评价";
@@ -522,7 +528,7 @@ namespace Service.Service
                 else if (orderTypeParam.orderStatus==4)
                 {
                     //查询订单详情，购物车信息
-                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderBy(e => e.id));
+                    pageModel = new PageUtils<store_order>(orderTypeParam.Page, orderTypeParam.Limit).StartPage(query.Where(e => e.paid == true && e.status == 3).OrderByDescending(e => e.id));
                     foreach (var items in ((List<store_order>)pageModel.Data))
                     {
                         items.statusInfo = "已完成";
@@ -580,6 +586,11 @@ namespace Service.Service
             using (var db =new eshoppingEntities())
             {  //获取快递信息
                 int deliveryID = Convert.ToInt32(express.deliveryName);
+                if (deliveryID == 0)
+                {
+                    throw new ApiException(500,"请选择快递公司");
+
+                }
               express expressInfo =  db.expresses.Where(e => e.id == deliveryID).FirstOrDefault();
                 //获取订单信息
                 store_order order = db.store_order.Find(express.id);
@@ -599,6 +610,7 @@ namespace Service.Service
             using (var db = new eshoppingEntities())
             {
                 var result = db.store_order.Where(e => e.order_id == orderId).FirstOrDefault();
+                result.update_time = DateTime.Now;
                 result.status = 2;
                 db.SaveChanges();
             }
