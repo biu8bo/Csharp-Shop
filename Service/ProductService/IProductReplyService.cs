@@ -30,5 +30,13 @@ namespace Service.Service
         /// <param name="uid"></param>
         /// <param name="store_Product_Reply"></param>
         void addComment(long uid, List<store_product_reply> store_Product_Reply);
+        /// <summary>
+        /// 后台获取所有用户评论信息
+        /// </summary>
+        /// <param name="queryData"></param>
+        /// <returns></returns>
+        PageModel GetProdctReplyData(QueryData queryData);
+
+        void RemoveReply(int id);
     }
 }

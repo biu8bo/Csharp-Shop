@@ -29,7 +29,7 @@ namespace MVC卓越项目.Controller.Comment.Rest
         {
             return ApiResult<PageModel>.ok(productReplyService.GetReplyByPid(pid, page, limit));
         }
-
+       
         /// <summary>
         /// 商品评论提交
         /// </summary>
@@ -45,5 +45,29 @@ namespace MVC卓越项目.Controller.Comment.Rest
             productReplyService.addComment(LocalUser.getUidByUser(), data);
             return ApiResult<int>.ok();
         }
-     }
+
+        /// <summary>
+        /// 获取商品评论数据
+        /// </summary>
+        [Route("productReply")]
+        [HttpGet]
+        [BackAuthCheck]
+        public ApiResult<PageModel> GetReply([FromUri] QueryData data)
+        {
+            return ApiResult<PageModel>.ok(productReplyService.GetProdctReplyData(data));
+        }
+        /// <summary>
+        /// 删除商品评论信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [BackAuthCheck]
+        [Route("productReply/{id}")]
+        public ApiResult<int> DeleteProductReply(int id)
+        {
+            productReplyService.RemoveReply(id);
+            return ApiResult<int>.ok();
+        }
+    }
 }

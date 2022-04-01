@@ -36,6 +36,20 @@ namespace Service.Service
             }
         }
 
+        public PageModel GetProdctReplyData(QueryData queryData)
+        {
+            using (var db = new eshoppingEntities())
+            {
+           
+
+                return new PageUtils<Object>(queryData.Page, queryData.Limit).StartPage(db.store_product_reply.Where(e => e.is_del == false).Join(db.store_product, e => e.product_id, e => e.id, (reply, product) => new
+                {
+                    reply = reply,
+                    product = product
+                }).Join(db.eshop_user, e => e.reply.uid, e => e.uid, (info, user) => new { info = info, user = user }).OrderByDescending(e=>e.info.reply.create_time));
+            }
+        }
+
         /// <summary>
         /// 获取商品评论信息
         /// </summary>
@@ -71,6 +85,16 @@ namespace Service.Service
                    commentInfo = a,
                     productInfo = b.FirstOrDefault()
                 }).OrderBy(e=>e.commentInfo.id));
+            }
+        }
+
+        public void RemoveReply(int id)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var result= db.store_product_reply.Find(id);
+                result.is_del = true;
+                db.SaveChanges();
             }
         }
     }

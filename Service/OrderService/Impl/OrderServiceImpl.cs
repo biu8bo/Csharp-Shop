@@ -414,7 +414,30 @@ namespace Service.Service
 
                 PageModel pageModel = null;
                 IQueryable<store_order> query = db.Set<store_order>().Include("store_order_cart_info").Include("store_order_cart_info.store_product").Include("store_order_cart_info.store_cart").Where(e => e.is_del == false);
-
+                //如果分类筛选不为空
+                if (!(orderTypeParam.type is null))
+                {
+                    //通过id搜索
+                    if (orderTypeParam.type=="order_id")
+                    {
+                        query = query.Where(e=>e.order_id== orderTypeParam.value);
+                    }
+                    //通过用户名搜索
+                    else
+                    if (orderTypeParam.type == "real_name")
+                    {
+                        query = query.Where(e => e.real_name == orderTypeParam.value);
+                    }
+                    else if (orderTypeParam.type == "user_phone")
+                    {
+                        query = query.Where(e => e.user_phone == orderTypeParam.value);
+                    }
+                }
+                //如果时间段不为空
+                if (orderTypeParam.startTime != null && orderTypeParam.endTime != null)
+                {
+                    query = query.Where(e => (e.create_time) >= (orderTypeParam.startTime) && (e.create_time) <= (orderTypeParam.endTime));
+                }
                 if (orderTypeParam.orderStatus == -9)
                 {
                     //查询订单详情，购物车信息
