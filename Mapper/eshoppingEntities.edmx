@@ -583,8 +583,8 @@
           <Property Name="unique" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="product_id" Type="bigint" Nullable="false" />
           <Property Name="reply_type" Type="varchar" MaxLength="32" Nullable="false" />
-          <Property Name="product_score" Type="bool" Nullable="false" />
-          <Property Name="service_score" Type="bool" Nullable="false" />
+          <Property Name="product_score" Type="int" Nullable="false" />
+          <Property Name="service_score" Type="int" Nullable="false" />
           <Property Name="comment" Type="varchar" MaxLength="512" Nullable="false" />
           <Property Name="pics" Type="text" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
@@ -1553,8 +1553,8 @@
           <Property Name="unique" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="product_id" Type="Int64" Nullable="false" />
           <Property Name="reply_type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="product_score" Type="Boolean" Nullable="false" />
-          <Property Name="service_score" Type="Boolean" Nullable="false" />
+          <Property Name="product_score" Type="Int32" Nullable="false" />
+          <Property Name="service_score" Type="Int32" Nullable="false" />
           <Property Name="comment" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="pics" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="create_time" Type="DateTime" Nullable="false" />

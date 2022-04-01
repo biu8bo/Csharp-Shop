@@ -22,16 +22,7 @@ namespace MVC卓越项目.Controller.Product
     public class ProductController : ApiController
     {
         private readonly IProductService productService = Bootstrapper.Resolve<IProductService>();
-        private readonly IProductReplyService iProductReply = Bootstrapper.Resolve<IProductReplyService>();
-        /// <summary>
-        /// 获取商品评论数据
-        /// </summary>
-        [Route("reply")]
-        [HttpGet]
-        public ApiResult<PageModel> getReplyByPid(long pid, int page, int limit)
-        {
-            return ApiResult<PageModel>.ok(iProductReply.GetReplyByPid(pid, page, limit));
-        }
+     
         /// <summary>
         /// 获取商品详情
         /// </summary>

@@ -13,6 +13,29 @@ namespace Service.Service
 {
     public class ProductReplyServiceImpl : IProductReplyService
     {
+        public void addComment(long uid, List<store_product_reply> store_Product_Reply)
+        {
+            int OID = Convert.ToInt32(store_Product_Reply[0].oid);
+            using (var db = new eshoppingEntities())
+            {
+               var tran =   db.Database.BeginTransaction();
+                store_Product_Reply.ForEach(e => {
+                e.uid = uid;
+                e.create_time = DateTime.Now;
+                    e.reply_type = "product";
+                e.update_time = DateTime.Now;
+                e.is_del = false;
+                e.is_reply = false;
+            });
+              store_order order =  db.store_order.Where(e => e.id == OID).FirstOrDefault();
+                order.status = 3;
+                
+                db.store_product_reply.BulkInsert(store_Product_Reply);
+                db.BulkSaveChanges();
+                tran.Commit();
+            }
+        }
+
         /// <summary>
         /// 获取商品评论信息
         /// </summary>

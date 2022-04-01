@@ -378,6 +378,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Controller\Address\AddressController.cs" />
+    <Compile Include="Controller\Comment\Rest\CommentController.cs" />
     <Compile Include="Controller\Express\Rest\ExpressController.cs" />
     <Compile Include="Controller\File\FileController.cs" />
     <Compile Include="Controller\File\WithExtensionMultipartFormDataStreamProvider .cs" />
@@ -428,6 +429,7 @@
   <ItemGroup>
     <Folder Include="App_Data\Log\" />
     <Folder Include="Controller\Collect\Param\" />
+    <Folder Include="Controller\Comment\Param\" />
     <Folder Include="Controller\Order\VO\" />
     <Folder Include="Controller\Product\Param\" />
   </ItemGroup>
@@ -476,7 +478,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.137.1:8888/</IISUrl>
+          <IISUrl>http://localhost:8888/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

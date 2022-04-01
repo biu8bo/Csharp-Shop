@@ -20,8 +20,8 @@ namespace Mapper
         public string unique { get; set; }
         public long product_id { get; set; }
         public string reply_type { get; set; }
-        public bool product_score { get; set; }
-        public bool service_score { get; set; }
+        public int product_score { get; set; }
+        public int service_score { get; set; }
         public string comment { get; set; }
         public string pics { get; set; }
         public System.DateTime create_time { get; set; }

@@ -124,7 +124,7 @@ namespace Service.Service
                 eshop_user result = db.eshop_user.Where(e => e.username == loginParam.Username && e.password == loginParam.Password && e.is_del == false).FirstOrDefault();
                 if (result == null)
                 {
-                    logger.WriteInfo($"IP[{ip}]:用户尝试登录 用户名:{loginParam.Username}  登录失败！");
+                //    logger.WriteInfo($"IP[{ip}]:用户尝试登录 用户名:{loginParam.Username}  登录失败！");
                     throw new AuthException("用户名或密码错误！");
                 }
                 else
@@ -149,7 +149,7 @@ namespace Service.Service
                     //将用户名设为键 写入缓存
                     RedisHelper.SetStringKey("USER:" + result.username + ":" + token, result, TimeSpan.FromMilliseconds(Convert.ToDouble(exTime)));
 
-                    logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 登陆成功！");
+                   // logger.WriteInfo($"IP为:{ip}的用户尝试登录 用户名:{loginParam.Username} 登陆成功！");
                     //不返回密码
                     result.password = null;
                     Hashtable hashtable = new Hashtable();

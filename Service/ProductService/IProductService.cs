@@ -49,7 +49,7 @@ namespace Service.Service
         void incBrowseNum(long pid);
 
         /// <summary>
-        /// 搜索
+        /// 商品搜索
         /// </summary>
         /// <param name="productParam"></param>
         PageModel searchProducts(ProductParam productParam);
