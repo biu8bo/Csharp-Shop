@@ -9,5 +9,6 @@ namespace Commons.BaseModels
  public   class QueryData : QueryParam
     {
         public string username { get; set; }
+        public string value { get; set; }
     }
 }

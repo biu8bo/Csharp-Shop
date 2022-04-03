@@ -234,6 +234,9 @@
     <Reference Include="Pipelines.Sockets.Unofficial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42ea0a778e13fbe2, processorArchitecture=MSIL">
       <HintPath>packages\Pipelines.Sockets.Unofficial.2.2.2\lib\net472\Pipelines.Sockets.Unofficial.dll</HintPath>
     </Reference>
+    <Reference Include="Quartz, Version=3.3.3.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.3.3.3\lib\net472\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <HintPath>packages\StackExchange.Redis.2.2.88\lib\net472\StackExchange.Redis.dll</HintPath>
     </Reference>
@@ -284,6 +287,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
     </Reference>
@@ -383,11 +387,13 @@
     <Compile Include="Controller\File\FileController.cs" />
     <Compile Include="Controller\File\WithExtensionMultipartFormDataStreamProvider .cs" />
     <Compile Include="Controller\Index\BackEnd\DataController.cs" />
+    <Compile Include="Controller\Seckill\Param\SeckillTimeConfigParam.cs" />
     <Compile Include="Controller\Index\VO\ChartVO.cs" />
     <Compile Include="Controller\Index\VO\OrderCountDataVO.cs" />
     <Compile Include="Controller\Material\Param\MeterialParam.cs" />
     <Compile Include="Controller\Material\Rest\MaterialController.cs" />
     <Compile Include="Controller\Product\Rest\RuleController.cs" />
+    <Compile Include="Controller\Seckill\Rest\SeckillController.cs" />
     <Compile Include="Controller\User\BackEnd\AuthController.cs" />
     <Compile Include="Controller\User\BackEnd\UserManagerController.cs" />
     <Compile Include="Controller\User\Rest\AuthController.cs" />
@@ -427,7 +433,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Log\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Controller\Collect\Param\" />
     <Folder Include="Controller\Comment\Param\" />
     <Folder Include="Controller\Order\VO\" />

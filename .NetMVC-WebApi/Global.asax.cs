@@ -1,8 +1,10 @@
-﻿using MVC卓越项目.Commons.Fillter;
+﻿using Commons.Quartz;
+using MVC卓越项目.Commons.Fillter;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Service.SeckillService.Quartz;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,9 +18,11 @@ using System.Web.Routing;
 namespace MVC卓越项目
 {
     public class WebApiApplication : HttpApplication
-    {/// <summary>
-     /// 跨域设置
-     /// </summary>
+    {
+        
+        /// <summary>
+       /// 跨域设置
+        /// </summary>
         public void Application_BeginRequest()
         {
             //解决预检请求跨域问题
@@ -65,6 +69,8 @@ namespace MVC卓越项目
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
             //初始化IOC容器
             Bootstrapper.Initialise();
+            //调度扫描秒杀商品  每隔5秒执行一次
+            QuartzManager.JoinToQuartz(typeof(SeckillQuartz));
         }
 
     }

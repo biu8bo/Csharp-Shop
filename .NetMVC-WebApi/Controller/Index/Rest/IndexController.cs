@@ -57,6 +57,19 @@ namespace MVC卓越项目.Controller.Auth
             system_Group_Data.ForEach(e => list.Add(JsonConvert.DeserializeObject(e.value)));
             return ApiResult<List<object>>.ok(list);
         }
+
+        /// <summary>
+        /// 首页菜单
+        /// </summary>
+        /// <returns></returns>
+        [Route("newProduct")]
+        [HttpGet]
+        [CacheEnable]
+        public ApiResult<PageModel> NewProduct()
+        {
+            return ApiResult<PageModel>.ok(indexService.GetList(1, 8,ProductEnum.TYPE_3));
+        }
+
         /// <summary>
         /// 精品推荐
         /// </summary>
@@ -68,6 +81,7 @@ namespace MVC卓越项目.Controller.Auth
         {
             return ApiResult<PageModel>.ok(indexService.GetList(1,6,ProductEnum.TYPE_1));
         }
+
         /// <summary>
         /// 热门推荐
         /// </summary>

@@ -1,6 +1,7 @@
 ﻿using Commons.BaseModels;
 using Mapper;
 using MVC卓越项目.Commons.Attribute;
+using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Controller.Index.VO;
 using MySql.Data.MySqlClient;
 using System;
@@ -60,12 +61,46 @@ namespace MVC卓越项目.Controller.Index.BackEnd
         [BackAuthCheck]
         [Route("yxSystemGroupData")]
         [HttpGet]
-        public ApiResult<List<system_group_data>> GetYxSystemGroupData(string groupName)
+        public ApiResult<PageModel> GetYxSystemGroupData([FromUri]string groupName, [FromUri] int page, [FromUri] int size)
         {
             using (var db = new eshoppingEntities())
             {
-               
-                return ApiResult<List<system_group_data>>.ok(db.system_group_data.Where(e => e.group_name == groupName).ToList());
+                PageModel pageModel = new PageUtils<system_group_data>(page,size).StartPage(db.system_group_data.Where(e => e.group_name == groupName && e.is_del == false).OrderByDescending(e=>e.sort));
+                return ApiResult<PageModel>.ok(pageModel);
+            }
+        }
+
+        /// <summary>
+        ///修改系统配置
+        /// </summary>
+        /// <returns></returns>
+        [BackAuthCheck]
+        [Route("yxSystemGroupData")]
+        [HttpPut]
+        public ApiResult<int> UpdateYxSystemGroupData([FromBody] system_group_data system_Group_Data)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                db.Entry(system_Group_Data).State = EntityState.Modified;
+                db.SaveChanges();
+                return ApiResult<int>.ok();
+            }
+        }
+        /// <summary>
+        ///删除系统配置
+        /// </summary>
+        /// <returns></returns>
+        [BackAuthCheck]
+        [Route("yxSystemGroupData/{id}")]
+        [HttpDelete]
+        public ApiResult<int> DelYxSystemGroupData(long id)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                var result =  db.system_group_data.Find(id);
+                result.is_del = true;
+                db.SaveChanges();
+                return ApiResult<int>.ok();
             }
         }
 

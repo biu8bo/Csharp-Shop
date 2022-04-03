@@ -22,5 +22,13 @@ namespace Mapper
         public Nullable<int> sort { get; set; }
         public bool status { get; set; }
         public Nullable<bool> is_del { get; set; }
+
+        public Map map;
+        public class Map
+        {
+            public int? id;
+            public int time;
+            public int continued;
+        }
     }
 }

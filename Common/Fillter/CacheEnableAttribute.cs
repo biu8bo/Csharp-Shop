@@ -78,7 +78,7 @@ namespace MVC卓越项目.Commons.Attribute
             //序列化成json
             string json = JsonConvert.SerializeObject(result);
             //写入redis
-            RedisHelper.SetStringValue(templateKey, json);
+            RedisHelper.SetStringKey(templateKey, json,TimeSpan.FromSeconds(3600));
             base.OnActionExecuted(actionExecutedContext);
            
         }

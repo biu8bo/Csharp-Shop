@@ -17,7 +17,7 @@ namespace MVC卓越项目.Commons.Utils
     {
         private static string RedisConnectionStr = ConfigurationManager.AppSettings["RedisConnectionStr"];
         private static ConnectionMultiplexer redis { get; set; }
-        private static IDatabase db { get; set; }
+        public static IDatabase db { get; set; }
         static RedisHelper()
         {
 
@@ -250,5 +250,7 @@ namespace MVC卓越项目.Commons.Utils
             return db.HashDelete(key, hashkey);
         }
         #endregion
+   
+
     }
 }

@@ -36,7 +36,10 @@ namespace Service.Service
         /// <param name="queryData"></param>
         /// <returns></returns>
         PageModel GetProdctReplyData(QueryData queryData);
-
+        /// <summary>
+        /// 删除评论
+        /// </summary>
+        /// <param name="id"></param>
         void RemoveReply(int id);
     }
 }

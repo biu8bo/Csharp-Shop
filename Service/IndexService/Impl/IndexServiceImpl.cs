@@ -31,22 +31,22 @@ namespace Service.Service
                 if (ProductEnum.TYPE_1 == flag)
                 {
                     //精品推荐
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_best == true && e.is_del == false).OrderBy(e => e.id));
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_best == true && e.is_del == false).OrderBy(e => e.update_time));
                 }
                 else if (ProductEnum.TYPE_2 == flag)
                 {
                     //热销
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_hot == true && e.is_del == false).OrderBy(e => e.id));
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_hot == true && e.is_del == false).OrderBy(e => e.update_time));
                 }
                 else if (ProductEnum.TYPE_3 == flag)
                 {
                     //新品推荐
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_new == true && e.is_del == false).OrderBy(e => e.id));
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_new == true && e.is_del == false).OrderBy(e => e.update_time));
                 }
                 else if (ProductEnum.TYPE_4 == flag)
                 {
                     //猜你喜欢
-                    return pageUtils.StartPage(db.store_product.Where(e => e.is_benefit == true && e.is_del == false).OrderBy(e => e.id));
+                    return pageUtils.StartPage(db.store_product.Where(e => e.is_benefit == true && e.is_del == false).OrderBy(e => e.update_time));
                 }
                 return null;
             }
