@@ -12,5 +12,7 @@ namespace Service.CartService.Param
         public int productId { get; set; }
 
         public int num { get; set; }
+
+        public int sid { get; set; }
     }
 }

@@ -9,5 +9,7 @@ namespace MVC卓越项目.Controller.Order.Param
     {
       public  string orderKey;
         public string mark;
+
+        public int sid;
     }
 }

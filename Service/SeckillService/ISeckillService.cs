@@ -1,5 +1,7 @@
 ﻿using Commons.BaseModels;
 using Mapper;
+using Service.CartService.Param;
+using Service.OrderService.VO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +48,21 @@ namespace Service.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-
         Object GetStore_SeckillsByID(int id);
+
+        /// <summary>
+        /// 秒杀抢购
+        /// </summary>
+        /// <param name="sid"></param>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        OrderConfirmVO Seckill(CartParam cartParam, long uid);
+        /// <summary>
+        /// 秒杀支付处理
+        /// </summary>
+        /// <param name="orderKey"></param>
+        /// <param name="mark"></param>
+        /// <param name="uid"></param>
+        void SeckilPay(string orderKey, int sid,string mark, long uid);
     }
 }

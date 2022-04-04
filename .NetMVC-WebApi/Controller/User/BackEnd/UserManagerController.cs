@@ -12,6 +12,9 @@ using System.Web.Http;
 
 namespace MVC卓越项目.Controller.User.BackEnd
 {
+    /// <summary>
+    /// 用户管理模块
+    /// </summary>
     [RoutePrefix("api/user")]
     public class UserManagerController : ApiController
     {

@@ -42,10 +42,13 @@ namespace Service.Service
                     {
                         throw new ApiException(501, "商品库存不足！");
                     }
+                    //创建后移除购物车
+                    cart.is_del = true;
                     cart.attrInfo = db.store_product_attr_value.Where(e => e.unique == cart.product_attr_unique).FirstOrDefault();
                     //计算价格 
                     price += cart.attrInfo.price * cart.cart_num;
                     storeCarts.Add(cart);
+                    db.SaveChanges();
                 });
 
                 orderConfirmVO.priceGroup = new Hashtable() { { "totalPrice", price } };
@@ -55,6 +58,7 @@ namespace Service.Service
                 //userInfo
                 orderConfirmVO.userInfo = db.eshop_user.Where(e => e.uid == uid).FirstOrDefault();
                 orderConfirmVO.orderKey = cacheOrderInfo(orderConfirmVO, uid);
+                db.SaveChanges();
                 tran.Commit();
                 return orderConfirmVO;
             }

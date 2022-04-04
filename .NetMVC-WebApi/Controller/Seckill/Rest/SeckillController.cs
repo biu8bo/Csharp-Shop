@@ -1,8 +1,13 @@
 ﻿using Commons.BaseModels;
 using Mapper;
 using MVC卓越项目.Commons.Attribute;
+using MVC卓越项目.Commons.ExceptionHandler;
+using MVC卓越项目.Commons.Utils;
+using MVC卓越项目.Controller.Order.Param;
 using MVC卓越项目.Controller.Seckill.Param;
 using Newtonsoft.Json;
+using Service.CartService.Param;
+using Service.OrderService.VO;
 using Service.Service;
 using System;
 using System.Collections.Generic;
@@ -134,5 +139,45 @@ namespace MVC卓越项目.Controller.Seckill.Rest
         {
             return ApiResult<List<system_group_data>>.ok(seckillService.getSeckillTime());
         }
+        /// <summary>
+        /// 秒杀接口
+        /// </summary>
+        /// <param name="cart"></param>
+        /// <returns></returns>
+        [AuthCheck]
+        [HttpPost]
+        [Route("Seckill")]
+        public ApiResult<OrderConfirmVO> Seckill([FromBody]CartParam cart)
+        {
+           long uid = LocalUser.getUidByUser();
+            //用户未登录异常
+            if (uid==0L)
+            {
+                throw new ApiException(400,"请先登录");
+            }
+            return ApiResult<OrderConfirmVO>.ok(seckillService.Seckill(cart, uid));
+        }
+
+        /// <summary>
+        /// 秒杀支付
+        /// </summary>
+        /// <param name="cart"></param>
+        /// <returns></returns>
+        [AuthCheck]
+        [HttpPost]
+        [Route("SeckillPay")]
+        public ApiResult<OrderConfirmVO> SeckillPay([FromBody] PayParam payParam)
+        {
+            long uid = LocalUser.getUidByUser();
+            //用户未登录异常
+            if (uid == 0L)
+            {
+                throw new ApiException(400, "请先登录");
+            }
+            seckillService.SeckilPay(payParam.orderKey, payParam.sid, payParam.mark, uid);
+
+            return ApiResult<OrderConfirmVO>.ok();
+        }
+
     }
 }

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Commons.Quartz
 {
+    /// <summary>
+    /// 任务调度基类
+    /// </summary>
     [DisallowConcurrentExecution()]
     public abstract class JobBase : IJob
     {
@@ -21,7 +24,7 @@ namespace Commons.Quartz
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

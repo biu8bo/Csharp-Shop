@@ -51,7 +51,7 @@ namespace Service.SeckillService.Quartz
                             //初始化缓存 开始新一轮
                             for (int i = 0; i < item.stock; i++)
                             {
-                                RedisHelper.db.ListLeftPush($"seckill:count:{item.id}", new RedisValue(item.product_id.ToString()));
+                                RedisHelper.db.ListLeftPush($"seckill:count:{item.id}", item.product_id.ToString());
                             }
                           
                         
