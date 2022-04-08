@@ -1,4 +1,7 @@
-﻿using Commons.Quartz;
+﻿using Commons.BaseModels;
+using Commons.Quartz;
+using Commons.Utils;
+using Fleck;
 using MVC卓越项目.Commons.Fillter;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Models;
@@ -21,7 +24,7 @@ namespace MVC卓越项目
     {
         
         /// <summary>
-       /// 跨域设置
+       /// 跨域拦截
         /// </summary>
         public void Application_BeginRequest()
         {
@@ -47,31 +50,14 @@ namespace MVC卓越项目
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings
-            //{
-            //    ContractResolver = new CamelCasePropertyNamesContractResolver(),        //小驼峰命名法,格式化日期时间
-            //    Formatting = Formatting.Indented,
-            //DateFormatString = "yyyy-MM-dd HH:mm:ss"
-            //};
-            //JsonSerializerSettings settings = new JsonSerializerSettings();
-            //JsonConvert.DefaultSettings = new Func<JsonSerializerSettings>(() =>
-            //{
-            //    //驼峰命名
-            //    settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            //    //日期类型默认格式化处理
-            //    settings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-            //    settings.Formatting = Formatting.Indented;
-            //    //空值处理
-            //    settings.NullValueHandling = NullValueHandling.Ignore;
-            //    return settings;
-            //});
             //载入log4j配置文件
             log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
             //初始化IOC容器
             Bootstrapper.Initialise();
             //调度扫描秒杀商品  每隔5秒执行一次
             QuartzManager.JoinToQuartz(typeof(SeckillQuartz));
+            //开启套接字服务
+            WebSocketService. WebSocketStart();
         }
-
     }
 }

@@ -43,6 +43,9 @@
     <Reference Include="Exceptionless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=fc181f0a46f65747, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\Exceptionless.4.6.2\lib\net452\Exceptionless.dll</HintPath>
     </Reference>
+    <Reference Include="Fleck, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\.NetMVC-WebApi\packages\Fleck.1.2.0\lib\net45\Fleck.dll</HintPath>
+    </Reference>
     <Reference Include="JWT, Version=8.0.0.0, Culture=neutral, PublicKeyToken=6f98bca0f40f2ecf, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\JWT.8.8.1\lib\net46\JWT.dll</HintPath>
     </Reference>

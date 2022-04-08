@@ -8,7 +8,8 @@ namespace Commons.Constant
 {
     public static class ShopConstants
     {
-      public static   long ORDER_OUTTIME_UNPAY = 30L;
+        public static String NOTIFY = "NOTIFY";
+        public static   long ORDER_OUTTIME_UNPAY = 30L;
         public static long ORDER_OUTTIME_UNCONFIRM = 7L;
         public static String REDIS_ORDER_OUTTIME_UNPAY = "order:unpay:";
         public static String REDIS_ORDER_OUTTIME_UNCONFIRM = "order:unconfirm:";

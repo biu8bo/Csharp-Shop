@@ -19,7 +19,8 @@ namespace Mapper
         public eshoppingEntities()
             : base("name=eshoppingEntities")
         {
-            //DbInterception.Add(new EFCommandInterceptor());
+            //sql拦截器
+           // DbInterception.Add(new EFCommandInterceptor());
                 //全局关闭懒加载;
             this.Configuration.LazyLoadingEnabled = false;
         }

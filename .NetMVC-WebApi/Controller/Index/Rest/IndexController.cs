@@ -69,6 +69,17 @@ namespace MVC卓越项目.Controller.Auth
         {
             return ApiResult<PageModel>.ok(indexService.GetList(1, 8,ProductEnum.TYPE_3));
         }
+        /// <summary>
+        /// 首页通知
+        /// </summary>
+        /// <returns></returns>
+        [Route("getNotify")]
+        [HttpGet]
+        [CacheEnable]
+        public ApiResult<Object> GetNotify()
+        {
+            return ApiResult<Object>.ok(indexService.GetDataByShopConstants(ShopConstants.NOTIFY).FirstOrDefault());
+        }
 
         /// <summary>
         /// 精品推荐

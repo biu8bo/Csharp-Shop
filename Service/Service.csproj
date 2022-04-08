@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Fleck, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\.NetMVC-WebApi\packages\Fleck.1.2.0\lib\net45\Fleck.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\.NetMVC-WebApi\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -236,6 +239,7 @@
     <Compile Include="UserService\IUserService.cs" />
     <Compile Include="UserService\Param\LoginParam.cs" />
     <Compile Include="UserService\Param\RegisterParam.cs" />
+    <Compile Include="WebScoketService\WebSocketEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Commons.csproj">

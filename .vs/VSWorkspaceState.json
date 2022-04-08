@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.NetMVC-WebApi"
+    "\\.NetMVC-WebApi",
+    "\\.NetMVC-WebApi\\App_Start",
+    "\\.NetMVC-WebApi\\Controller",
+    "\\.NetMVC-WebApi\\Controller\\File",
+    "\\.NetMVC-WebApi\\Controller\\Index",
+    "\\.NetMVC-WebApi\\Controller\\Index\\BackEnd",
+    "\\Mapper"
   ],
+  "SelectedNode": "\\.NetMVC-WebApi\\Controller\\File\\FileController.cs",
   "PreviewInSolutionExplorer": false
 }

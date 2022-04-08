@@ -1,9 +1,11 @@
 ﻿using Commons.BaseModels;
+using Commons.Constant;
 using Mapper;
 using MVC卓越项目.Commons.Attribute;
 using MVC卓越项目.Commons.Utils;
 using MVC卓越项目.Controller.Index.VO;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,6 +33,8 @@ namespace MVC卓越项目.Controller.Index.BackEnd
         {
             using (var db = new eshoppingEntities())
             {
+                //刷新配置
+                db.Database.ExecuteSqlCommandAsync("set global sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';");
                 long userCount = db.eshop_user.Where(e => e.is_del == false).Count();
                 long goodsCount = db.store_product.Where(e => e.is_del == false).Count();
                 long orderCount = db.store_order.Where(e => e.is_del == false).Count();
@@ -183,5 +187,79 @@ namespace MVC卓越项目.Controller.Index.BackEnd
                 return ApiResult<Hashtable>.ok(hashtable);
             }
         }
+
+        /// <summary>
+        ///保存/修改轮播配置
+        /// </summary>
+        /// <returns></returns>
+        [BackAuthCheck]
+        [Route("data/saveBanner")]
+        [HttpPost]
+        public ApiResult<int> SaveBanner([FromBody] List<string> strings)
+        {
+            using (var db = new eshoppingEntities())
+            {
+
+                var result = db.system_group_data.Where(e => e.group_name == ShopConstants.YSHOP_HOME_BANNER);
+                foreach (var item in result)
+                {
+                    item.is_del = true;
+                }
+                db.SaveChanges();
+                for (int i = 0; i < strings.Count; i++)
+                {
+                    Hashtable hashtable = new Hashtable();
+                    system_group_data group_Data = new system_group_data();
+
+                    hashtable.Add("pic", strings[i]);
+                    group_Data.value = JsonConvert.SerializeObject(hashtable);
+                    group_Data.group_name = ShopConstants.YSHOP_HOME_BANNER;
+                    group_Data.is_del = false;
+                    db.system_group_data.Add(group_Data);
+                }
+                db.SaveChanges();
+                RedisHelper.DeleteKeyByLike("Index:*");
+                return ApiResult<int>.ok();
+            }
+        }
+
+
+        /// <summary>
+        ///保存/修改通知
+        /// </summary>
+        /// <returns></returns>
+        [BackAuthCheck]
+        [Route("data/setNotify")]
+        [HttpPost]
+        public ApiResult<int> SaveBanner([FromUri] string tips)
+        {
+            using (var db = new eshoppingEntities())
+            {
+                system_group_data group_Data;
+                var result = db.system_group_data.Where(e=>e.group_name==ShopConstants.NOTIFY).FirstOrDefault();
+                if (result is null)
+                {
+                    group_Data = new system_group_data();
+                    group_Data.group_name = ShopConstants.NOTIFY;
+                    group_Data.is_del = false;
+                   group_Data.value = tips;
+                    db.system_group_data.Add(group_Data);
+                }
+                else
+                {
+                    result.value = tips;
+
+                }
+                db.SaveChanges();
+
+                RedisHelper.DeleteKeyByLike("Index:*");
+                return ApiResult<int>.ok();
+            }
+        }
+
+
+
     }
+
+
 }

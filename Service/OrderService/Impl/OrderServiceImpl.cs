@@ -318,11 +318,9 @@ namespace Service.Service
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 db.eshop_user.Attach(user);
                 db.SaveChanges();
-
-
-
                 //写入数据库
                 tran.Commit();
+                WebSocketService.SendMessage("您有一条新的订单等待发货");
             }
 
         }
