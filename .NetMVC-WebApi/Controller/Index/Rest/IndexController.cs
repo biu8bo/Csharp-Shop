@@ -90,7 +90,9 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<PageModel> bastList()
         {
-            return ApiResult<PageModel>.ok(indexService.GetList(1,6,ProductEnum.TYPE_1));
+            PageModel pg = indexService.GetList(1, 1000, ProductEnum.TYPE_1);
+            pg.Data = ((List<store_product>)pg.Data).OrderBy(e => Guid.NewGuid()).Skip(1).Take(6).OrderBy(e => Guid.NewGuid()).ToList();
+            return ApiResult<PageModel>.ok(pg);
         }
 
         /// <summary>
@@ -102,7 +104,9 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<PageModel> hotList()
         {
-            return ApiResult<PageModel>.ok(indexService.GetList(1, 6, ProductEnum.TYPE_2));
+            PageModel pg = indexService.GetList(1, 1000, ProductEnum.TYPE_2);
+            pg.Data = ((List<store_product>)pg.Data).OrderBy(e => Guid.NewGuid()).Skip(1).Take(6).OrderBy(e => Guid.NewGuid()).ToList();
+            return ApiResult<PageModel>.ok(pg);
         }
         /// <summary>
         /// 猜你喜欢
@@ -113,7 +117,10 @@ namespace MVC卓越项目.Controller.Auth
         [HttpGet]
         public ApiResult<PageModel> guessLike()
         {
-            return ApiResult<PageModel>.ok(indexService.GetList(1, 8, ProductEnum.TYPE_4));
+            PageModel pg = indexService.GetList(1, 1000, ProductEnum.TYPE_4);
+            pg.Data = ((List<store_product>)pg.Data).OrderBy(e => Guid.NewGuid()).Skip(1).Take(8).OrderBy(e => Guid.NewGuid()).ToList();
+            return ApiResult<PageModel>.ok(pg);
+  
         }
         /// <summary>
         /// 热门搜索
